@@ -1,5 +1,5 @@
 module.exports = {
-  entry: 'path/to/entry.jsx',
+  entry: 'frontend/entry.jsx',
   output: {
     path: 'app/assets/javascripts',
     filename: 'bundle.js',
