@@ -31,3 +31,10 @@ By the end of Week 9, this app will, at a minimum, satisfy the following creteri
 [sample-state]: docs/sample-state.md
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md
+
+## Implementation Timeline
+
+### Bonus Features (TBD)
+- [ ] Search programs and reviews
+- [ ] Friend other users
+- [ ] View timeline of your friends' statuses and reviews
