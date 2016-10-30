@@ -1,24 +1,33 @@
-# README
+# GoodCode
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Heroku link]
+[Trello link][trello]
 
-Things you may want to cover:
+[trello]: https://trello.com/b/mAPXiEe1/goodcode
 
-* Ruby version
+## Minimum Viable Product
 
-* System dependencies
+Goodcode is a web application based on Goodreads but designed to support reviews of coding frameworks and librarys rather than books.
+It is built using Ruby on Rails and React/Redux.
+By the end of Week 9, this app will, at a minimum, satisfy the following creteria with smooth, bug free navigation, adequate seed data and sufficient CSS styling:
 
-* Configuration
+- [ ] Hosting on Heroku
+- [ ] New account creation, login, and guest login
+- [ ] Programs
+- [ ] Storing programs in a personal collection
+- [ ] Giving programs a status (have used/want to use/etc.)
+- [ ] Review programs in markdown
+- [ ] Infinite scroll or pagination for programs index
 
-* Database creation
+## Design Docs
+* [View Wireframs][wireframes]
+* [React Components][components]
+* [API Endpoints][api-endpoints]
+* [DB Schema][schema]
+* [Sample State][sample-state]
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[wireframes]: docs/wireframes
+[components]: docs/component-hierarchy.md
+[sample-state]: docs/sample-state.md
+[api-endpoints]: docs/api-endpoints.md
+[schema]: docs/schema.md
