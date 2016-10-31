@@ -13,7 +13,13 @@
 **AccountFormContainer**
   - AccountForm
 
+**HomeContainer**
+  - ProgramIndex
+
 **ProgramIndexContainer**
+  - ProgramIndex
+
+**ProgramIndex**
   - ProgramIndexItemContainer
     - ProgramIndexItem
     - ProgramIndexItemDetail
@@ -47,3 +53,16 @@
 **TimelineContainer**
   - Timeline
     - TimelineItem
+
+## Routes
+
+| Path                             | Component               |
+| -------------------------------- | ----------------------- |
+| "/programs"                      | "ProgramIndexContainer" |
+| "/programs/sign_up"              | "NewUserHeader"         |
+| "/programs/:programId"            | "ProgramShowContainer"  |
+| "/home"                          | "HomeContainer"         |
+| "/programs/:programId/new-review" | "NewReviewContainer"    |
+| "/programs/new-program"          | "NewProgramContainer"   |
+| "/search"                        | "SearchContainer"       |
+| "/timeline"                      | "TimelineContainer"     |

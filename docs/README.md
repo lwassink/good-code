@@ -7,9 +7,9 @@
 
 ## Minimum Viable Product
 
-Goodcode is a web application based on Goodreads but designed to support reviews of coding frameworks and librarys rather than books.
+Goodcode is a web application based on Goodreads but designed to support reviews of coding frameworks and libraries rather than books.
 It is built using Ruby on Rails and React/Redux.
-By the end of Week 9, this app will, at a minimum, satisfy the following creteria with smooth, bug free navigation, adequate seed data and sufficient CSS styling:
+By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug free navigation, adequate seed data and sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest login
@@ -20,7 +20,7 @@ By the end of Week 9, this app will, at a minimum, satisfy the following creteri
 - [ ] Infinite scroll or pagination for programs index
 
 ## Design Docs
-* [View Wireframs][wireframes]
+* [View Wireframes][wireframes]
 * [React Components][components]
 * [API Endpoints][api-endpoints]
 * [DB Schema][schema]
