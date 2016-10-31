@@ -1,9 +1,10 @@
 # GoodCode
 
-[Heroku link]
+[Heroku link][heroku]
 [Trello link][trello]
 
 [trello]: https://trello.com/b/mAPXiEe1/goodcode
+[heroku]: https://goodcode.herokuapp.com/
 
 ## Minimum Viable Product
 
