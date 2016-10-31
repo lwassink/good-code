@@ -11,6 +11,8 @@
 ### Users
 
 - `POST /api/users`
+- `GET /api/users/:id`
+  - sends back all programs the user has marked with a status
 
 ### Session
 
@@ -31,7 +33,7 @@
 ### Reviews
 
 - `GET /api/programs/:programId/reviews`
-  - reviews index only shows reviews for a given program
+  - the reviews index only shows reviews for a given program
 - `GET /reviews/:id`
 - `POST /api/programs/:programId/reviews`
   - creates a review for the program with id == programId
@@ -40,7 +42,8 @@
 
 ### Statuses
 
-- `GET /api/stuses/:id`
-- `POST /api/statuses`
+- `GET /api/statuses`
+- `POST /api/programs/:program_id/statuses`
 - `PATCH /api/statuses/:id`
 - `DELETE /api/statuses/:id`
+
