@@ -62,7 +62,7 @@
 | "/programs/sign_up"               | "NewUserHeader"         |
 | "/programs/:id"                   | "ProgramShowContainer"  |
 | "/home"                           | "HomeContainer"         |
-| "/programs/:programId/new-review" | "ReviewFormContainer"   |
+| "/programs/:id/new-review"        | "ReviewFormContainer"   |
 | "/reviews/:id/edit                | "ReviewFormContainer"   |
 | "/programs/new-program"           | "ProgramFormContainer"  |
 | "/programs/:id/edit"              | "ProgramFormContainer"  |
