@@ -2,9 +2,9 @@
 {
   currentUser: {
     id: 1,
-    username: "bob"
+    username: "bob",
+    errors: ["Invalid login" ]
   },
-  errors: ["Invalid login" ],
   programs: {
     1: {
       id: 1,
@@ -15,7 +15,8 @@
       description: "A web app framework",
       status: "want to use",
       author_id: 1
-    }
+    },
+    errors: []
   }
   reviews: { // Only store reviews for the program being shown
     1: {
@@ -24,7 +25,8 @@
       usedFor: "A cool project",
       authorId: "2",
       status: "have used"
-    }
+    },
+    errors: []
   }
 }
 ```
