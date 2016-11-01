@@ -1,6 +1,6 @@
 # GoodCode
 
-[Heroku link][heroku]
+[Heroku link][heroku],
 [Trello link][trello]
 
 [trello]: https://trello.com/b/mAPXiEe1/goodcode
@@ -16,8 +16,9 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 - [ ] New account creation, login, and guest login
 - [ ] Programs
 - [ ] Giving programs a status (have used/want to use/etc.)
-- [ ] Review programs in markdown
-- [ ] Infinite scroll or pagination for programs index
+- [ ] Review programs
+- [ ] Markdown and code snippets
+- [ ] Production README
 
 ## Design Docs
 * [View Wireframes][wireframes]
@@ -26,11 +27,11 @@ By the end of Week 9, this app will, at a minimum, satisfy the following criteri
 * [DB Schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: wireframes
-[components]: component-hierarchy.md
-[sample-state]: sample-state.md
-[api-endpoints]: api-endpoints.md
-[schema]: schema.md
+[wireframes]: docs/wireframes
+[components]: docs/component-hierarchy.md
+[sample-state]: docs/sample-state.md
+[api-endpoints]: docs/api-endpoints.md
+[schema]: docs/schema.md
 
 ## Implementation Timeline
 
@@ -54,10 +55,6 @@ Reviews are shown on the user show page
 ### Phase 5: Reviews in Markdown with live preview (1 day)
 
 **Objective:** Reviews can be styled in markdown with code snippets and a live preview of the review is shown like on Stack Overflow
-
-### Phase 6: Pagination / infinte scroll for programs index (1 day, W2 F 6PM)
-
-**Objective:** Add infinite scroll to the Programs Index
 
 ### Bonus Features (TBD)
 - [ ] Search programs and reviews

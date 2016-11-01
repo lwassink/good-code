@@ -1,42 +1,27 @@
 ## Component Hierarchy
 
-**NavHeader**
+**AuthHeader**
   - AuthFormContainer
-  - NavIndex
+    - AuthForm
 
-**NewUserHeader**
-  - AccountFormContainer
-
-**AuthFormContainer**
-  - AuthForm
-
-**AccountFormContainer**
-  - AccountForm
-
-**HomeContainer**
-  - ProgramIndex
+**NavHeaderContainer**
+  - NavHeader
+    - NavIndex
 
 **ProgramIndexContainer**
   - ProgramIndex
-
-**ProgramIndex**
-  - ProgramIndexItemContainer
     - ProgramIndexItem
-    - ProgramIndexItemDetail
-    - ProgramIndexItemTools
 
 **ProgramShowContainer**
-  - PrgramShowDetails
+  - PrgramShowDetail
     - ProgramShowSidebar
     - ProgramShowMain
   - ReviewsIndexContainer
     - ReviewsIndex
-    - ReviewsIndexItem
+      - ReviewsIndexItem
 
 **ReviewFormContainer**
-  - NewReviewToolbar
   - ReviewForm
-    - ReviewPreview
 
 **ProgramFormContainer**
   - ProgramForm
@@ -56,15 +41,13 @@
 
 ## Routes
 
-| Path                              | Component               |
-| --------------------------------- | ----------------------- |
-| "/programs"                       | "ProgramIndexContainer" |
-| "/programs/sign_up"               | "NewUserHeader"         |
-| "/programs/:id"                   | "ProgramShowContainer"  |
-| "/home"                           | "HomeContainer"         |
-| "/programs/:id/new-review"        | "ReviewFormContainer"   |
-| "/reviews/:id/edit                | "ReviewFormContainer"   |
-| "/programs/new-program"           | "ProgramFormContainer"  |
-| "/programs/:id/edit"              | "ProgramFormContainer"  |
-| "/search"                         | "SearchContainer"       |
-| "/timeline"                       | "TimelineContainer"     |
+| Path                 | Component               |
+| -------------------- | ----------------------- |
+| "/programs"          | "ProgramIndexContainer" |
+| "/sign_up"           | "AuthHeader"            |
+| "/programs/:id"      | "ProgramShowContainer"  |
+| "/home"              | "ProgramIndexContainer" |
+| "/programs/:id/new"  | "ReviewFormContainer"   |
+| "/reviews/:id/edit   | "ReviewFormContainer"   |
+| "/programs/new"      | "ProgramFormContainer"  |
+| "/programs/:id/edit" | "ProgramFormContainer"  |

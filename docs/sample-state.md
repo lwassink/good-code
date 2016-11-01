@@ -4,12 +4,7 @@
     id: 1,
     username: "bob"
   },
-  forms: {
-    signUp: { errors: [] },
-    signIn: { errors: [] },
-    createProgram: { errors: [] },
-    createNote: { errors: [] }
-  },
+  errors: ["Invalid login" ],
   programs: {
     1: {
       id: 1,

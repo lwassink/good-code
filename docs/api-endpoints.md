@@ -1,49 +1,37 @@
 # API Endpoints
 
-## HTML API
-
-### Root
-
-- `GET /` - loads the web app
-
-## JSON API
-
-### Users
+## Users
 
 - `POST /api/users`
-- `GET /api/users/:id`
-  - sends back all programs the user has marked with a status
 
-### Session
+## Session
 
 - `POST /api/session`
 - `DELETE /api/session`
 - `GET /api/session`
 
-### Programs
+## Programs
 
 - `GET /api/programs`
-  - Programs index
-  - only gets the most recent n programs
-  - then the next n, and so on
+  - can take query param to only get programs for a given user
 - `GET /api/programs/:id`
 - `POST /api/programs`
 - `DELETE /api/programs/:id`
 
-### Reviews
+## Reviews
 
-- `GET /api/programs/:programId/reviews`
+- `GET /api/reviews`
   - the reviews index only shows reviews for a given program
+  - program passed in the query params
 - `GET /reviews/:id`
-- `POST /api/programs/:programId/reviews`
-  - creates a review for the program with id == programId
+- `POST /api/reviews`
 - `DELETE /reviews/:id`
 - `PATCH /reviews/:id`
 
-### Statuses
+## Statuses
 
 - `GET /api/statuses`
-- `POST /api/programs/:program_id/statuses`
+- `POST /api/statuses`
 - `PATCH /api/statuses/:id`
 - `DELETE /api/statuses/:id`
 
