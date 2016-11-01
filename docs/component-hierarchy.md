@@ -43,10 +43,10 @@
 
 | Path                 | Component               |
 | -------------------- | ----------------------- |
+| "/"                  | "ProgramIndexContainer" |
 | "/programs"          | "ProgramIndexContainer" |
 | "/sign_up"           | "AuthHeader"            |
 | "/programs/:id"      | "ProgramShowContainer"  |
-| "/home"              | "ProgramIndexContainer" |
 | "/programs/:id/new"  | "ReviewFormContainer"   |
 | "/reviews/:id/edit   | "ReviewFormContainer"   |
 | "/programs/new"      | "ProgramFormContainer"  |
