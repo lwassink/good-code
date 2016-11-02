@@ -8,8 +8,9 @@ export default (props) => (
       <span className="code">code</span>
     </p>
 
-    <p> Test</p>
-    <AuthFormContainer />
+    <div className="auth-form">
+      <AuthFormContainer />
+    </div>
   </header>
 )
 

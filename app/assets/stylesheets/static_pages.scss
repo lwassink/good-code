@@ -2,7 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+$light-brown: #f4f1ea;
+$dark-brown: #65411f;
+
 .logo {
   font-family: Raleway;
-  font-size: 32px;
+  font-size: 50px;
+  text-align: center;
+  color: $dark-brown;
+  padding: 10px;
 };
+
+.good {
+  font-weight: 300;
+}
+
+.code {
+  font-weight: 500;
+}
+
+header {
+  background-color: $light-brown;
+}
+
+.auth-form {
+  padding-bottom: 10px;
+  display: block;
+}

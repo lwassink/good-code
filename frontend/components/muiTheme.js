@@ -1,12 +1,17 @@
-export default {
+export const colors = {
+  lightBrown: '#f4f1ea',
+  darkBrown: '#65411f',
+  tan: '#cc9966',
+};
+
+export const muiTheme = {
   fontFamily: 'Roboto, sans-serif',
   palette: {
-    primary1Color: '#65411f',
-    accent1Color: '#f4f1ea',
+    primary1Color: colors.darkBrown,
+    accent1Color: colors.tan,
   },
-
   button: {
     margin: 10,
-    color: '#f4f1ea',
+    color: colors.tan
   }
 };
