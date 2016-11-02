@@ -6,13 +6,25 @@
 $light-brown: #f4f1ea;
 $dark-brown: #65411f;
 
+// Logo styling
+
 .logo {
   font-family: Raleway;
-  font-size: 50px;
   text-align: center;
   color: $dark-brown;
   padding: 10px;
 };
+
+.big {
+  font-size: 50px;
+}
+
+.small {
+  font-size: 35px;
+  margin-left: 80px;
+  margin-top: -6px;
+  cursor: pointer;
+}
 
 .good {
   font-weight: 300;
@@ -22,9 +34,7 @@ $dark-brown: #65411f;
   font-weight: 500;
 }
 
-header {
-  background-color: $light-brown;
-}
+// Logo styling ends
 
 .auth-form {
   padding-bottom: 10px;

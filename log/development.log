@@ -4396,3 +4396,1121 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 3.7ms)
 
 
+Started POST "/api/users" for ::1 at 2016-11-02 10:02:16 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 110ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 10:03:53 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "eyBCIZ8jMPjzJodzj-wkhg"], ["updated_at", 2016-11-02 17:03:53 UTC], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (3.3ms)
+Completed 200 OK in 137ms (Views: 12.8ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-02 10:03:55 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eyBCIZ8jMPjzJodzj-wkhg"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eyBCIZ8jMPjzJodzj-wkhg"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YMsgN7TcQ_CHIJoXq3SVsA"], ["updated_at", 2016-11-02 17:03:55 UTC], ["id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 10:04:51 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "xe6fabx4CFyS-WQaRbKf9A"], ["updated_at", 2016-11-02 17:04:51 UTC], ["id", 3]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (3.1ms)
+Completed 200 OK in 139ms (Views: 15.6ms | ActiveRecord: 10.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-02 10:12:25 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xe6fabx4CFyS-WQaRbKf9A"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xe6fabx4CFyS-WQaRbKf9A"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "fBVLLQu0anNffvxBLmP_mg"], ["updated_at", 2016-11-02 17:12:25 UTC], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 44ms (Views: 1.7ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 10:14:35 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "aGke5_sxqJSq3ukO9DRD2w"], ["updated_at", 2016-11-02 17:14:35 UTC], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered api/users/show.json.jbuilder (8.0ms)
+Completed 200 OK in 135ms (Views: 19.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:30:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGke5_sxqJSq3ukO9DRD2w"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGke5_sxqJSq3ukO9DRD2w"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.9ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1i9csr1" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1c6e6wl" -
+Completed 200 OK in 8212ms (Views: 8205.1ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-02 10:30:32 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGke5_sxqJSq3ukO9DRD2w"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aGke5_sxqJSq3ukO9DRD2w"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ojQWYwTlAoEr_WASVDU8xA"], ["updated_at", 2016-11-02 17:30:32 UTC], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:30:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-11i4tjx" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-lz0aaq" -
+Completed 200 OK in 8147ms (Views: 8141.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:33:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 71ms (Views: 65.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 10:33:32 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["updated_at", 2016-11-02 17:33:32 UTC], ["id", 3]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (3.2ms)
+Completed 200 OK in 127ms (Views: 13.7ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:33:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 49ms (Views: 46.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:34:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (4.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.7ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1oiifie" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1hb5c0r" -
+Completed 200 OK in 8170ms (Views: 8164.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:35:21 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1skszel" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-n932na" -
+Completed 200 OK in 8032ms (Views: 8028.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:36:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.7ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-z4smuy" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1ukyefk" -
+Completed 200 OK in 7883ms (Views: 7879.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:38:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.7ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1mbatsc" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1wa7w33" -
+Completed 200 OK in 7961ms (Views: 7958.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:38:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 100ms (Views: 92.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:38:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-i4byss" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1hhcnl5" -
+Completed 200 OK in 8248ms (Views: 8245.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:39:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.5ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1vk14bc" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1x9l55x" -
+Completed 200 OK in 7641ms (Views: 7635.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:40:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.4ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1rq4m7v" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-17wyz11" -
+Completed 200 OK in 7601ms (Views: 7596.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:42:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 73ms (Views: 69.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:42:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.6ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-rwoiwh" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1yiohqc" -
+Completed 200 OK in 7622ms (Views: 7619.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:45:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1neef37" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-cc4i3c" -
+Completed 200 OK in 8141ms (Views: 8138.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 10:46:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.9ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1b1tqj7" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-130kd7" -
+Completed 200 OK in 8254ms (Views: 8250.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:08:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (4.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 230ms (Views: 222.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:09:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 166ms (Views: 162.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:16:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (9.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (36.2ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-e5swjm" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-18h3pwh" -
+Completed 200 OK in 8269ms (Views: 8257.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:16:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 78ms (Views: 73.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:17:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.4ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-7243c3" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-vhxkny" -
+Completed 200 OK in 8176ms (Views: 8172.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:22:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (4.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (60.3ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1axpfi2" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-deapa7" -
+Completed 200 OK in 9960ms (Views: 9937.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:24:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.7ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1ulpzdd" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-25ps0s" -
+Completed 200 OK in 8312ms (Views: 8306.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:28:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (28.3ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1is3iko" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1m4gf4w" -
+Completed 200 OK in 8972ms (Views: 8962.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:29:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 144ms (Views: 140.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:29:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 78ms (Views: 74.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:29:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.0ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-ol1lf2" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-17p7rb1" -
+Completed 200 OK in 8303ms (Views: 8299.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:30:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1ptdqnk" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1ahvn1u" -
+Completed 200 OK in 8193ms (Views: 8190.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:31:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.8ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-o1dpby" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-iompl5" -
+Completed 200 OK in 8785ms (Views: 8781.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:32:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 122ms (Views: 118.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:32:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 66ms (Views: 62.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:33:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (7.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 173ms (Views: 167.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:33:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-77xd3s" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-g5qte7" -
+Completed 200 OK in 8467ms (Views: 8464.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:36:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.5ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-wxm69v" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-13dz6gh" -
+Completed 200 OK in 8262ms (Views: 8259.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:36:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 71ms (Views: 64.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:36:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.0ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1kwzjkg" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-5otd77" -
+Completed 200 OK in 9054ms (Views: 9050.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:39:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.8ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1qcd3dl" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-gse5rr" -
+Started GET "/" for ::1 at 2016-11-02 11:39:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.1ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-y91tit" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1yhegqb" -
+Completed 200 OK in 10693ms (Views: 10690.4ms | ActiveRecord: 0.3ms)
+
+
+Completed 200 OK in 9206ms (Views: 9161.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:40:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 109ms (Views: 105.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:40:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 143ms (Views: 139.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:46:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (29.4ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1m48poq" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1x4whs9" -
+Completed 200 OK in 8545ms (Views: 8538.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:47:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 150ms (Views: 145.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:47:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.0ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1f7ha0t" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-i79emj" -
+Completed 200 OK in 9485ms (Views: 9480.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 11:51:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-qi784k" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-15u43w9" -
+Completed 200 OK in 8190ms (Views: 8186.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 12:01:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.2ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-15321h1" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1g0g3yy" -
+Completed 200 OK in 8657ms (Views: 8652.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 12:03:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.2ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-7xe656" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1785vn" -
+Completed 200 OK in 8244ms (Views: 8240.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 12:04:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1rxea7e" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-12u8zc3" -
+Completed 200 OK in 8349ms (Views: 8345.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 12:06:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.1ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1inucoa" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-crnfoz" -
+Completed 200 OK in 8195ms (Views: 8192.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 12:08:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-y2rco8" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-ajdsbh" -
+Completed 200 OK in 8183ms (Views: 8180.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 12:10:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-47tp83" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-157onsh" -
+Completed 200 OK in 8210ms (Views: 8206.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 12:11:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.5ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-114e1hy" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-97atxp" -
+Completed 200 OK in 8876ms (Views: 8870.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 12:11:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1rkfzf1" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-s25toz" -
+Completed 200 OK in 8111ms (Views: 8108.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 12:16:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.0ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-abt64l" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1rjutf0" -
+Completed 200 OK in 8376ms (Views: 8364.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:08:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 160ms (Views: 153.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:09:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.4ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-unxean" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-16fe5dr" -
+Completed 200 OK in 8310ms (Views: 8307.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:10:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-km3v4j" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1pngi0a" -
+Completed 200 OK in 9824ms (Views: 9820.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:11:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.6ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1uh4khy" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-gr3f49" -
+Completed 200 OK in 9019ms (Views: 9015.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:13:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.4ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-fwp9lp" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-vxzkzo" -
+Completed 200 OK in 8805ms (Views: 8801.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:14:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 204ms (Views: 198.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:14:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.0ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-ngtilx" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-7u08ls" -
+Completed 200 OK in 8707ms (Views: 8703.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:16:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.4ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1uq57sm" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-87jvlq" -
+Completed 200 OK in 8040ms (Views: 8037.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:17:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (24.9ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1ljq381" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1yzfbmi" -
+Completed 200 OK in 7997ms (Views: 7991.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:20:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-frvmlx" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1lg8zpe" -
+Completed 200 OK in 8386ms (Views: 8382.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:21:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.0ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1ojqj88" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1vgvhpc" -
+Completed 200 OK in 8272ms (Views: 8268.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:23:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.3ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1pksy0h" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-14qj3ci" -
+Completed 200 OK in 8851ms (Views: 8848.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:24:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-8hqn80" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1cis38n" -
+Completed 200 OK in 8872ms (Views: 8869.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:24:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.6ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-104epl8" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1um6qpe" -
+Completed 200 OK in 9158ms (Views: 9154.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-02 13:26:21 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TlyJFiVeDh11ZhICcYXIWA"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (4.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yMVMOqkD-RwcJvE9xf_-Lw"], ["updated_at", 2016-11-02 20:26:21 UTC], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:28:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1drcpwq" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1sg62hl" -
+Completed 200 OK in 8036ms (Views: 8030.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/users" for ::1 at 2016-11-02 13:28:27 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 146ms (Views: 0.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:28:33 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 404 Not Found in 106ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:28:35 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 404 Not Found in 106ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:31:35 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 404 Not Found in 103ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:31:42 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 404 Not Found in 110ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:32:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 84ms (Views: 81.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:33:00 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 404 Not Found in 108ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/users" for ::1 at 2016-11-02 13:33:02 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 101ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:34:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-qiwxei" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-ed1log" -
+Completed 200 OK in 8285ms (Views: 8281.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:34:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:35:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 102ms (Views: 96.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:36:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-ks4c0g" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-10kgidk" -
+Completed 200 OK in 8658ms (Views: 8655.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:36:22 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 404 Not Found in 114ms (Views: 0.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/api/users" for ::1 at 2016-11-02 13:36:30 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 121ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/users" for ::1 at 2016-11-02 13:36:43 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 107ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:37:17 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 404 Not Found in 108ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:44:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (17.6ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-bt46pg" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1f13oxj" -
+Completed 200 OK in 8609ms (Views: 8601.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:44:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1rm13p1" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-c0ef92" -
+Completed 200 OK in 8208ms (Views: 8204.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:45:08 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 404 Not Found in 148ms (Views: 0.4ms | ActiveRecord: 24.3ms)
+
+
+Started POST "/api/users" for ::1 at 2016-11-02 13:45:10 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 116ms (Views: 0.5ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:45:11 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+Completed 404 Not Found in 109ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:45:25 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "x5GlRF4h2IXFe1eAbfWtkg"], ["updated_at", 2016-11-02 20:45:25 UTC], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered api/users/show.json.jbuilder (9.8ms)
+Completed 200 OK in 162ms (Views: 27.0ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:48:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "x5GlRF4h2IXFe1eAbfWtkg"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "x5GlRF4h2IXFe1eAbfWtkg"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.8ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1msu2ua" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-q3co8e" -
+Completed 200 OK in 8539ms (Views: 8530.8ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-02 13:49:03 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "x5GlRF4h2IXFe1eAbfWtkg"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "x5GlRF4h2IXFe1eAbfWtkg"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "RQ0xwu_fB4Pj2Hd5EDeGTg"], ["updated_at", 2016-11-02 20:49:04 UTC], ["id", 3]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-02 13:49:14 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Luke", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Luke"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (10.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "O7Umrln37tDk4SX8tTxUvA"], ["updated_at", 2016-11-02 20:49:14 UTC], ["id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  Rendered api/users/show.json.jbuilder (5.3ms)
+Completed 200 OK in 133ms (Views: 16.1ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:50:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "O7Umrln37tDk4SX8tTxUvA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "O7Umrln37tDk4SX8tTxUvA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.8ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1pr0xgb" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-6iugst" -
+Completed 200 OK in 9447ms (Views: 9441.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 13:51:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "O7Umrln37tDk4SX8tTxUvA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "O7Umrln37tDk4SX8tTxUvA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.7ms)
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc --list --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1kojwt8" -
+Browserify: /Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/node_modules/.bin/browserifyinc  --cachefile=/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/browserifyinc-cache.json -o "/Users/lwassink/Dropbox/developer/app-academy/full_stack_project/goodCode/tmp/cache/browserify-rails/output20161102-29107-1tizojt" -
+Completed 200 OK in 8172ms (Views: 8169.5ms | ActiveRecord: 0.3ms)
+
+
