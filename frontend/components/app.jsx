@@ -1,10 +1,10 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import HeaderContainer from './header/header_container.js';
 
 export default ({ children }) => (
   <div>
-    <RaisedButton label="Test" />
-    <h1>This is the root</h1>
+    <HeaderContainer />
   </div>
 );
 

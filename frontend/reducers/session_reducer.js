@@ -1,7 +1,6 @@
 import { RECEIVE_ERRORS, RECEIVE_CURRENT_USER, LOGOUT } from '../actions/session_actions.js';
 
 const _default_state = {
-  currentUser: null,
   errors: []
 };
 
@@ -10,11 +9,15 @@ export default (oldState = _default_state, action) => {
 
   switch(action.type) {
     case RECEIVE_ERRORS:
-      return { errors: action.errors, currentUser: action.user }
+      let errorState = { errors: action.errors };
+      merge(errorState, oldState);
+      return errorState;
     case RECEIVE_CURRENT_USER:
-      return { errors: [], currentUser: action.user }
+      let userState = action.user;
+      merge (userState, { errors: [] });
+      return userState;
     case LOGOUT:
-      return { errors: [], currentUser: null }
+      return { errors: [] }
     default:
       return oldState;
   }

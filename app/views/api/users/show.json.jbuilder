@@ -1,2 +1,1 @@
-json.username @user.username
-json.id @user.id
+json.partial! 'api/users/user', user: @user

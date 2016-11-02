@@ -2,15 +2,19 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Router, IndexRoute, hashHistory } from 'react-router';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import muiTheme from './muiTheme.js';
 import App from './app.jsx';
 
-export default () => {
+export default ({ store }) => {
   return (
-    <MuiThemeProvider>
-      <Router history={hashHistory}>
-        <Route path="/" component={App} />
-      </Router>
-    </MuiThemeProvider>
+    <Provider store={store}>
+      <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>
+        <Router history={hashHistory}>
+          <Route path="/" component={App} />
+        </Router>
+      </MuiThemeProvider>
+    </Provider>
   );
 };
 
