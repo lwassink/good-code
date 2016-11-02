@@ -1,12 +1,13 @@
 ## Component Hierarchy
 
-**AuthHeader**
-  - AuthFormContainer
-    - AuthForm
-
-**NavHeaderContainer**
-  - NavHeader
-    - NavIndex
+**HeaderContainer**
+  - Header
+    - AuthHeader
+      - AuthFormContainer
+        - AuthForm
+    - NavHeaderContainer
+      - NavHeader
+        - NavIndex
 
 **ProgramIndexContainer**
   - ProgramIndex
