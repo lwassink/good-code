@@ -3,6 +3,10 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, uniqueness: true
 
+  has_many :authored_programs,
+    class_name: :Program,
+    foreign_key: :author_id
+
   attr_reader :password
   before_validation :ensure_session_token
 

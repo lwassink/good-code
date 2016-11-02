@@ -41,7 +41,7 @@ class NavHeader extends React.Component {
       <Toolbar
         backgroundColor={colors.light_brown} >
         <LogoSmall
-          onClick={() => hashHistory.push('/')} />
+          clickCallback={() => hashHistory.push('/')} />
 
         <FlatButton
           style={modelAnchor}

@@ -7,8 +7,9 @@ export const LogoBig = () => (
   </p>
 );
 
-export const LogoSmall = () => (
-  <p className="logo small">
+export const LogoSmall = ({ clickCallback }) => (
+  <p className="logo small"
+    onClick={clickCallback}>
     <span className="good">good</span>
     <span className="code">code</span>
   </p>
