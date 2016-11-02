@@ -6,7 +6,6 @@ export default (props) => (
     <p className="logo">
       <span className="good">good</span>
       <span className="code">code</span>
-      Hi
     </p>
 
     <p> Test</p>
