@@ -4,6 +4,7 @@ import { card, button, textInput } from '../styles/formStyles.js';
 import { colors } from '../muiTheme.js';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
+import Divider from 'material-ui/Divider';
 import Errors from './errors.jsx';
 
 class SessionForm extends React.Component {
@@ -23,6 +24,7 @@ class SessionForm extends React.Component {
 
     this.handleSignup = this.handleSignup.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
     this.getErrors = this.getErrors.bind(this);
     this.update = this.update.bind(this);
     this.touch = this.touch.bind(this);
@@ -36,6 +38,11 @@ class SessionForm extends React.Component {
   handleLogin(event) {
     event.preventDefault();
     this.props.login({username: this.state.username.value, password: this.state.password.value});
+  }
+
+  handleGuestLogin(event) {
+    event.preventDefault();
+    this.props.login({username: 'Guest', password: 'password'});
   }
 
   validInput(key) {
@@ -83,6 +90,9 @@ class SessionForm extends React.Component {
     return (
       <Card
         style={card}>
+        className="">
+
+        <h1 className="form">Login or Signup</h1>
 
         <Errors errors={this.props.errors} />
 
@@ -112,7 +122,6 @@ class SessionForm extends React.Component {
             hoverColor={colors.lightBrown}
             disabled={!this.submittable()}
             label="Login" />
-          <br />
 
           <FlatButton
             onClick={this.handleSignup}
@@ -120,7 +129,21 @@ class SessionForm extends React.Component {
             style={button}
             disabled={!this.submittable()}
             label="Create Account" />
-          <br />
+
+          <Divider 
+            style={{
+              width: '100%',
+              marginTop: '8px',
+              marginBottom: '8px'
+            }}/>
+
+          <FlatButton
+            onClick={this.handleGuestLogin}
+            hoverColor={colors.lightBrown}
+            style={{
+              width: '100%',
+            }}
+            label="Continue as Guest" />
         </CardActions>
       </Card>
     );

@@ -1,3 +1,6 @@
+$light-brown: #f4f1ea;
+$dark-brown: #65411f;
+
 .error-list {
   text-align: center;
   padding-top: 3px;
@@ -8,3 +11,13 @@
 .error-item {
   padding: 5px;
 }
+
+.form {
+  margin: auto;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 18px;
+  color: $dark-brown;
+}
+

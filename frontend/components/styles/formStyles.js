@@ -1,11 +1,10 @@
 export const card = {
-  width: '300px',
+  width: '400px',
   margin: 'auto',
 };
 
 export const button = {
-  width: '100%',
-  marginTop: '10px'
+  width: 'calc(50% - 8px)',
 };
 
 export const textInput = {

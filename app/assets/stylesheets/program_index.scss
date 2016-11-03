@@ -1,0 +1,23 @@
+.program-index {
+  margin: auto;
+  width: calc(100% - 200px);
+}
+
+.program-item-list {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.program-item-list li {
+  margin: 10px;
+}
+
+.program-item-list label {
+  font-style: italic;
+}
+
+.program-item-list h2 {
+  font-weight: 700;
+  font-size: 18px;
+}
+

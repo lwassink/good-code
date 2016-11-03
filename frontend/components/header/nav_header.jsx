@@ -8,6 +8,7 @@ import FlatButton from 'material-ui/FlatButton';
 import { LogoSmall } from '../misc.jsx';
 import { modelAnchor } from '../styles/headerStyles.js';
 import { hashHistory } from 'react-router';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 class NavHeader extends React.Component {
   constructor(props) {
@@ -46,6 +47,8 @@ class NavHeader extends React.Component {
         <FlatButton
           style={modelAnchor}
           label={this.props.user.username}
+          icon={<MoreVertIcon />}
+          labelPosition="before"
           onClick={this.handleTouchTap}/>
 
         <Popover
@@ -58,7 +61,7 @@ class NavHeader extends React.Component {
           <Menu>
             <MenuItem
               onClick={() => hashHistory.push('/programs')}
-              primaryText="Home" />
+              primaryText="My programs" />
             <MenuItem
               onClick={this.props.logout}
               primaryText="Log out" />
