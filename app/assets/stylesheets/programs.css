@@ -21,3 +21,17 @@
   font-size: 18px;
 }
 
+.link {
+  color: #0B6376;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.program-show {
+  width: calc(100% - 200px);
+  margin: auto;
+  display: block;
+}
+

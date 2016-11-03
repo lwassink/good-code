@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 import { fetchPrograms, fetchUserPrograms } from '../../actions/program_actions.js';
 import ProgramIndex from './program_index.jsx';
 
-const mapStateToProps = state => ({
-  programs: state.programs
+const mapStateToProps = (state, ownProps) => ({
+  programs: state.programs,
+  path: ownProps.location.pathname
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {

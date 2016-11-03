@@ -9,7 +9,6 @@ $dark-brown: #65411f;
 // Logo styling
 
 .logo {
-  font-family: Raleway;
   text-align: center;
   color: $dark-brown;
   padding: 10px;
@@ -17,6 +16,7 @@ $dark-brown: #65411f;
 
 .big {
   font-size: 50px;
+  margin-bottom: 5px;
 }
 
 .small {
@@ -27,10 +27,12 @@ $dark-brown: #65411f;
 }
 
 .good {
+  font-family: Raleway;
   font-weight: 100;
 }
 
 .code {
+  font-family: Raleway;
   font-weight: 300;
 }
 

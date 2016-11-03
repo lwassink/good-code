@@ -12,6 +12,12 @@ class ProgramIndex extends React.Component {
     this.props.fetchPrograms();
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.path != newProps.path) {
+      newProps.fetchPrograms();
+    }
+  }
+
   render() {
     let programs = this.props.programs;
     delete programs.errors;

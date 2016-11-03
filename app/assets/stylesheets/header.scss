@@ -1,4 +1,5 @@
 $light-brown: #f4f1ea;
+$dark-brown: #65411f;
 
 .nav-div {
   width: calc(100% - 200px);
@@ -7,5 +8,20 @@ $light-brown: #f4f1ea;
 header {
   background-color: $light-brown;
   width: 100%;
+}
+
+.header-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
+}
+
+.display-text {
+  display: block;
+  font-size: 56px;
+  color: $dark-brown;
+  width: 411px;
+  text-align: center;
+  font-weight: 300;
 }
 

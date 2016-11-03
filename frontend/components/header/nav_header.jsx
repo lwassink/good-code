@@ -20,6 +20,7 @@ class NavHeader extends React.Component {
 
     this.handleTouchTap = this.handleTouchTap.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
+    this.handleMyProgramsClick = this.handleMyProgramsClick.bind(this);
   }
 
   handleTouchTap(event) {
@@ -31,11 +32,13 @@ class NavHeader extends React.Component {
   };
 
   handleRequestClose(event) {
-    this.setState({
-      open: false,
-    });
+    this.setState({open: false});
   };
 
+  handleMyProgramsClick(event) {
+    hashHistory.push('programs');
+    this.setState({open: false});
+  }
 
   render() {
     return (
@@ -60,7 +63,7 @@ class NavHeader extends React.Component {
 
           <Menu>
             <MenuItem
-              onClick={() => hashHistory.push('/programs')}
+              onClick={this.handleMyProgramsClick}
               primaryText="My programs" />
             <MenuItem
               onClick={this.props.logout}
