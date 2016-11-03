@@ -5,6 +5,7 @@ import HeaderContainer from './header/header_container.js';
 export default ({ children }) => (
   <div>
     <HeaderContainer />
+    { children }
   </div>
 );
 
