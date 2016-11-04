@@ -19909,3 +19909,2047 @@ Processing by Api::ProgramsController#show as JSON
 Completed 200 OK in 20ms (Views: 14.8ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/api/programs" for ::1 at 2016-11-03 15:48:47 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (1.6ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (2.8ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (11.8ms)
+Completed 200 OK in 40ms (Views: 23.4ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 15:48:50 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GNabYFeXwKi5L7M0CGd6cg"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GNabYFeXwKi5L7M0CGd6cg"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yNQPCu8kOXOrhSrF_fkNbw"], ["updated_at", 2016-11-03 22:48:50 UTC], ["id", 10]]
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.5ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:48:54 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (4.0ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (3.1ms)
+Completed 200 OK in 23ms (Views: 13.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:48:54 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (3.1ms)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 15:49:06 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (1.4ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (9.8ms)
+Completed 200 OK in 29ms (Views: 20.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 15:49:33 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "K0-vSUrEgHtSJAxZyYb-dA"], ["updated_at", 2016-11-03 22:49:33 UTC], ["id", 10]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.9ms)
+Completed 200 OK in 135ms (Views: 14.0ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 15:49:37 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (7.9ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.3ms)
+  Rendered api/programs/index.json.jbuilder (20.4ms)
+Completed 200 OK in 42ms (Views: 24.3ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/api/programs?current_user=true" for ::1 at 2016-11-03 15:49:37 -0700
+Processing by Api::ProgramsController#index as JSON
+  Parameters: {"current_user"=>"true"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "K0-vSUrEgHtSJAxZyYb-dA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "K0-vSUrEgHtSJAxZyYb-dA"], ["LIMIT", 1]]
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT "programs".* FROM "programs" WHERE "programs"."author_id" = $1[0m  [["author_id", 10]]
+  Rendered api/programs/index.json.jbuilder (2.4ms)
+Completed 200 OK in 24ms (Views: 13.0ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 15:49:40 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "K0-vSUrEgHtSJAxZyYb-dA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "K0-vSUrEgHtSJAxZyYb-dA"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "kRaJGgv_R30_J6Hxve5fIA"], ["updated_at", 2016-11-03 22:49:40 UTC], ["id", 10]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 15:50:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 1233ms (Views: 1228.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 15:50:14 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (7.7ms)
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:50:19 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (5.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.9ms)
+  Rendered api/programs/show.json.jbuilder (6.7ms)
+Completed 200 OK in 38ms (Views: 24.3ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:50:19 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (1.2ms)
+  Rendered api/programs/show.json.jbuilder (5.4ms)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 15:52:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 930ms (Views: 928.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:52:36 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (3.7ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (1.0ms)
+  Rendered api/programs/show.json.jbuilder (3.2ms)
+Completed 200 OK in 35ms (Views: 24.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 15:53:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 84ms (Views: 79.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:53:02 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (2.7ms)
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 15:53:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 1006ms (Views: 1000.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:53:06 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (2.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (5.0ms)
+Completed 200 OK in 30ms (Views: 22.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 15:53:15 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YM0SbvxsmDh7NxfZwxcH1Q"], ["updated_at", 2016-11-03 22:53:15 UTC], ["id", 10]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 127ms (Views: 11.3ms | ActiveRecord: 9.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 15:53:27 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YM0SbvxsmDh7NxfZwxcH1Q"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YM0SbvxsmDh7NxfZwxcH1Q"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "a2epMbjlFgrm-yrC8h2S5Q"], ["updated_at", 2016-11-03 22:53:27 UTC], ["id", 10]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 15:55:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1066ms (Views: 1063.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 15:55:32 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.9ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (1.0ms)
+  Rendered api/programs/_program.json.jbuilder (0.1ms)
+  Rendered api/programs/index.json.jbuilder (7.3ms)
+Completed 200 OK in 28ms (Views: 22.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:55:34 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (10.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.4ms)
+  Rendered api/programs/show.json.jbuilder (2.2ms)
+Completed 200 OK in 31ms (Views: 15.7ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:55:34 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (2.7ms)
+Completed 200 OK in 26ms (Views: 18.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 15:55:35 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JF9_BWHDxrywHFOaLXyKmQ"], ["updated_at", 2016-11-03 22:55:35 UTC], ["id", 10]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 150ms (Views: 10.8ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 15:55:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JF9_BWHDxrywHFOaLXyKmQ"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JF9_BWHDxrywHFOaLXyKmQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 61ms (Views: 58.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 15:55:46 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.9ms)
+  Rendered api/programs/_program.json.jbuilder (0.1ms)
+  Rendered api/programs/index.json.jbuilder (7.9ms)
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:55:52 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (6.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (2.8ms)
+Completed 200 OK in 24ms (Views: 11.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 15:55:52 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (2.2ms)
+  Rendered api/programs/show.json.jbuilder (5.7ms)
+Completed 200 OK in 27ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 15:55:53 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.1ms)
+  Rendered api/programs/index.json.jbuilder (5.9ms)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:01:29 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (3.5ms)
+Completed 200 OK in 22ms (Views: 18.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:01:29 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (2.6ms)
+Completed 200 OK in 18ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 16:01:32 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JF9_BWHDxrywHFOaLXyKmQ"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JF9_BWHDxrywHFOaLXyKmQ"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "MlCdp8Em0PvAsmewl4YJyg"], ["updated_at", 2016-11-03 23:01:32 UTC], ["id", 10]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 16:01:37 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "MV4Cn6AXIbpM7P_vMzAGvA"], ["updated_at", 2016-11-03 23:01:37 UTC], ["id", 10]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 142ms (Views: 11.3ms | ActiveRecord: 11.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 16:08:26 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MV4Cn6AXIbpM7P_vMzAGvA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MV4Cn6AXIbpM7P_vMzAGvA"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "bG35IL8u5et_-8k8cD5QUg"], ["updated_at", 2016-11-03 23:08:26 UTC], ["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:08:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 79ms (Views: 74.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 16:08:31 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (7.5ms)
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:08:35 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (8.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (2.6ms)
+Completed 200 OK in 34ms (Views: 13.0ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:08:35 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (2.8ms)
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 16:08:38 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "7OnRzVXNnxeIpavSqP7Big"], ["updated_at", 2016-11-03 23:08:38 UTC], ["id", 10]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (4.5ms)
+Completed 200 OK in 145ms (Views: 18.1ms | ActiveRecord: 10.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 16:21:10 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7OnRzVXNnxeIpavSqP7Big"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7OnRzVXNnxeIpavSqP7Big"], ["LIMIT", 1]]
+  [1m[35m (6.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (8.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "1ptUYOFPhpHKGo4-FGJm9w"], ["updated_at", 2016-11-03 23:21:10 UTC], ["id", 10]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 80ms (Views: 1.2ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:21:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 131ms (Views: 122.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 16:21:13 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.7ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.9ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (13.2ms)
+Completed 200 OK in 43ms (Views: 27.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:21:17 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (2.1ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (3.7ms)
+Completed 200 OK in 33ms (Views: 21.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:21:17 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (1.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.4ms)
+  Rendered api/programs/show.json.jbuilder (2.6ms)
+Completed 200 OK in 20ms (Views: 13.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 16:21:20 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "uK42H7JgOPZRj05qRXoUzw"], ["updated_at", 2016-11-03 23:21:20 UTC], ["id", 10]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/show.json.jbuilder (4.6ms)
+Completed 200 OK in 212ms (Views: 14.2ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:22:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uK42H7JgOPZRj05qRXoUzw"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uK42H7JgOPZRj05qRXoUzw"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (4.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 465ms (Views: 461.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 16:22:14 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.8ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (8.5ms)
+Completed 200 OK in 27ms (Views: 21.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:22:18 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (10.0ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (4.8ms)
+Completed 200 OK in 38ms (Views: 15.2ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:22:19 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (3.6ms)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 16:22:20 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uK42H7JgOPZRj05qRXoUzw"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uK42H7JgOPZRj05qRXoUzw"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Fppu18vzzYlQTBHeoz06xQ"], ["updated_at", 2016-11-03 23:22:20 UTC], ["id", 10]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 8.5ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 16:22:22 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "c7qne9q9GrfaiQ6czHLkvg"], ["updated_at", 2016-11-03 23:22:22 UTC], ["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (2.6ms)
+Completed 200 OK in 146ms (Views: 9.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:22:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c7qne9q9GrfaiQ6czHLkvg"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c7qne9q9GrfaiQ6czHLkvg"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 1077ms (Views: 1074.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 16:22:31 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (2.3ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (8.9ms)
+Completed 200 OK in 33ms (Views: 24.0ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 16:22:33 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c7qne9q9GrfaiQ6czHLkvg"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c7qne9q9GrfaiQ6czHLkvg"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "2ch13S00XZHtsB9laLq0nQ"], ["updated_at", 2016-11-03 23:22:33 UTC], ["id", 10]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:22:35 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (8.7ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (5.1ms)
+Completed 200 OK in 40ms (Views: 18.9ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:22:35 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.3ms)
+  Rendered api/programs/show.json.jbuilder (2.1ms)
+Completed 200 OK in 29ms (Views: 17.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 16:22:36 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "8nSfvJqtRnC0ofxQvJLGQQ"], ["updated_at", 2016-11-03 23:22:36 UTC], ["id", 10]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 221ms (Views: 15.2ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:23:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8nSfvJqtRnC0ofxQvJLGQQ"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8nSfvJqtRnC0ofxQvJLGQQ"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 1130ms (Views: 1127.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 16:23:09 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.7ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (44.7ms)
+Completed 200 OK in 69ms (Views: 59.8ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 16:23:12 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8nSfvJqtRnC0ofxQvJLGQQ"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8nSfvJqtRnC0ofxQvJLGQQ"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "xhYu5ohqdzcGW5qI5Pj5pQ"], ["updated_at", 2016-11-03 23:23:12 UTC], ["id", 10]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:23:14 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (6.1ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (3.7ms)
+Completed 200 OK in 35ms (Views: 22.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:23:14 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (1.1ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (3.7ms)
+Completed 200 OK in 29ms (Views: 21.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 16:23:15 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["updated_at", 2016-11-03 23:23:15 UTC], ["id", 10]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 197ms (Views: 14.4ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:24:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 89ms (Views: 86.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 16:24:20 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (2.3ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (1.9ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (13.2ms)
+Completed 200 OK in 70ms (Views: 53.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:24:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 1245ms (Views: 1242.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 16:24:34 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.7ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (7.0ms)
+Completed 200 OK in 31ms (Views: 18.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:24:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 78ms (Views: 74.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 16:24:55 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (6.6ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (72.7ms)
+Completed 200 OK in 192ms (Views: 172.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:24:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 1166ms (Views: 1163.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 16:24:59 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/_program.json.jbuilder (0.1ms)
+  Rendered api/programs/index.json.jbuilder (6.4ms)
+Completed 200 OK in 25ms (Views: 20.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 16:25:04 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KIJvi-oyrixp9UEhONrp5Q"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (2.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "W_Zp444pguJ7di5V0LcfMA"], ["updated_at", 2016-11-03 23:25:04 UTC], ["id", 10]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:25:05 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (8.6ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.4ms)
+  Rendered api/programs/show.json.jbuilder (2.2ms)
+Completed 200 OK in 31ms (Views: 14.5ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:25:05 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (1.3ms)
+  Rendered api/programs/show.json.jbuilder (4.0ms)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 16:25:07 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/api/programs" for ::1 at 2016-11-03 16:25:07 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mUser Exists (21.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[36mProgram Load (2.0ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yCU0lVOcse7YtLtAZ2oJyA"], ["updated_at", 2016-11-03 23:25:07 UTC], ["id", 10]]
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (10.6ms)
+Completed 200 OK in 29ms (Views: 23.2ms | ActiveRecord: 2.0ms)
+
+
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  Rendered api/users/show.json.jbuilder (4.5ms)
+Completed 200 OK in 191ms (Views: 29.7ms | ActiveRecord: 30.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:30:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yCU0lVOcse7YtLtAZ2oJyA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yCU0lVOcse7YtLtAZ2oJyA"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 106ms (Views: 102.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 16:30:10 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (7.3ms)
+Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:30:12 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (2.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (2.9ms)
+Completed 200 OK in 31ms (Views: 14.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:30:12 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (1.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (4.2ms)
+Completed 200 OK in 36ms (Views: 26.0ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 16:30:14 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yCU0lVOcse7YtLtAZ2oJyA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yCU0lVOcse7YtLtAZ2oJyA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "nptUbIRsQ5vwStCYYEl-jA"], ["updated_at", 2016-11-03 23:30:14 UTC], ["id", 10]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 16:31:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 1034ms (Views: 1031.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 16:31:18 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (3.3ms)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:02:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 1264ms (Views: 1258.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:02:33 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (3.9ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (1.3ms)
+  Rendered api/programs/show.json.jbuilder (17.7ms)
+Completed 200 OK in 79ms (Views: 62.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:02:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 133ms (Views: 130.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:03:00 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.7ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.9ms)
+  Rendered api/programs/show.json.jbuilder (3.6ms)
+Completed 200 OK in 22ms (Views: 15.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:03:13 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 145ms (Views: 142.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:03:14 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (2.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (3.1ms)
+Completed 200 OK in 44ms (Views: 29.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:03:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 218ms (Views: 215.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:03:55 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (5.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (118.9ms)
+  Rendered api/programs/show.json.jbuilder (123.0ms)
+Completed 200 OK in 151ms (Views: 137.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:05:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 1127ms (Views: 1122.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:05:08 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (2.9ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (10.8ms)
+Completed 200 OK in 57ms (Views: 40.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:07:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 151ms (Views: 148.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:07:32 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (5.8ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (3.9ms)
+Completed 200 OK in 41ms (Views: 28.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:10:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 178ms (Views: 172.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:10:45 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (1.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (3.1ms)
+  Rendered api/programs/show.json.jbuilder (69.5ms)
+Completed 200 OK in 112ms (Views: 101.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:12:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 228ms (Views: 224.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:12:59 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (2.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (5.6ms)
+  Rendered api/programs/show.json.jbuilder (9.2ms)
+Completed 200 OK in 33ms (Views: 25.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:14:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 209ms (Views: 203.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:14:56 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (5.0ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (36.5ms)
+  Rendered api/programs/show.json.jbuilder (100.2ms)
+Completed 200 OK in 149ms (Views: 133.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:18:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.7ms)
+
+
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from initialize at /Users/lwassink/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/better_errors-2.1.1/lib/better_errors/raised_exception.rb:7)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from initialize at /Users/lwassink/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/better_errors-2.1.1/lib/better_errors/raised_exception.rb:8)
+
+Sass::SyntaxError - Invalid CSS after "...550') 0px -65px": expected ")", was ";":
+  sass (3.4.22) lib/sass/scss/parser.rb:1189:in `expected'
+  sass (3.4.22) lib/sass/script/lexer.rb:229:in `expected!'
+  sass (3.4.22) lib/sass/script/parser.rb:711:in `assert_tok'
+  sass (3.4.22) lib/sass/script/parser.rb:535:in `funcall'
+  sass (3.4.22) lib/sass/script/parser.rb:514:in `ident'
+  sass (3.4.22) lib/sass/script/parser.rb:309:in `unary_not'
+  sass (3.4.22) lib/sass/script/parser.rb:309:in `unary_div'
+  sass (3.4.22) lib/sass/script/parser.rb:309:in `unary_minus'
+  sass (3.4.22) lib/sass/script/parser.rb:309:in `unary_plus'
+  sass (3.4.22) lib/sass/script/parser.rb:286:in `times_div_or_mod'
+  sass (3.4.22) lib/sass/script/parser.rb:286:in `plus_or_minus'
+  sass (3.4.22) lib/sass/script/parser.rb:286:in `relational'
+  sass (3.4.22) lib/sass/script/parser.rb:286:in `eq_or_neq'
+  sass (3.4.22) lib/sass/script/parser.rb:286:in `and_expr'
+  sass (3.4.22) lib/sass/script/parser.rb:286:in `or_expr'
+  sass (3.4.22) lib/sass/script/parser.rb:488:in `space'
+  sass (3.4.22) lib/sass/script/parser.rb:434:in `interpolation'
+  sass (3.4.22) lib/sass/script/parser.rb:359:in `expr'
+  sass (3.4.22) lib/sass/script/parser.rb:702:in `assert_expr'
+  sass (3.4.22) lib/sass/script/parser.rb:75:in `parse'
+  sass (3.4.22) lib/sass/scss/parser.rb:1051:in `sass_script'
+  sass (3.4.22) lib/sass/scss/parser.rb:897:in `value!'
+  sass (3.4.22) lib/sass/scss/parser.rb:769:in `block in try_declaration'
+  sass (3.4.22) lib/sass/scss/parser.rb:1165:in `rethrow'
+  sass (3.4.22) lib/sass/scss/parser.rb:782:in `try_declaration'
+  sass (3.4.22) lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+  sass (3.4.22) lib/sass/scss/parser.rb:676:in `block_child'
+  sass (3.4.22) lib/sass/scss/parser.rb:665:in `block_contents'
+  sass (3.4.22) lib/sass/scss/parser.rb:657:in `block'
+  sass (3.4.22) lib/sass/scss/parser.rb:649:in `ruleset'
+  sass (3.4.22) lib/sass/scss/parser.rb:675:in `block_child'
+  sass (3.4.22) lib/sass/scss/parser.rb:668:in `block_contents'
+  sass (3.4.22) lib/sass/scss/parser.rb:125:in `stylesheet'
+  sass (3.4.22) lib/sass/scss/parser.rb:41:in `parse'
+  sass (3.4.22) lib/sass/engine.rb:406:in `_to_tree'
+  sass (3.4.22) lib/sass/engine.rb:281:in `render'
+  sass-rails (5.0.6) lib/sass/rails/template.rb:47:in `evaluate'
+  tilt (2.0.5) lib/tilt/template.rb:102:in `render'
+  sprockets (3.7.0) lib/sprockets/legacy_tilt_processor.rb:25:in `call'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:75:in `call_processor'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:57:in `block in call_processors'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:56:in `call_processors'
+  sprockets (3.7.0) lib/sprockets/loader.rb:134:in `load_from_unloaded'
+  sprockets (3.7.0) lib/sprockets/loader.rb:60:in `block in load'
+  sprockets (3.7.0) lib/sprockets/loader.rb:317:in `fetch_asset_from_dependency_cache'
+  sprockets (3.7.0) lib/sprockets/loader.rb:44:in `load'
+  sprockets (3.7.0) lib/sprockets/cached_environment.rb:20:in `block in initialize'
+  sprockets (3.7.0) lib/sprockets/cached_environment.rb:47:in `load'
+  sprockets (3.7.0) lib/sprockets/bundle.rb:23:in `block in call'
+  sprockets (3.7.0) lib/sprockets/utils.rb:196:in `dfs'
+  sprockets (3.7.0) lib/sprockets/bundle.rb:24:in `call'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:75:in `call_processor'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:57:in `block in call_processors'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:56:in `call_processors'
+  sprockets (3.7.0) lib/sprockets/loader.rb:134:in `load_from_unloaded'
+  sprockets (3.7.0) lib/sprockets/loader.rb:60:in `block in load'
+  sprockets (3.7.0) lib/sprockets/loader.rb:317:in `fetch_asset_from_dependency_cache'
+  sprockets (3.7.0) lib/sprockets/loader.rb:44:in `load'
+  sprockets (3.7.0) lib/sprockets/cached_environment.rb:20:in `block in initialize'
+  sprockets (3.7.0) lib/sprockets/cached_environment.rb:47:in `load'
+  sprockets (3.7.0) lib/sprockets/base.rb:66:in `find_asset'
+  sprockets (3.7.0) lib/sprockets/base.rb:92:in `[]'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:355:in `find_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:347:in `find_debug_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:170:in `block in stylesheet_link_tag'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:169:in `stylesheet_link_tag'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__741879491465592682_70298585395480'
+  actionview (5.0.0.1) lib/action_view/template.rb:158:in `block in render'
+  activesupport (5.0.0.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (5.0.0.1) lib/action_view/template.rb:348:in `instrument'
+  actionview (5.0.0.1) lib/action_view/template.rb:156:in `render'
+  actionview (5.0.0.1) lib/action_view/renderer/template_renderer.rb:66:in `render_with_layout'
+  actionview (5.0.0.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (5.0.0.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (5.0.0.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (5.0.0.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (5.0.0.1) lib/action_view/rendering.rb:103:in `_render_template'
+  actionpack (5.0.0.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (5.0.0.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+  actionpack (5.0.0.1) lib/action_controller/metal/renderers.rb:144:in `render_to_body'
+  actionpack (5.0.0.1) lib/abstract_controller/rendering.rb:26:in `render'
+  actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:36:in `render'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (5.0.0.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/lwassink/.rbenv/versions/2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (5.0.0.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (5.0.0.1) lib/action_controller/metal/implicit_render.rb:36:in `default_render'
+  actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+  actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:455:in `call'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+  activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+  actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+  actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+  actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+  actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+  actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+  actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+  actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+  rack (2.0.1) lib/rack/etag.rb:25:in `call'
+  rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.1) lib/rack/head.rb:12:in `call'
+  rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+  rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+  web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+  activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+  railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+  rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+  rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+  railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+  puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+  puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+  puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+  puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+Started POST "/__better_errors/4f40801a93b062f3/variables" for ::1 at 2016-11-03 17:18:06 -0700
+Started GET "/" for ::1 at 2016-11-03 17:18:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 139ms (Views: 135.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:19:00 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (3.2ms)
+Completed 200 OK in 22ms (Views: 15.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:23:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 137ms (Views: 134.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:23:16 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (1.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (72.8ms)
+Completed 200 OK in 104ms (Views: 97.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:23:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 84ms (Views: 80.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:23:20 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (1.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (93.5ms)
+Completed 200 OK in 121ms (Views: 113.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:26:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 144ms (Views: 141.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:26:13 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (1.0ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (3.3ms)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:30:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 154ms (Views: 151.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:30:13 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (1.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (1.2ms)
+  Rendered api/programs/show.json.jbuilder (7.2ms)
+Completed 200 OK in 29ms (Views: 22.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:30:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 132ms (Views: 129.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:30:25 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (3.7ms)
+Completed 200 OK in 22ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:30:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 193ms (Views: 190.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:30:33 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (4.5ms)
+Completed 200 OK in 30ms (Views: 24.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:30:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 129ms (Views: 125.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:30:43 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.9ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (3.5ms)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:31:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 126ms (Views: 123.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:31:59 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (3.9ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.9ms)
+  Rendered api/programs/show.json.jbuilder (4.3ms)
+Completed 200 OK in 30ms (Views: 19.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:32:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 157ms (Views: 154.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:32:25 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.9ms)
+  Rendered api/programs/show.json.jbuilder (3.4ms)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:32:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 145ms (Views: 142.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:32:37 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (3.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (1.1ms)
+  Rendered api/programs/show.json.jbuilder (63.1ms)
+Completed 200 OK in 116ms (Views: 99.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:32:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 172ms (Views: 168.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:32:47 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (3.1ms)
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:33:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 124ms (Views: 122.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:33:17 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (7.0ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (3.4ms)
+Completed 200 OK in 49ms (Views: 35.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:33:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 148ms (Views: 143.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:33:31 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (1.2ms)
+  Rendered api/programs/show.json.jbuilder (3.8ms)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:33:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 161ms (Views: 157.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:33:50 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (3.5ms)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:33:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 141ms (Views: 138.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:34:01 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (3.6ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (4.0ms)
+Completed 200 OK in 27ms (Views: 18.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:34:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 138ms (Views: 135.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:34:31 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (7.9ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (5.4ms)
+Completed 200 OK in 41ms (Views: 20.9ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:34:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 152ms (Views: 149.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:34:39 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (3.5ms)
+Completed 200 OK in 24ms (Views: 18.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:34:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 124ms (Views: 121.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:34:54 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (8.9ms)
+  Rendered api/programs/show.json.jbuilder (47.1ms)
+Completed 200 OK in 77ms (Views: 72.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:35:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 164ms (Views: 161.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:35:06 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (1.0ms)
+  Rendered api/programs/show.json.jbuilder (3.7ms)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:36:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 228ms (Views: 225.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:36:45 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.9ms)
+  Rendered api/programs/show.json.jbuilder (3.5ms)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:40:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 89ms (Views: 83.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:40:04 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (1.0ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/show.json.jbuilder (7.0ms)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:40:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 991ms (Views: 987.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:40:10 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (4.1ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (3.3ms)
+Completed 200 OK in 35ms (Views: 24.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:40:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 1355ms (Views: 1347.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:40:23 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (8.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (14.6ms)
+Completed 200 OK in 41ms (Views: 27.9ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:40:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 997ms (Views: 994.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:40:38 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (2.7ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (8.5ms)
+Completed 200 OK in 75ms (Views: 64.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:41:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 137ms (Views: 126.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:41:56 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (3.3ms)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:41:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 1005ms (Views: 1002.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:42:00 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.8ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (5.3ms)
+Completed 200 OK in 24ms (Views: 17.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:42:01 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.4ms)
+  Rendered api/programs/_program.json.jbuilder (0.1ms)
+  Rendered api/programs/index.json.jbuilder (4.9ms)
+Completed 200 OK in 28ms (Views: 14.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:42:03 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (1.0ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.5ms)
+  Rendered api/programs/show.json.jbuilder (2.3ms)
+Completed 200 OK in 30ms (Views: 22.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:42:03 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (2.9ms)
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:42:04 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/_program.json.jbuilder (0.1ms)
+  Rendered api/programs/index.json.jbuilder (7.9ms)
+Completed 200 OK in 25ms (Views: 18.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 17:42:19 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yxNUKnpXge9f7nb16zGF8A"], ["updated_at", 2016-11-04 00:42:19 UTC], ["id", 10]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.2ms)
+Completed 200 OK in 129ms (Views: 13.1ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/api/programs/2" for ::1 at 2016-11-03 17:48:21 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (6.0ms)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/2" for ::1 at 2016-11-03 17:48:21 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.4ms)
+  Rendered api/programs/show.json.jbuilder (1.9ms)
+Completed 200 OK in 15ms (Views: 9.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:48:22 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.7ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (6.8ms)
+Completed 200 OK in 28ms (Views: 22.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:48:23 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.5ms)
+  Rendered api/programs/show.json.jbuilder (2.9ms)
+Completed 200 OK in 28ms (Views: 21.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:48:23 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (2.0ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/show.json.jbuilder (2.7ms)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:48:24 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (1.0ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (1.0ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (8.1ms)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:48:27 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (3.9ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (3.3ms)
+  Rendered api/programs/_program.json.jbuilder (0.3ms)
+  Rendered api/programs/index.json.jbuilder (15.3ms)
+Completed 200 OK in 35ms (Views: 27.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/programs?current_user=true" for ::1 at 2016-11-03 17:48:28 -0700
+Processing by Api::ProgramsController#index as JSON
+  Parameters: {"current_user"=>"true"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yxNUKnpXge9f7nb16zGF8A"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yxNUKnpXge9f7nb16zGF8A"], ["LIMIT", 1]]
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT "programs".* FROM "programs" WHERE "programs"."author_id" = $1[0m  [["author_id", 10]]
+  Rendered api/programs/index.json.jbuilder (2.3ms)
+Completed 200 OK in 29ms (Views: 18.3ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 17:48:29 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yxNUKnpXge9f7nb16zGF8A"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yxNUKnpXge9f7nb16zGF8A"], ["LIMIT", 1]]
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (8.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (3.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Cu1vhsG7r6i_yUKkYQ3PcA"], ["updated_at", 2016-11-04 00:48:29 UTC], ["id", 10]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 34ms (Views: 0.3ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:48:29 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.1ms)
+  Rendered api/programs/index.json.jbuilder (7.0ms)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 17:49:23 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "2Euj5qTtwOGbLYrVG1z8qA"], ["updated_at", 2016-11-04 00:49:24 UTC], ["id", 10]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 128ms (Views: 14.8ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:49:27 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.9ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.5ms)
+  Rendered api/programs/show.json.jbuilder (2.8ms)
+Completed 200 OK in 25ms (Views: 19.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/programs/1" for ::1 at 2016-11-03 17:49:27 -0700
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/show.json.jbuilder (2.3ms)
+Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:49:28 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (2.1ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.8ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (8.6ms)
+Completed 200 OK in 24ms (Views: 18.1ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 17:49:31 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2Euj5qTtwOGbLYrVG1z8qA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2Euj5qTtwOGbLYrVG1z8qA"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Ddr7HQznC2UjaN88iiwiYA"], ["updated_at", 2016-11-04 00:49:31 UTC], ["id", 10]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 10.1ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 17:49:33 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "sGCaJN-S5QivZHRlrx8nZQ"], ["updated_at", 2016-11-04 00:49:33 UTC], ["id", 10]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 129ms (Views: 12.6ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:49:34 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (1.8ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+Started GET "/api/programs?current_user=true" for ::1 at 2016-11-03 17:49:34 -0700
+Processing by Api::ProgramsController#index as JSON
+  Parameters: {"current_user"=>"true"}
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sGCaJN-S5QivZHRlrx8nZQ"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sGCaJN-S5QivZHRlrx8nZQ"], ["LIMIT", 1]]
+  Rendered api/programs/_program.json.jbuilder (1.2ms)
+  Rendered api/programs/index.json.jbuilder (58.1ms)
+Completed 200 OK in 120ms (Views: 111.7ms | ActiveRecord: 1.8ms)
+
+
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT "programs".* FROM "programs" WHERE "programs"."author_id" = $1[0m  [["author_id", 10]]
+  Rendered api/programs/index.json.jbuilder (2.3ms)
+Completed 200 OK in 72ms (Views: 59.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:49:35 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.5ms)
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/index.json.jbuilder (7.4ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2016-11-03 17:51:08 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sGCaJN-S5QivZHRlrx8nZQ"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sGCaJN-S5QivZHRlrx8nZQ"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ciZnd8E3sOUl0hXKJtqr5g"], ["updated_at", 2016-11-04 00:51:08 UTC], ["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-03 17:52:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:52:26 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (0.6ms)
+  Rendered api/programs/_program.json.jbuilder (0.1ms)
+  Rendered api/programs/index.json.jbuilder (8.0ms)
+Completed 200 OK in 77ms (Views: 71.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-03 17:52:46 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "od-2k3xBdzJpR8A5q_pAoA"], ["updated_at", 2016-11-04 00:52:46 UTC], ["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.2ms)
+Completed 200 OK in 141ms (Views: 12.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:56:56 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (3.8ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (1.6ms)
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/index.json.jbuilder (13.2ms)
+Completed 200 OK in 44ms (Views: 36.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/programs?current_user=true" for ::1 at 2016-11-03 17:56:56 -0700
+Processing by Api::ProgramsController#index as JSON
+  Parameters: {"current_user"=>"true"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "od-2k3xBdzJpR8A5q_pAoA"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "od-2k3xBdzJpR8A5q_pAoA"], ["LIMIT", 1]]
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.9ms)[0m  [1m[34mSELECT "programs".* FROM "programs" WHERE "programs"."author_id" = $1[0m  [["author_id", 10]]
+  Rendered api/programs/index.json.jbuilder (4.8ms)
+Completed 200 OK in 39ms (Views: 26.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-03 17:57:01 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (3.3ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (1.2ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (10.3ms)
+Completed 200 OK in 29ms (Views: 20.0ms | ActiveRecord: 3.3ms)
+
+

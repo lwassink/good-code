@@ -1,7 +1,8 @@
 import React from 'react';
 
-export const LogoBig = () => (
-  <p className="logo big">
+export const LogoBig = ({ clickCallback }) => (
+  <p className="logo big"
+    onClick={clickCallback}>
     <span className="good">good</span>
     <span className="code">code</span>
   </p>

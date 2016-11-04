@@ -6,7 +6,7 @@ $dark-brown: #65411f;
 }
 
 header {
-  background-color: $light-brown;
+  // background-color: $light-brown;
   width: 100%;
 }
 
@@ -23,5 +23,9 @@ header {
   width: 411px;
   text-align: center;
   font-weight: 300;
+}
+
+header.auth {
+  background: linear-gradient(180deg, $light-brown, $light-brown 85%, transparent);
 }
 

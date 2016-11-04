@@ -5,6 +5,7 @@ import { colors } from '../muiTheme.js';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
+import { hashHistory } from 'react-router';
 import Errors from './errors.jsx';
 
 class SessionForm extends React.Component {
@@ -33,16 +34,19 @@ class SessionForm extends React.Component {
   handleSignup(event) {
     event.preventDefault();
     this.props.signup({username: this.state.username.value, password: this.state.password.value});
+    hashHistory.push('/');
   }
 
   handleLogin(event) {
     event.preventDefault();
     this.props.login({username: this.state.username.value, password: this.state.password.value});
+    hashHistory.push('/');
   }
 
   handleGuestLogin(event) {
     event.preventDefault();
     this.props.login({username: 'Guest', password: 'password'});
+    hashHistory.push('/');
   }
 
   validInput(key) {
@@ -130,7 +134,7 @@ class SessionForm extends React.Component {
             disabled={!this.submittable()}
             label="Create Account" />
 
-          <Divider 
+          <Divider
             style={{
               width: '100%',
               marginTop: '8px',
