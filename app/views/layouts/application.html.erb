@@ -9,6 +9,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300" rel="stylesheet">
     <script src="http://widget.cloudinary.com/global/all.js"></script>
+
+    <script type="text/javascript">
+      window.cloudinary_options = {
+        cloud_name: '<%= ENV["CLOUD_NAME"] %>',
+        upload_preset: '<%= ENV["UPLOAD_PRESET"] %>'
+      };
+    </script>
   </head>
 
   <body>

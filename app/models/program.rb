@@ -5,4 +5,10 @@ class Program < ApplicationRecord
   belongs_to :author,
     class_name: :User,
     foreign_key: :author_id
+
+  has_many :statuses
+
+  has_many :users,
+    through: :statuses,
+    source: :user
 end

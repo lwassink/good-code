@@ -7,3 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(username: 'Guest', password: 'password')
+User.create!(username: 'Luke', password: 'password')
+User.create!(username: 'Timmy', password: 'password')
+User.create!(username: 'Frank', password: 'password')
+
+Program.create!(
+  name: 'Ruby on Rails',
+  createor: 'David Heinsmeier Hansson',
+  description: 'descriptio',
+    source_code_url: 'https://github.com/rails/rails',
+  image_url:
+  thumbnail_url:
+  author_id:
+)

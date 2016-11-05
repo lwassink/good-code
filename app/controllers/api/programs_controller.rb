@@ -1,5 +1,5 @@
 class Api::ProgramsController < ApplicationController
-  before_action :restrict_to_owner, only: [:update, :destroy]
+  # before_action :restrict_to_owner, only: [:update, :destroy]
 
   def index
     if params[:current_user] && current_user
@@ -53,7 +53,7 @@ class Api::ProgramsController < ApplicationController
   end
 
   def program_params
-    prams.require(:program).permit(:name,
+    params.require(:program).permit(:name,
                                    :creator,
                                    :source_code_url,
                                    :image_url,

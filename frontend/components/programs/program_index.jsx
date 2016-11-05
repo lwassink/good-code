@@ -25,8 +25,7 @@ class ProgramIndex extends React.Component {
     }
 
     return(
-      <div
-        className="program-index">
+      <div>
         <Paper
           style={index}>
           <ul>

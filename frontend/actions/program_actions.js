@@ -21,8 +21,9 @@ export const createProgram = (program) => ({
 });
 
 export const UPDATE_PROGRAM = 'UPDATE_PROGRAM';
-export const updateProgram = () => ({
-  type: UPDATE_PROGRAM
+export const updateProgram = (program) => ({
+  type: UPDATE_PROGRAM,
+  program
 });
 
 export const DESTROY_PROGRAM = 'DESTROY_PROGRAM';

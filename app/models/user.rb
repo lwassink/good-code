@@ -7,6 +7,12 @@ class User < ApplicationRecord
     class_name: :Program,
     foreign_key: :author_id
 
+  has_many :statuses
+
+  has_many :programs,
+    through: :statuses,
+    source: :program
+
   attr_reader :password
   before_validation :ensure_session_token
 

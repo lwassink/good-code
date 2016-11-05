@@ -3,12 +3,31 @@ export const card = {
   margin: 'auto',
 };
 
+export const cardWide = {
+  width: '500px',
+  margin: 'auto',
+};
+
 export const button = {
   width: 'calc(50% - 8px)',
+  margin: 'auto'
 };
+
+export const submitButton = {
+  width: '300px',
+  margin: 'auto'
+}
 
 export const textInput = {
   display: 'block',
   margin: '0 auto',
   width: 'calc(100% - 20px)'
 };
+
+export const textInputNarrow = {
+  display: 'block',
+  width: '300px',
+  margn: 'auto',
+  textAlign: 'center'
+};
+

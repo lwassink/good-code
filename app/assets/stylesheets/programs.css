@@ -1,6 +1,10 @@
-.program-index {
+.main {
   margin: auto;
-  width: calc(100% - 200px);
+  width: calc(100% - 400px);
+}
+
+.main p {
+  margin: 10px;
 }
 
 .program-item-list {
@@ -23,6 +27,7 @@
 
 .link {
   color: #0B6376;
+  cursor: pointer;
 }
 
 .link:hover {

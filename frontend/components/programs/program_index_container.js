@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
-    fetchPrograms: (ownProps.location.pathname === '/programs'
+    fetchPrograms: (ownProps.location.pathname.endsWith('programs')
       ? () => dispatch(fetchUserPrograms())
       : () => dispatch(fetchPrograms()))
   });

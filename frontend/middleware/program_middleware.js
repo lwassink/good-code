@@ -18,7 +18,7 @@ import {fetchPrograms,
 } from '../util/programs_api_util.js';
 
 export default ({ getState, dispatch }) => next => action => {
-  const error = e => dispatch(receiveErrors(e.responseJSON));
+  const error = e => dispatch(receiveProgramErrors(e.responseJSON));
   const fetchProgramsSuccess = programs => dispatch(receivePrograms(programs));
   const fetchProgramSuccess = program => dispatch(receiveProgram(program));
   const removeProgramSuccess = program => dispatch(removeProgram(program));
