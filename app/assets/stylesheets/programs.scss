@@ -1,0 +1,59 @@
+.main {
+  margin: auto;
+  width: calc(100% - 400px);
+}
+
+.main p {
+  margin: 10px;
+}
+
+.program-item-list {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  li {
+    margin: 10px;
+  }
+  label {
+    font-style: italic;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 18px;
+  }
+  img {
+    float: left;
+    margin: 10px;
+  }
+}
+
+.link {
+  color: #0B6376;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.program-show {
+  width: calc(100% - 300px);
+  margin: auto;
+  display: block;
+  aside {
+    float: left;
+    display: inline-block;
+    width: 110px;
+    margin: 10px;
+  }
+  ul {
+    float: left;
+    display: block;
+    width: calc(100% - 130px);
+  }
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+

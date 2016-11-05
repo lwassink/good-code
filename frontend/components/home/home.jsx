@@ -30,7 +30,7 @@ export default (props) => {
         className="main">
         <p>
           Click on any of these programs to read reviews.
-          Create and account or log in as a <span className="link" onClick={handleGuestLogin}>guest</span> to write your own reviews.
+          Log in or continue as as a <span className="link" onClick={handleGuestLogin}>guest</span> to write your own reviews.
         </p>
 
       <ProgramIndex programs={props.programs} path={props.path} fetchPrograms={props.fetchPrograms} />

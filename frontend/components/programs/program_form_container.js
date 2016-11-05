@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchProgram, createProgram, updateProgram } from '../../actions/program_actions.js';
 import ProgramForm from './program_form.jsx';
+import { merge } from 'lodash';
 
 const _default_program = {
   id: "",
@@ -13,10 +14,11 @@ const _default_program = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const program = state.programs[ownProps.params.id] || _default_program;
+  const program = state.programs[ownProps.params.id] ? state.programs[ownProps.params.id] : merge({}, _default_program);
+
   return ({
     path: ownProps.location.pathname,
-    program,
+    program: program,
     edit: ownProps.location.pathname.endsWith('new') ? false : true
   });
 }

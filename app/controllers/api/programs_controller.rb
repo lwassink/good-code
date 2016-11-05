@@ -15,6 +15,7 @@ class Api::ProgramsController < ApplicationController
 
   def create
     @program = Program.new(program_params)
+    @program.author_id = current_user.id
     if @program.valid?
       @program.save
       render :show
@@ -57,6 +58,7 @@ class Api::ProgramsController < ApplicationController
                                    :creator,
                                    :source_code_url,
                                    :image_url,
+                                   :thumbnail_url,
                                    :description,)
   end
 end

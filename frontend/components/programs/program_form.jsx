@@ -13,6 +13,7 @@ import Divider from 'material-ui/Divider';
 import { hashHistory } from 'react-router';
 import Errors from '../auth/errors.jsx';
 import CircularProgress from 'material-ui/CircularProgress';
+import Snackbar from 'material-ui/Snackbar';
 
 class ProgramForm extends React.Component {
   constructor (props) {
@@ -25,7 +26,8 @@ class ProgramForm extends React.Component {
         description: false
       },
       program: this.props.program,
-      loading: this.props.edit
+      loading: this.props.edit,
+      snackOpen: false
     };
 
     window.myState = this.state;
@@ -37,11 +39,11 @@ class ProgramForm extends React.Component {
     this.touch = this.touch.bind(this);
     this.cloudinate = this.cloudinate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleRequestSnackClose = this.handleRequestSnackClose.bind(this);
   }
 
   componentDidMount() {
     if (this.props.edit) {
-      debugger
       this.props.fetchProgram();
     }
   }
@@ -60,7 +62,7 @@ class ProgramForm extends React.Component {
   }
 
   submittable() {
-    return this.validInput('name') && this.validInput('sourceCodeUrl')
+    return this.validInput('name') && this.validInput('source_code_url')
       && this.validInput('creator') && this.validInput('description')
   }
 
@@ -88,6 +90,12 @@ class ProgramForm extends React.Component {
     }
   }
 
+  handleRequestSnackClose() {
+    this.setState({
+      snackOpen: false
+    });
+  }
+
   cloudinate(e) {
     e.preventDefault();
     cloudinary.openUploadWidget(
@@ -97,7 +105,10 @@ class ProgramForm extends React.Component {
           let program = this.state.program;
           program.image_url = imageInfo[0].url;
           program.thumbnail_url = imageInfo[0].thumbnail_url;
-          this.setState({ program })
+          this.setState({
+            program,
+            snackOpen: true
+          });
         }
       }
     );
@@ -136,7 +147,7 @@ class ProgramForm extends React.Component {
 
           <TextField
             style={textInput}
-            onChange={this.update("sourceCodeUrl")}
+            onChange={this.update("source_code_url")}
             value={this.state.program.source_code_url}
             floatingLabelText="Source Code Url" />
 
@@ -184,6 +195,13 @@ class ProgramForm extends React.Component {
               label={buttonText} />
           </CardActions>
         </Card>
+        <Snackbar
+          open={this.state.snackOpen}
+          message="Image saved"
+          autoHideDuration={3000}
+          onRequestClose={this.handleRequestSnackClose}
+
+        />
       </div>
     );
   }

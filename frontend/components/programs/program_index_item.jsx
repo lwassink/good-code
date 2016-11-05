@@ -7,8 +7,12 @@ export default ({ program }) => (
   <li>
     <Paper
       style={item}>
+
       <ul
         className="program-item-list">
+
+        <img src={program.thumbnail_url} />
+
         <li>
           <h2 className="link">
             <Link to={`programs/${program.id}`} >{program.name}</Link>

@@ -17,25 +17,50 @@ class ProgramShow extends React.Component {
     }
   }
 
+  sourceCodeUrl() {
+    if (this.props.program.source_code_url) {
+      return (
+        <a
+          href={this.props.program.source_code_url}
+          className="link">
+          Source code
+        </a>
+      );
+    } else {
+      return(<div></div>);
+    }
+  }
+
   render() {
     return (
       <div
         className="program-show">
         <Paper>
-          <ul
-          className="program-item-list">
-            <li>
-              <h2>{this.props.program.name}</h2>
-            </li>
-            <li>
-              <label>Created by:</label> {this.props.program.creator}
-            </li>
-            <li>
-              <label>Description:</label>
-              <br />
-              {this.props.program.description}
-            </li>
-          </ul>
+          <Paper>
+            <div
+              className="group">
+              <aside>
+                <img src={this.props.program.thumbnail_url} />
+                <br />
+                {this.sourceCodeUrl()}
+              </aside>
+
+              <ul
+                className="program-item-list">
+                <li>
+                  <h2>{this.props.program.name}</h2>
+                </li>
+                <li>
+                  <label>Created by:</label> {this.props.program.creator}
+                </li>
+                <li>
+                  <label>Description:</label>
+                  <br />
+                  {this.props.program.description}
+                </li>
+              </ul>
+            </div>
+          </Paper>
         </Paper>
       </div>
     )
