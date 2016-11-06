@@ -12,12 +12,6 @@ class ProgramIndex extends React.Component {
     this.props.fetchPrograms();
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.path != newProps.path) {
-      newProps.fetchPrograms();
-    }
-  }
-
   render() {
     let programs = merge({}, this.props.programs);
     if (programs.errors) {
@@ -30,7 +24,11 @@ class ProgramIndex extends React.Component {
           style={index}>
           <ul>
             {Object.values(programs).map(program => 
-                (<ProgramIndexItem key={program.id} program={program} />)
+                (<ProgramIndexItem
+                  key={program.id}
+                  handleExpand={this.props.expand(program.id)}
+                  expanded={program.expanded}
+                  program={program} />)
             )}
           </ul>
         </Paper>

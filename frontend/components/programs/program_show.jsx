@@ -1,18 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router';
 import Paper from 'material-ui/Paper';
 import { fetchProgram } from '../../util/programs_api_util.js';
 
 class ProgramShow extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchProgram()
   }
 
-  componentWillReceiveProps(newState) {
-    if (this.props.path != newState.path) {
+  componentDidReceiveProps(newProps) {
+    if (this.props.path != newProps.path) {
       newState.fetchProgram();
     }
   }
@@ -31,18 +33,48 @@ class ProgramShow extends React.Component {
     }
   }
 
+  editAndDelete() {
+    if (this.props.authorId === this.props.program.author_id) {
+      return (
+        <div>
+          <Link to={`programs/${this.props.program.id}/edit`}>
+            <span className="link">
+              Edit
+            </span>
+          </Link>
+          &nbsp;
+          <span className="link"
+            onClick={this.handleDelete}>
+            Delete
+          </span>
+        </div>
+      );
+    } else {
+      return (<div></div>);
+    }
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.destroyProgram();
+  }
+
   render() {
     return (
       <div
         className="program-show">
         <Paper>
           <Paper>
+
             <div
               className="group">
               <aside>
                 <img src={this.props.program.thumbnail_url} />
                 <br />
                 {this.sourceCodeUrl()}
+                <br />
+
+                {this.editAndDelete()}
               </aside>
 
               <ul
@@ -60,6 +92,7 @@ class ProgramShow extends React.Component {
                 </li>
               </ul>
             </div>
+
           </Paper>
         </Paper>
       </div>

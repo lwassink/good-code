@@ -16,12 +16,19 @@ import {fetchPrograms,
   updateProgram,
   destroyProgram
 } from '../util/programs_api_util.js';
+import { hashHistory } from 'react-router';
 
 export default ({ getState, dispatch }) => next => action => {
   const error = e => dispatch(receiveProgramErrors(e.responseJSON));
   const fetchProgramsSuccess = programs => dispatch(receivePrograms(programs));
-  const fetchProgramSuccess = program => dispatch(receiveProgram(program));
-  const removeProgramSuccess = program => dispatch(removeProgram(program));
+  const fetchProgramSuccess = program => {
+    dispatch(receiveProgram(program));
+    hashHistory.push(`programs/${program.id}`);
+  }
+  const removeProgramSuccess = program => {
+    dispatch(removeProgram(program));
+    hashHistory.push('/');
+  }
 
   switch(action.type) {
     case FETCH_PROGRAMS:

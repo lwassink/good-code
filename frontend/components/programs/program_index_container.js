@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPrograms, fetchUserPrograms } from '../../actions/program_actions.js';
+import { fetchPrograms, fetchUserPrograms, expand } from '../../actions/program_actions.js';
 import ProgramIndex from './program_index.jsx';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -8,7 +8,9 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  debugger
   return ({
+    expand: id => { return () => dispatch(expand(id)); },
     fetchPrograms: (ownProps.location.pathname.endsWith('programs')
       ? () => dispatch(fetchUserPrograms())
       : () => dispatch(fetchPrograms()))

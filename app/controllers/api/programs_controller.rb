@@ -37,7 +37,7 @@ class Api::ProgramsController < ApplicationController
 
   def destroy
     @program = Program.find(params[:id])
-    if @program && current_user.id == params[:id]
+    if @program && current_user.id == @program.author_id
       @program.destroy
       render json: @program
     else

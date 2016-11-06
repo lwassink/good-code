@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { colors } from '../muiTheme.js';
-import { Toolbar } from 'material-ui/Toolbar';
+import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import { LogoSmall } from '../misc.jsx';
-import { modelAnchor } from '../styles/headerStyles.js';
+import { modelAnchor, button } from '../styles/headerStyles.js';
 import { hashHistory } from 'react-router';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
@@ -47,12 +48,29 @@ class NavHeader extends React.Component {
         <LogoSmall
           clickCallback={() => hashHistory.push('/')} />
 
-        <FlatButton
-          style={modelAnchor}
-          label={this.props.user.username}
-          icon={<MoreVertIcon />}
-          labelPosition="before"
-          onClick={this.handleTouchTap}/>
+        <ToolbarGroup>
+          <Link to="/" >
+            <FlatButton
+              style={button}
+              label="All Programs"/>
+          </Link>
+
+          <Link to="programs/new">
+            <FlatButton
+              style={button}
+              label="Add Program"/>
+          </Link>
+        </ToolbarGroup>
+
+        <ToolbarGroup
+          firstChild={true}>
+          <FlatButton
+            style={modelAnchor}
+            label={this.props.user.username}
+            icon={<MoreVertIcon />}
+            labelPosition="before"
+            onClick={this.handleTouchTap}/>
+        </ToolbarGroup>
 
         <Popover
           open={this.state.open}

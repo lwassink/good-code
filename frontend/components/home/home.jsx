@@ -15,13 +15,13 @@ export default (props) => {
       <div
         className="main">
         <p>
-          Click on one of these programs to leave a reveiw, or click <span className="link">
+          Click a program to leave a reveiw, or click <span className="link">
             <Link to={"programs/new"} >here</Link>
           </span> to add a new program to the list.
       </p>
 
 
-      <ProgramIndex programs={props.programs} path={props.path} fetchPrograms={props.fetchPrograms} />
+      <ProgramIndex expand={props.expand} programs={props.programs} path={props.path} fetchPrograms={props.fetchPrograms} />
     </div>
     );
   } else {
@@ -29,11 +29,11 @@ export default (props) => {
       <div
         className="main">
         <p>
-          Click on any of these programs to read reviews.
+          Click a program to read reviews.
           Log in or continue as as a <span className="link" onClick={handleGuestLogin}>guest</span> to write your own reviews.
         </p>
 
-      <ProgramIndex programs={props.programs} path={props.path} fetchPrograms={props.fetchPrograms} />
+      <ProgramIndex expand={props.expand} programs={props.programs} path={props.path} fetchPrograms={props.fetchPrograms} />
     </div>
     );
   }

@@ -1,7 +1,8 @@
 import { RECEIVE_PROGRAM_ERRORS,
   RECEIVE_PROGRAM,
   REMOVE_PROGRAM,
-  RECEIVE_PROGRAMS
+  RECEIVE_PROGRAMS,
+  EXPAND
 } from '../actions/program_actions.js';
 import merge from 'lodash/merge';
 
@@ -25,6 +26,12 @@ export default (oldState = _default_state, action) =>{
       return newState;
     case RECEIVE_PROGRAM_ERRORS:
       merge(newState, {errors: action.errors})
+      return newState;
+    case EXPAND:
+      let ids = Object.keys(newState);
+      delete ids.errors;
+      ids.forEach(id => {newState[id].expanded = false});
+      newState[action.id].expanded = true;
       return newState;
     default:
       return oldState;

@@ -56,3 +56,9 @@ export const receiveProgramErrors = (errors) => ({
   errors
 });
 
+export const EXPAND = 'EXPAND';
+export const expand = (id) => ({
+  type: EXPAND,
+  id
+});
+

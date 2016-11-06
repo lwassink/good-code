@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Home from './home.jsx';
-import { fetchPrograms } from '../../actions/program_actions.js';
+import { fetchPrograms, expand } from '../../actions/program_actions.js';
 import { login } from '../../actions/session_actions.js';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
+    expand: id => { return () => dispatch(expand(id)); },
     fetchPrograms: (ownProps.location.pathname === '/programs'
       ? () => dispatch(fetchUserPrograms())
       : () => dispatch(fetchPrograms())),

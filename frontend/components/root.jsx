@@ -6,7 +6,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { muiTheme } from './muiTheme.js';
 import { fetchProgram } from '../actions/program_actions.js';
 import App from './app.jsx';
-import ProgramIndexContainer from './programs/program_index_container.js';
+import MyProgramsContainer from './programs/my_programs_container.jsx';
 import ProgramShowContainer from './programs/program_show_container.js';
 import HomeContainer from './home/home_container.js';
 import ProgramFormContainer from './programs/program_form_container.js';
@@ -24,10 +24,10 @@ export default ({ store }) => {
         <Router history={hashHistory}>
           <Route path="/" component={App}>
             <IndexRoute component={HomeContainer} />
-            <Route path="programs/new" component={ProgramFormContainer} />
-            <Route path="programs/:id/edit" component={ProgramFormContainer} />
+            <Route path="programs/new" onEnter={_requireLogin} component={ProgramFormContainer} />
+            <Route path="programs/:id/edit" onEnter={_requireLogin} component={ProgramFormContainer} />
             <Route path="programs/:id" component={ProgramShowContainer} />
-            <Route path="programs" onEnter={_requireLogin} component={ProgramIndexContainer} />
+            <Route path="programs" component={MyProgramsContainer} />
           </Route>
         </Router>
       </MuiThemeProvider>

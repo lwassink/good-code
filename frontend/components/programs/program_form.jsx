@@ -118,7 +118,6 @@ class ProgramForm extends React.Component {
     event.preventDefault();
     console.log(this.state.program);
     this.props.submit(this.state.program);
-    hashHistory.push(`/`)
   }
 
   render () {
