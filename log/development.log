@@ -37234,3 +37234,213 @@ Completed 200 OK in 37ms (Views: 29.8ms | ActiveRecord: 1.1ms)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (159.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "goodCode_development"[0m
+  [1m[35m (125.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "goodCode_test"[0m
+  [1m[35m (450.4ms)[0m  [1m[35mCREATE DATABASE "goodCode_development" ENCODING = 'unicode'[0m
+  [1m[35m (263.1ms)[0m  [1m[35mCREATE DATABASE "goodCode_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (22.9ms)[0m  [1m[35mCREATE TABLE "programs" ("id" serial primary key, "name" character varying NOT NULL, "creator" character varying NOT NULL, "source_code_url" character varying, "image_url" character varying, "description" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "thumbnail_url" character varying)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_programs_on_author_id" ON "programs" USING btree ("author_id")[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "statuses" ("id" serial primary key, "content" character varying NOT NULL, "user_id" integer NOT NULL, "program_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_statuses_on_program_id" ON "statuses" USING btree ("program_id")[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_statuses_on_user_id" ON "statuses" USING btree ("user_id")[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20161104220114')[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES ('20161101181639'), ('20161102210526'), ('20161104210510');
+
+[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-11-06 08:08:18 UTC], ["updated_at", 2016-11-06 08:08:18 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "programs" ("id" serial primary key, "name" character varying NOT NULL, "creator" character varying NOT NULL, "source_code_url" character varying, "image_url" character varying, "description" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "thumbnail_url" character varying)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_programs_on_author_id" ON "programs" USING btree ("author_id")[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "statuses" ("id" serial primary key, "content" character varying NOT NULL, "user_id" integer NOT NULL, "program_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_statuses_on_program_id" ON "statuses" USING btree ("program_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_statuses_on_user_id" ON "statuses" USING btree ("user_id")[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20161104220114')[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES ('20161101181639'), ('20161102210526'), ('20161104210510');
+
+[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-11-06 08:08:18 UTC], ["updated_at", 2016-11-06 08:08:18 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mProgram Load (0.9ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Guest"], ["password_digest", "$2a$10$U8KNN8z1JW2EpAavEZ/9J.7XNWqfBgh2wNU45HczwHsk3dnY1m9QW"], ["session_token", "aVkWxmKM99Z49HK9wJSdIA"], ["created_at", 2016-11-06 08:08:18 UTC], ["updated_at", 2016-11-06 08:08:18 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Luke"], ["password_digest", "$2a$10$yEu4JMxT7VpvOnlBxhCTBOMEZLbzvig/v9wmxqsMYzTuaC6ELlLve"], ["session_token", "pdwLvTMAWY6UjO63vcDZzw"], ["created_at", 2016-11-06 08:08:19 UTC], ["updated_at", 2016-11-06 08:08:19 UTC]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Timmy"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Timmy"], ["password_digest", "$2a$10$dNr.Ab.Bh7TInqa2EllZU.25Jz1WKAZsgCE9hkcq3F56quusHCvTm"], ["session_token", "S0d79OKTpnIG0NcF7jWkVA"], ["created_at", 2016-11-06 08:08:19 UTC], ["updated_at", 2016-11-06 08:08:19 UTC]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Frank"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Frank"], ["password_digest", "$2a$10$TDWvKa7s.Z1umhlCxGq2suTUUvLQeXzN7f1Qt4AJYjhh9NcV8pZvG"], ["session_token", "hiNfowoID_rtfZH1xfR9Yg"], ["created_at", 2016-11-06 08:08:19 UTC], ["updated_at", 2016-11-06 08:08:19 UTC]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "Ruby on Rails"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "source_code_url", "image_url", "description", "author_id", "created_at", "updated_at", "thumbnail_url") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Ruby on Rails"], ["creator", "David Heinsmeier Hansson"], ["source_code_url", "https://github.com/rails/rails"], ["image_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478379951/fg5otdbdy3f5tmt3plqd.png"], ["description", "Ruby on Rails, or simply Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller (MVC) framework, providing default structures for a database, a web service, and web pages. It encourages and facilitates the use of web standards such as JSON or XML for data transfer, and HTML, CSS and JavaScript for display and user interfacing. In addition to MVC, Rails emphasizes the use of other well-known software engineering patterns and paradigms, including convention over configuration (CoC), don't repeat yourself (DRY), and the active record pattern."], ["author_id", 1], ["created_at", 2016-11-06 08:08:19 UTC], ["updated_at", 2016-11-06 08:08:19 UTC], ["thumbnail_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478379951/fg5otdbdy3f5tmt3plqd.png"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "Node.js"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "source_code_url", "image_url", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Node.js"], ["creator", "Ryan Dahl"], ["source_code_url", "https://github.com/nodejs/node"], ["image_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478390051/qn4ezajyfmdta1kh8ojp.png"], ["description", "Node.js is an open-source, cross-platform JavaScript runtime environment for developing a diverse variety of tools and applications. Although Node.js is not a JavaScript framework, many of its basic modules are written in JavaScript, and developers can write new modules in JavaScript. The runtime environment interprets JavaScript using Google's V8 JavaScript engine.\n\nNode.js has an event-driven architecture capable of asynchronous I/O. These design choices aim to optimize throughput and scalability in Web applications with many input/output operations, as well as for real-time Web applications (e.g., real-time communication programs and browser games).\n\nThe Node.js distributed development project, governed by the Node.js Foundation, is facilitated by the Linux Foundation's Collaborative Projects program."], ["author_id", 1], ["created_at", 2016-11-06 08:08:19 UTC], ["updated_at", 2016-11-06 08:08:19 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "Atom"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "source_code_url", "image_url", "description", "author_id", "created_at", "updated_at", "thumbnail_url") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Atom"], ["creator", "GitHub"], ["source_code_url", "https://github.com/atom"], ["image_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478385048/icve4ksfvnn4tnusuzak.png"], ["description", "Atom is a free and open-source text and source code editor for OS X, Linux, and Windows with support for plug-ins written in Node.js, and embedded Git Control, developed by GitHub. Atom is a desktop application built using web technologies. Most of the extending packages have free software licenses and are community-built and maintained. Atom is based on Electron (formerly known as Atom Shell), a framework that enables cross-platform desktop applications using Chromium and Node.js. It is written in CoffeeScript and Less. It can also be used as an integrated development environment (IDE). Atom was released from beta, as version 1.0, on June 25, 2015. Its developers call it a \"hackable text editor for the 21st Century\"."], ["author_id", 2], ["created_at", 2016-11-06 08:08:19 UTC], ["updated_at", 2016-11-06 08:08:19 UTC], ["thumbnail_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478385048/icve4ksfvnn4tnusuzak.png"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "Material-Ui"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "source_code_url", "image_url", "description", "author_id", "created_at", "updated_at", "thumbnail_url") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Material-Ui"], ["creator", "Olivier Tassinari"], ["source_code_url", "https://github.com/callemall/material-ui"], ["image_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478389665/eqkmgqwr7stpgezwhe0j.svg"], ["description", "Material Design (codenamed Quantum Paper) is a design language developed in 2014 by Google. Expanding upon the \"card\" motifs that debuted in Google Now, Material Design makes more liberal use of grid-based layouts, responsive animations and transitions, padding, and depth effects such as lighting and shadows.\n\nDesigner Matías Duarte explained that, \"unlike real paper, our digital material can expand and reform intelligently. Material has physical surfaces and edges. Seams and shadows provide meaning about what you can touch.\" Google states that their new design language is based on paper and ink.\n\nMaterial Design can be used in API Level 21 and newer via the v7 appcompat library, which is used on virtually all Android devices manufactured after 2009. Material Design will gradually be extended throughout Google's array of web and mobile products, providing a consistent experience across all platforms and applications. Google has also released application programming interfaces (APIs) for third-party developers to incorporate the design language into their applications.\n\n"], ["author_id", 2], ["created_at", 2016-11-06 08:08:19 UTC], ["updated_at", 2016-11-06 08:08:19 UTC], ["thumbnail_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478389665/eqkmgqwr7stpgezwhe0j.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (11.1ms)[0m  [1m[35mDROP TABLE "programs" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "programs" ("id" serial primary key, "name" character varying NOT NULL, "creator" character varying NOT NULL, "source_code_url" character varying, "image_url" character varying, "description" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "thumbnail_url" character varying)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_programs_on_author_id" ON "programs" USING btree ("author_id")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE "statuses" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "statuses" ("id" serial primary key, "content" character varying NOT NULL, "user_id" integer NOT NULL, "program_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_statuses_on_program_id" ON "statuses" USING btree ("program_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_statuses_on_user_id" ON "statuses" USING btree ("user_id")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "users" CASCADE[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.8ms)[0m  [1m[35mDROP TABLE "programs" CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "programs" ("id" serial primary key, "name" character varying NOT NULL, "creator" character varying NOT NULL, "source_code_url" character varying, "image_url" character varying, "description" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "thumbnail_url" character varying)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX  "index_programs_on_author_id" ON "programs" USING btree ("author_id")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "statuses" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "statuses" ("id" serial primary key, "content" character varying NOT NULL, "user_id" integer NOT NULL, "program_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_statuses_on_program_id" ON "statuses" USING btree ("program_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_statuses_on_user_id" ON "statuses" USING btree ("user_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "users" CASCADE[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mProgram Load (0.8ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Guest"], ["password_digest", "$2a$10$MeDj0m4T9MYn/0RZhPdNyOXjHhag2RholK9mzjMy28UTv0/2F2mxi"], ["session_token", "WnPaUfQz8TnUCT3Ca0kmzQ"], ["created_at", 2016-11-06 08:08:27 UTC], ["updated_at", 2016-11-06 08:08:27 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Luke"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Luke"], ["password_digest", "$2a$10$COzLC3GsmCVYZxKKeldjuuTUjRWLne3iRoXiDNM5Z3XZce/ytXJtW"], ["session_token", "__Og9AaclpIG_boy6F0adw"], ["created_at", 2016-11-06 08:08:27 UTC], ["updated_at", 2016-11-06 08:08:27 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Timmy"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Timmy"], ["password_digest", "$2a$10$7mmOFK9zyN3wq9ukqBLFWusodfDZiqteZucHqG9QkDu6DRrJx0Vlu"], ["session_token", "CvsHRplk6V7iaqV7zIqk4g"], ["created_at", 2016-11-06 08:08:27 UTC], ["updated_at", 2016-11-06 08:08:27 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Frank"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Frank"], ["password_digest", "$2a$10$tgSPxqYXOjmSCyK2bqVVcOIjBl.FbgXkxE0C5WtgCQysibO/o8NFO"], ["session_token", "ot4Ter-PxPijWyxss2ZvXQ"], ["created_at", 2016-11-06 08:08:27 UTC], ["updated_at", 2016-11-06 08:08:27 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "Ruby on Rails"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "source_code_url", "image_url", "description", "author_id", "created_at", "updated_at", "thumbnail_url") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Ruby on Rails"], ["creator", "David Heinsmeier Hansson"], ["source_code_url", "https://github.com/rails/rails"], ["image_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478379951/fg5otdbdy3f5tmt3plqd.png"], ["description", "Ruby on Rails, or simply Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller (MVC) framework, providing default structures for a database, a web service, and web pages. It encourages and facilitates the use of web standards such as JSON or XML for data transfer, and HTML, CSS and JavaScript for display and user interfacing. In addition to MVC, Rails emphasizes the use of other well-known software engineering patterns and paradigms, including convention over configuration (CoC), don't repeat yourself (DRY), and the active record pattern."], ["author_id", 1], ["created_at", 2016-11-06 08:08:27 UTC], ["updated_at", 2016-11-06 08:08:27 UTC], ["thumbnail_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478379951/fg5otdbdy3f5tmt3plqd.png"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "Node.js"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "source_code_url", "image_url", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Node.js"], ["creator", "Ryan Dahl"], ["source_code_url", "https://github.com/nodejs/node"], ["image_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478390051/qn4ezajyfmdta1kh8ojp.png"], ["description", "Node.js is an open-source, cross-platform JavaScript runtime environment for developing a diverse variety of tools and applications. Although Node.js is not a JavaScript framework, many of its basic modules are written in JavaScript, and developers can write new modules in JavaScript. The runtime environment interprets JavaScript using Google's V8 JavaScript engine.\n\nNode.js has an event-driven architecture capable of asynchronous I/O. These design choices aim to optimize throughput and scalability in Web applications with many input/output operations, as well as for real-time Web applications (e.g., real-time communication programs and browser games).\n\nThe Node.js distributed development project, governed by the Node.js Foundation, is facilitated by the Linux Foundation's Collaborative Projects program."], ["author_id", 1], ["created_at", 2016-11-06 08:08:27 UTC], ["updated_at", 2016-11-06 08:08:27 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "Atom"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "source_code_url", "image_url", "description", "author_id", "created_at", "updated_at", "thumbnail_url") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Atom"], ["creator", "GitHub"], ["source_code_url", "https://github.com/atom"], ["image_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478385048/icve4ksfvnn4tnusuzak.png"], ["description", "Atom is a free and open-source text and source code editor for OS X, Linux, and Windows with support for plug-ins written in Node.js, and embedded Git Control, developed by GitHub. Atom is a desktop application built using web technologies. Most of the extending packages have free software licenses and are community-built and maintained. Atom is based on Electron (formerly known as Atom Shell), a framework that enables cross-platform desktop applications using Chromium and Node.js. It is written in CoffeeScript and Less. It can also be used as an integrated development environment (IDE). Atom was released from beta, as version 1.0, on June 25, 2015. Its developers call it a \"hackable text editor for the 21st Century\"."], ["author_id", 2], ["created_at", 2016-11-06 08:08:27 UTC], ["updated_at", 2016-11-06 08:08:27 UTC], ["thumbnail_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478385048/icve4ksfvnn4tnusuzak.png"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "Material-Ui"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "source_code_url", "image_url", "description", "author_id", "created_at", "updated_at", "thumbnail_url") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Material-Ui"], ["creator", "Olivier Tassinari"], ["source_code_url", "https://github.com/callemall/material-ui"], ["image_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478389665/eqkmgqwr7stpgezwhe0j.svg"], ["description", "Material Design (codenamed Quantum Paper) is a design language developed in 2014 by Google. Expanding upon the \"card\" motifs that debuted in Google Now, Material Design makes more liberal use of grid-based layouts, responsive animations and transitions, padding, and depth effects such as lighting and shadows.\n\nDesigner Matías Duarte explained that, \"unlike real paper, our digital material can expand and reform intelligently. Material has physical surfaces and edges. Seams and shadows provide meaning about what you can touch.\" Google states that their new design language is based on paper and ink.\n\nMaterial Design can be used in API Level 21 and newer via the v7 appcompat library, which is used on virtually all Android devices manufactured after 2009. Material Design will gradually be extended throughout Google's array of web and mobile products, providing a consistent experience across all platforms and applications. Google has also released application programming interfaces (APIs) for third-party developers to incorporate the design language into their applications.\n\n"], ["author_id", 2], ["created_at", 2016-11-06 08:08:27 UTC], ["updated_at", 2016-11-06 08:08:27 UTC], ["thumbnail_url", "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478389665/eqkmgqwr7stpgezwhe0j.jpg"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2016-11-06 01:08:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "AgbFO894gMZXWT5huMd05g"], ["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (51.7ms)
+Completed 200 OK in 2760ms (Views: 2754.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/programs" for ::1 at 2016-11-06 01:09:03 -0700
+Processing by Api::ProgramsController#index as JSON
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (15.2ms)[0m  [1m[34mSELECT "programs".* FROM "programs"[0m
+  Rendered api/programs/_program.json.jbuilder (1.9ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (69.4ms)
+Completed 200 OK in 159ms (Views: 106.7ms | ActiveRecord: 29.3ms)
+
+
+Started POST "/api/session" for ::1 at 2016-11-06 01:09:07 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Guest"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "znOSVf_GCiM9ovhDFWNmmQ"], ["updated_at", 2016-11-06 08:09:07 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 166ms (Views: 15.4ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/api/programs?current_user=true" for ::1 at 2016-11-06 01:09:10 -0700
+Processing by Api::ProgramsController#index as JSON
+  Parameters: {"current_user"=>"true"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "znOSVf_GCiM9ovhDFWNmmQ"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "znOSVf_GCiM9ovhDFWNmmQ"], ["LIMIT", 1]]
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (1.1ms)[0m  [1m[34mSELECT "programs".* FROM "programs" WHERE "programs"."author_id" = $1[0m  [["author_id", 1]]
+  Rendered api/programs/_program.json.jbuilder (0.7ms)
+  Rendered api/programs/_program.json.jbuilder (0.2ms)
+  Rendered api/programs/index.json.jbuilder (12.2ms)
+Completed 200 OK in 59ms (Views: 24.2ms | ActiveRecord: 5.5ms)
+
+

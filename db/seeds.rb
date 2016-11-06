@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.all.destroy_all
+Program.all.destroy_all
+
 User.create!(username: 'Guest', password: 'password')
 User.create!(username: 'Luke', password: 'password')
 User.create!(username: 'Timmy', password: 'password')
@@ -13,7 +16,7 @@ User.create!(username: 'Frank', password: 'password')
 
 Program.create!({
   name: 'Ruby on Rails',
-  createor: 'David Heinsmeier Hansson',
+  creator: 'David Heinsmeier Hansson',
   description: 'Ruby on Rails, or simply Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller (MVC) framework, providing default structures for a database, a web service, and web pages. It encourages and facilitates the use of web standards such as JSON or XML for data transfer, and HTML, CSS and JavaScript for display and user interfacing. In addition to MVC, Rails emphasizes the use of other well-known software engineering patterns and paradigms, including convention over configuration (CoC), don\'t repeat yourself (DRY), and the active record pattern.',
   thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478379951/fg5otdbdy3f5tmt3plqd.png",
   source_code_url: 'https://github.com/rails/rails',
