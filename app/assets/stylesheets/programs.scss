@@ -45,18 +45,26 @@
   aside {
     float: left;
     display: inline-block;
-    width: 160px;
+    width: 170px;
     margin: 10px;
   }
   ul {
     float: left;
     display: block;
-    width: calc(100% - 180px);
+    width: calc(100% - 190px);
+  }
+  a {
+    margin-top: 10px;
+    display: inline-block;
   }
 }
 
 img {
   width: auto;
   height: auto;
+}
+
+.white-space {
+  white-space: pre;
 }
 

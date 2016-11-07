@@ -13,5 +13,8 @@ export const muiTheme = {
   button: {
     margin: 10,
     color: colors.tan
+  },
+  divider: {
+    margin: 10
   }
 };

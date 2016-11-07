@@ -5,6 +5,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import configureStore from './store/store.js';
 import { merge, union } from 'lodash';
 
+injectTapEventPlugin();
+
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   if (window.currentUser) {

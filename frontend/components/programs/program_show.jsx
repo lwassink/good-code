@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Paper from 'material-ui/Paper';
+import Divider from 'material-ui/Divider';
+import FlatButton from 'material-ui/FlatButton';
+import Dialog from 'material-ui/Dialog';
 import { fetchProgram } from '../../util/programs_api_util.js';
+import StatusSelectorContainer from '../statuses/status_selector_container.js';
 
 class ProgramShow extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = this.props.program;
+    this.state.deleteOpen = false;
 
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -37,20 +42,36 @@ class ProgramShow extends React.Component {
     }
   }
 
-  editAndDelete() {
+  editAndDelete(actions) {
     if (this.props.authorId === this.state.author_id) {
       return (
-        <div>
+        <div
+          className="white-space"
+        >
+          <Divider
+            style={{marginTop: 10}}
+          />
+
           <Link to={`programs/${this.state.id}/edit`}>
             <span className="link">
               Edit
             </span>
           </Link>
           &nbsp;
+          &nbsp;
           <span className="link"
-            onClick={this.handleDelete}>
+            onClick={() => this.setState({deleteOpen: true})}>
             Delete
           </span>
+
+          <Dialog
+            title="Delete Program"
+            actions={actions}
+            modal={false}
+            open={this.state.deleteOpen}
+            onRequestClose={() => this.setState({deleteOpen: false})}>
+            Are you sure you want to delete this program?
+          </Dialog>
         </div>
       );
     } else {
@@ -64,6 +85,20 @@ class ProgramShow extends React.Component {
   }
 
   render() {
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        keyboardFocused={true}
+        onClick={() => this.setState({deleteOpen: false})}
+      />,
+      <FlatButton
+        label="Delete"
+        primary={true}
+        onClick={this.handleDelete}
+      />,
+    ];
+
     return (
       <div
         className="program-show">
@@ -74,15 +109,15 @@ class ProgramShow extends React.Component {
               className="group">
               <aside>
                 <img src={this.state.thumbnail_url} />
-                <br />
 
-                <label>Written by</label>: {this.state.creator}
+                <StatusSelectorContainer />
+
+                <label>Created by</label>: {this.state.creator}
                 <br />
 
                 {this.sourceCodeUrl()}
-                <br />
 
-                {this.editAndDelete()}
+                {this.editAndDelete(actions)}
               </aside>
 
               <ul
