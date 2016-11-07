@@ -29,6 +29,8 @@ class ProgramForm extends React.Component {
       snackOpen: false
     };
 
+    console.log(this.props.program);
+
     window.myState = this.state;
     window.myProps = this.props;
 
@@ -48,7 +50,7 @@ class ProgramForm extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.program.name != this.props.program.name) {
+    if (this.props.edit && prevProps.program.name != this.props.program.name) {
       this.setState({
         program: this.props.program
       });
@@ -60,8 +62,8 @@ class ProgramForm extends React.Component {
   }
 
   submittable() {
-    return this.validInput('name') && this.validInput('source_code_url')
-      && this.validInput('creator') && this.validInput('description')
+    return this.validInput('name') &&
+      this.validInput('creator') && this.validInput('description')
   }
 
   touch(key) {
@@ -128,6 +130,8 @@ class ProgramForm extends React.Component {
         <Card
           style={cardWide}>
 
+          <Errors errors={this.props.errors} />
+
           <h1 className="form">{title}</h1>
 
           <TextField
@@ -183,6 +187,7 @@ class ProgramForm extends React.Component {
               style={{
                 width: '100%'
               }}
+              disabled={!this.submittable()}
               hoverColor={colors.lightBrown}
               onClick={this.handleSubmit}
               label={buttonText} />

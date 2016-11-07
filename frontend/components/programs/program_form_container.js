@@ -19,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     path: ownProps.location.pathname,
     program: program,
-    edit: ownProps.location.pathname.endsWith('new') ? false : true
+    edit: ownProps.location.pathname.endsWith('new') ? false : true,
+    errors: state.programs.errors || []
   });
 }
 
