@@ -10,6 +10,7 @@ import { LogoSmall } from '../misc.jsx';
 import { modelAnchor, button } from '../styles/headerStyles.js';
 import { hashHistory } from 'react-router';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import ListChoice from '../statuses/list_choice.jsx';
 
 class NavHeader extends React.Component {
   constructor(props) {
@@ -60,6 +61,8 @@ class NavHeader extends React.Component {
               style={button}
               label="Add Program"/>
           </Link>
+
+          <ListChoice />
         </ToolbarGroup>
 
         <ToolbarGroup
