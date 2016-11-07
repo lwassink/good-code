@@ -35,7 +35,7 @@ export default ({ getState, dispatch }) => next => action => {
 
   switch(action.type) {
     case FETCH_PROGRAMS:
-      fetchPrograms(fetchProgramsSuccess, error);
+      fetchPrograms(fetchProgramsSuccess, error, action.statusCode);
       return next(action);
     case FETCH_USER_PROGRAMS:
       fetchUserPrograms(fetchProgramsSuccess, error);

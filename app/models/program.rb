@@ -6,7 +6,8 @@ class Program < ApplicationRecord
     class_name: :User,
     foreign_key: :author_id
 
-  has_many :statuses
+  has_many :statuses,
+    dependent: :destroy
 
   has_many :users,
     through: :statuses,

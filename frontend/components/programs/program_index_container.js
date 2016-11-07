@@ -8,7 +8,6 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  debugger
   return ({
     expand: id => { return () => dispatch(expand(id)); },
     fetchPrograms: (ownProps.location.pathname.endsWith('programs')

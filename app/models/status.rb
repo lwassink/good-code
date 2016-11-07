@@ -1,9 +1,5 @@
 class Status < ApplicationRecord
-  VALID_STATUSES = [
-    "Currently using",
-    "Have used",
-    "Want to use"
-  ]
+  VALID_STATUSES = ['1', '2', '3']
 
   validates_presence_of :user_id, :program_id, :content
   validates :user_id, uniqueness: { scope: :program_id }

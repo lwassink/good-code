@@ -1,9 +1,3 @@
-export const FETCH_STATUS = 'FETCH_STATUS';
-export const fetchStatus = (id) => ({
-  type: FETCH_STATUS,
-  id
-});
-
 export const CREATE_STATUS = 'CREATE_STATUS';
 export const createStatus = (status) => ({
   type: CREATE_STATUS,
@@ -17,9 +11,9 @@ export const updateStatus = (status) => ({
 });
 
 export const DESTROY_STATUS = 'DESTROY_STATUS';
-export const destroyStatus = (id) => ({
+export const destroyStatus = (programId) => ({
   type: DESTROY_STATUS,
-  id
+  programId
 });
 
 export const RECEIVE_STATUS = 'RECEIVE_STATUS';
@@ -29,8 +23,8 @@ export const receiveStatus = (status) => ({
 });
 
 export const REMOVE_STATUS = 'REMOVE_STATUS';
-export const removeStatus = (id) => ({
+export const removeStatus = (programId) => ({
   type: REMOVE_STATUS,
-  id
+  programId
 });
 

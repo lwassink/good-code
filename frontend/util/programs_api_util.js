@@ -8,12 +8,13 @@ export const fetchUserPrograms = (success, error) => {
   });
 };
 
-export const fetchPrograms = (success, error) => {
+export const fetchPrograms = (success, error, status = -1) => {
   $.ajax({
     url: `api/programs`,
     type: 'GET',
     success,
-    error
+    error,
+    data: { status }
   });
 };
 

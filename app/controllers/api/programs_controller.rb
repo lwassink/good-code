@@ -2,11 +2,19 @@ class Api::ProgramsController < ApplicationController
   # before_action :restrict_to_owner, only: [:update, :destroy]
 
   def index
-    if params[:current_user] && current_user
-      @programs = current_user.authored_programs
-    else
+    if params[:status] == '-1'
       @programs = Program.all
+    elsif params[:current_user] && current_user
+      @programs = current_user.authored_programs
+    elsif params[:all_statuses] && current_user
+      @programs = current_user.programs
+    elsif current_user
+      @programs = User.first.programs
+        .joins(:statuses)
+        .where(statuses: { content: params[:status] })
     end
+
+    p @programs
   end
 
   def show

@@ -9,7 +9,7 @@ class StatusSelector extends React.Component {
     super(props);
 
     this.state = {
-      status: 1,
+      statusCode: this.props.statusCode,
       snackOpen: false
     }
 
@@ -17,9 +17,22 @@ class StatusSelector extends React.Component {
     this.handleRequestSnackClose = this.handleRequestSnackClose.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.statusCode != this.props.statusCode) {
+      this.setState({ statusCode: newProps.statusCode })
+    }
+  }
+
   handleChange(event, index, value) {
+    if (this.state.statusCode != value) {
+      if (value === 0) {
+        this.props.destroyStatus();
+      } else {
+        this.props.setStatus(this.state.statusCode, value);
+      }
+    }
     this.setState({
-      status: value,
+      statusCode: value,
       snackOpen: true
     });
   }
@@ -32,7 +45,7 @@ class StatusSelector extends React.Component {
     return (
       <div>
         <SelectField
-          value={this.state.status}
+          value={this.state.statusCode}
           onChange={this.handleChange}
           color="brown"
           style={{
@@ -41,16 +54,16 @@ class StatusSelector extends React.Component {
           labelStyle={{
             color: colors.tan
           }}>
-          <MenuItem value={1} primaryText="No status" />
+          <MenuItem value={0} primaryText="No status" />
+          <MenuItem value={1} primaryText="Currently using" />
           <MenuItem value={2} primaryText="Have used" />
-          <MenuItem value={3} primaryText="Currently using" />
-          <MenuItem value={4} primaryText="Want to use" />
+          <MenuItem value={3} primaryText="Want to use" />
         </SelectField>
 
         <Snackbar
           open={this.state.snackOpen}
           message="Status Set"
-          autoHideDuration={2000}
+          autoHideDuration={3000}
           onRequestClose={this.handleRequestSnackClose}
 
         />

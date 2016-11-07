@@ -4,8 +4,9 @@ export const fetchUserPrograms = () => ({
 });
 
 export const FETCH_PROGRAMS = 'FETCH_PROGRAMS';
-export const fetchPrograms = () => ({
-  type: FETCH_PROGRAMS
+export const fetchPrograms = (statusCode) => ({
+  type: FETCH_PROGRAMS,
+  statusCode
 });
 
 export const FETCH_PROGRAM = 'FETCH_PROGRAM';

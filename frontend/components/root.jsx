@@ -10,6 +10,7 @@ import MyProgramsContainer from './programs/my_programs_container.jsx';
 import ProgramShowContainer from './programs/program_show_container.js';
 import HomeContainer from './home/home_container.js';
 import ProgramFormContainer from './programs/program_form_container.js';
+import ProgramListContainer from './programs/program_list_container.js';
 
 export default ({ store }) => {
   const _requireLogin = () =>{
@@ -28,6 +29,7 @@ export default ({ store }) => {
             <Route path="programs/:id/edit" onEnter={_requireLogin} component={ProgramFormContainer} />
             <Route path="programs/:id" component={ProgramShowContainer} />
             <Route path="programs" component={MyProgramsContainer} />
+            <Route path="lists/:statusCode" onEnter={_requireLogin} component={ProgramListContainer} />
           </Route>
         </Router>
       </MuiThemeProvider>

@@ -110,7 +110,7 @@ class ProgramShow extends React.Component {
               <aside>
                 <img src={this.state.thumbnail_url} />
 
-                <StatusSelectorContainer />
+                {this.props.authorId ?  <StatusSelectorContainer programId={this.state.id} /> : <div></div> }
 
                 <label>Created by</label>: {this.state.creator}
                 <br />

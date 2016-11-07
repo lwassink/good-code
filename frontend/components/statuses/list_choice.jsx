@@ -5,6 +5,7 @@ import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import { modelAnchor, button } from '../styles/headerStyles.js';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import { hashHistory } from 'react-router';
 
 class ListChoice extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class ListChoice extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
+    this.handleChoiceClick = this.handleChoiceClick.bind(this);
   }
 
   handleClick(event) {
@@ -27,6 +29,14 @@ class ListChoice extends React.Component {
   handleRequestClose(event) {
     this.setState({open: false});
   };
+
+  handleChoiceClick(statusCode) {
+    return (event) => {
+      event.preventDefault();
+      hashHistory.push(`lists/${statusCode}`);
+      this.setState({open: false});
+    }
+  }
 
   render() {
     return (
@@ -47,12 +57,16 @@ class ListChoice extends React.Component {
 
           <Menu>
             <MenuItem
+              onClick={this.handleChoiceClick(1)}
               primaryText="Programs I am currently using" />
             <MenuItem
+              onClick={this.handleChoiceClick(2)}
               primaryText="Programs I have used" />
             <MenuItem
+              onClick={this.handleChoiceClick(3)}
               primaryText="Programs I want to use" />
             <MenuItem
+              onClick={this.handleChoiceClick(0)}
               primaryText="All" />
           </Menu>
         </Popover>

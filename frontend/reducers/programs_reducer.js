@@ -4,6 +4,10 @@ import { RECEIVE_PROGRAM_ERRORS,
   RECEIVE_PROGRAMS,
   EXPAND
 } from '../actions/program_actions.js';
+import {
+  RECEIVE_STATUS,
+  REMOVE_STATUS
+} from '../actions/statuses_actions.js';
 import merge from 'lodash/merge';
 
 const _default_state = {}
@@ -32,6 +36,12 @@ export default (oldState = _default_state, action) =>{
       delete ids.errors;
       ids.forEach(id => {newState[id].expanded = false});
       newState[action.id].expanded = true;
+      return newState;
+    case RECEIVE_STATUS:
+      newState[action.status.programId] = action.status.content;
+      return newState;
+    case REMOVE_STATUS:
+      newState[action.status.programId] = null;
       return newState;
     default:
       return oldState;
