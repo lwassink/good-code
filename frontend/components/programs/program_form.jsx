@@ -26,7 +26,6 @@ class ProgramForm extends React.Component {
         description: false
       },
       program: this.props.program,
-      loading: this.props.edit,
       snackOpen: false
     };
 
@@ -51,8 +50,7 @@ class ProgramForm extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.program.name != this.props.program.name) {
       this.setState({
-        program: this.props.program,
-        loading: false
+        program: this.props.program
       });
     }
   }
@@ -124,10 +122,6 @@ class ProgramForm extends React.Component {
     const title = this.props.edit ? "Edit " + this.props.program.name : "Add a program"
     const pictureButtonText = this.props.edit ? "Update picture" : "Add picture"
     const buttonText = this.props.edit ? "Update Program" : "Add Program"
-
-    if (this.state.loading) {
-      return <div></div>;
-    }
 
     return (
       <div>

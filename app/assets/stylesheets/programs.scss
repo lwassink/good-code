@@ -1,6 +1,6 @@
 .main {
   margin: auto;
-  width: calc(100% - 400px);
+  width: calc(100% - 500px);
 }
 
 .main p {
@@ -39,16 +39,19 @@
   width: calc(100% - 300px);
   margin: auto;
   display: block;
+  label {
+    font-style: italic;
+  }
   aside {
     float: left;
     display: inline-block;
-    width: 110px;
+    width: 160px;
     margin: 10px;
   }
   ul {
     float: left;
     display: block;
-    width: calc(100% - 130px);
+    width: calc(100% - 180px);
   }
 }
 

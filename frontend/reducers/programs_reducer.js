@@ -19,7 +19,7 @@ export default (oldState = _default_state, action) =>{
       return clearErrors;
     case RECEIVE_PROGRAM:
       let programState = {[action.program.id]: action.program};
-      merge(programState, oldState, clearErrors);
+      merge(newState, programState, clearErrors);
       return programState;
     case REMOVE_PROGRAM:
       delete newState[action.id];

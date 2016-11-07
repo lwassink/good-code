@@ -21,10 +21,13 @@ import { hashHistory } from 'react-router';
 export default ({ getState, dispatch }) => next => action => {
   const error = e => dispatch(receiveProgramErrors(e.responseJSON));
   const fetchProgramsSuccess = programs => dispatch(receivePrograms(programs));
-  const fetchProgramSuccess = program => {
+  const fetchProgramSuccess = program => dispatch(receiveProgram(program));
+
+  const makeProgramSuccess = program => {
     dispatch(receiveProgram(program));
     hashHistory.push(`programs/${program.id}`);
   }
+
   const removeProgramSuccess = program => {
     dispatch(removeProgram(program));
     hashHistory.push('/');
@@ -41,10 +44,10 @@ export default ({ getState, dispatch }) => next => action => {
       fetchProgram(action.id, fetchProgramSuccess, error);
       return next(action);
     case CREATE_PROGRAM:
-      createProgram(action.program, fetchProgramSuccess, error);
+      createProgram(action.program, makeProgramSuccess, error);
       return next(action);
     case UPDATE_PROGRAM:
-      updateProgram(action.program, fetchProgramSuccess, error);
+      updateProgram(action.program, makeProgramSuccess, error);
       return next(action);
     case DESTROY_PROGRAM:
       destroyProgram(action.id, removeProgramSuccess, error);

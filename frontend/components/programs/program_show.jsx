@@ -6,6 +6,9 @@ import { fetchProgram } from '../../util/programs_api_util.js';
 class ProgramShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = this.props.program;
+
     this.handleDelete = this.handleDelete.bind(this);
   }
 
@@ -13,17 +16,18 @@ class ProgramShow extends React.Component {
     this.props.fetchProgram()
   }
 
-  componentDidReceiveProps(newProps) {
-    if (this.props.path != newProps.path) {
-      newState.fetchProgram();
+  componentWillReceiveProps(newProps) {
+    if (newProps.program.id != this.state.id) {
+      newProps.fetchProgram();
     }
+    this.setState(newProps.program);
   }
 
   sourceCodeUrl() {
-    if (this.props.program.source_code_url) {
+    if (this.state.source_code_url) {
       return (
         <a
-          href={this.props.program.source_code_url}
+          href={this.state.source_code_url}
           className="link">
           Source code
         </a>
@@ -34,10 +38,10 @@ class ProgramShow extends React.Component {
   }
 
   editAndDelete() {
-    if (this.props.authorId === this.props.program.author_id) {
+    if (this.props.authorId === this.state.author_id) {
       return (
         <div>
-          <Link to={`programs/${this.props.program.id}/edit`}>
+          <Link to={`programs/${this.state.id}/edit`}>
             <span className="link">
               Edit
             </span>
@@ -69,8 +73,12 @@ class ProgramShow extends React.Component {
             <div
               className="group">
               <aside>
-                <img src={this.props.program.thumbnail_url} />
+                <img src={this.state.thumbnail_url} />
                 <br />
+
+                <label>Written by</label>: {this.state.creator}
+                <br />
+
                 {this.sourceCodeUrl()}
                 <br />
 
@@ -80,15 +88,15 @@ class ProgramShow extends React.Component {
               <ul
                 className="program-item-list">
                 <li>
-                  <h2>{this.props.program.name}</h2>
+                  <h2>{this.state.name}</h2>
                 </li>
                 <li>
-                  <label>Created by:</label> {this.props.program.creator}
+                  <label>Created by:</label> {this.state.creator}
                 </li>
                 <li>
                   <label>Description:</label>
                   <br />
-                  {this.props.program.description}
+                  {this.state.description}
                 </li>
               </ul>
             </div>
