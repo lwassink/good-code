@@ -9,6 +9,10 @@ export default (props) => {
     style={{marginTop: '10px'}}>
       <Paper>
         <ReviewToolbar />
+
+        <ReviewItemContainer />
+        <ReviewItemContainer />
+        <ReviewItemContainer />
       </Paper>
     </div>
   )

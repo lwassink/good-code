@@ -1,5 +1,6 @@
 export const item = {
-  marginBottom: '8px'
+  marginBottom: '8px',
+  marginTop: '8px'
 };
 
 export const toolbarTitle = {

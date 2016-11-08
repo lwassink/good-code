@@ -5,7 +5,10 @@ import ReviewModalContainer from './review_modal_container.js';
 
 export default (props) => {
   return (
-    <Toolbar>
+    <Toolbar
+      style={{
+        marginTop: '-10px'
+      }}>
       <ToolbarGroup>
         <ToolbarTitle text="Reviews"
           style={toolbarTitle}/>
