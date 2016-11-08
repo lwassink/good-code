@@ -213,3 +213,57 @@ Program.create!(
   author_id: 1,
   thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478478496/hgqnkegvly9hwa8saxbu.png"
 )
+
+Status.create!(
+  user_id: 1,
+  program_id: 1,
+  content: "1"
+)
+
+Status.create!(
+  user_id: 1,
+  program_id: 4,
+  content: "1"
+)
+
+Status.create!(
+  user_id: 1,
+  program_id: 2,
+  content: "2"
+)
+
+Status.create!(
+  user_id: 1,
+  program_id: 5,
+  content: "2"
+)
+
+Status.create!(
+  user_id: 1,
+  program_id: 7,
+  content: "2"
+)
+
+Status.create!(
+  user_id: 1,
+  program_id: 3,
+  content: "3"
+)
+
+Status.create!(
+  user_id: 1,
+  program_id: 6,
+  content: "3"
+)
+
+Status.create!(
+  user_id: 1,
+  program_id: 9,
+  content: "3"
+)
+
+Status.create!(
+  user_id: 1,
+  program_id: 13,
+  content: "3"
+)

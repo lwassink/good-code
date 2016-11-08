@@ -4,9 +4,9 @@ import { hashHistory } from 'react-router';
 import { Link } from 'react-router';
 
 const introMessages = {
-  1: 'These are programs you are currently using',
-  2: 'These are programs you have used in the past',
-  3: 'These are programs you want to use on a future project'
+  1: 'These are programs you are currently using.',
+  2: 'These are programs you have used in the past.',
+  3: 'These are programs you want to use on a future project.'
 };
 
 export default (props) => {
@@ -14,7 +14,7 @@ export default (props) => {
     <div
       className="main">
       <p>
-        { introMessages[props.statusCode] }
+        { introMessages[props.statusCode] + " Add programs to this list by setting their status." }
       </p>
 
       <ProgramIndex expand={props.expand} programs={props.programs} path={props.path} fetchPrograms={props.fetchPrograms} />
