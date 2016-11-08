@@ -2,6 +2,7 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import { index } from '../styles/indexStyle.js';
 import ProgramIndexItem from './program_index_item.jsx';
+import LoadingContainer from '../util/loading_container.js';
 
 class ProgramIndex extends React.Component {
   constructor(props) {
@@ -26,8 +27,14 @@ class ProgramIndex extends React.Component {
 
     return(
       <div>
+        <p>
+          { Object.keys(programs).length === 0 ? 'No programs to display...' : '' }
+        </p>
+
         <Paper
           style={index}>
+          <LoadingContainer />
+
           <ul>
             {Object.values(programs).map(program => 
                 (<ProgramIndexItem

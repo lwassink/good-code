@@ -16,12 +16,20 @@ import {fetchPrograms,
   updateProgram,
   destroyProgram
 } from '../util/programs_api_util.js';
+import { startLoading, stopLoading } from '../actions/util_actions.js';
 import { hashHistory } from 'react-router';
 
 export default ({ getState, dispatch }) => next => action => {
   const error = e => dispatch(receiveProgramErrors(e.responseJSON));
-  const fetchProgramsSuccess = programs => dispatch(receivePrograms(programs));
-  const fetchProgramSuccess = program => dispatch(receiveProgram(program));
+
+  const fetchProgramsSuccess = programs => {
+    dispatch(stopLoading());
+    dispatch(receivePrograms(programs));
+  }
+  const fetchProgramSuccess = program => {
+    dispatch(stopLoading());
+    dispatch(receiveProgram(program));
+  }
 
   const makeProgramSuccess = program => {
     dispatch(receiveProgram(program));
@@ -35,12 +43,15 @@ export default ({ getState, dispatch }) => next => action => {
 
   switch(action.type) {
     case FETCH_PROGRAMS:
+      dispatch(startLoading());
       fetchPrograms(fetchProgramsSuccess, error, action.statusCode);
       return next(action);
     case FETCH_USER_PROGRAMS:
+      dispatch(startLoading());
       fetchUserPrograms(fetchProgramsSuccess, error);
       return next(action);
     case FETCH_PROGRAM:
+      dispatch(startLoading());
       fetchProgram(action.id, fetchProgramSuccess, error);
       return next(action);
     case CREATE_PROGRAM:
