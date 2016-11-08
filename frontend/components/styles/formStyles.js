@@ -4,7 +4,7 @@ export const card = {
 };
 
 export const cardWide = {
-  width: '500px',
+  width: '550px',
   margin: 'auto',
 };
 

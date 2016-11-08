@@ -2,6 +2,7 @@ import {
   recieveReview,
   recieveReviews,
   removeReview,
+  recieveReviewErrors,
   REQUEST_REVIEW,
   REQUEST_REVIEWS,
   CREATE_REVIEW,
@@ -10,8 +11,8 @@ import {
 } from '../actions/review_actions.js';
 
 export default ({ getState, dispatch }) => next => action => {
-  const error = e => console.log(e);
-  const fetchStatusSuccess = status => dispatch(receiveStatus(status));
+  const error = e => dispatch(recieveReviewErrors(e));
+  const fetchReviewSuccess = review => dispatch(receiveStatus(status));
   const destroyStatusSuccess = () => dispatch(removeStatus(action.program));
 
   switch(action.type) {

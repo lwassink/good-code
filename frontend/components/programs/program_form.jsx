@@ -178,7 +178,7 @@ class ProgramForm extends React.Component {
             <br />
 
             <img
-              src={this.state.program.thumbnail_url ? this.state.program.thumbnail_url : '#'}
+              src={this.state.program.thumbnail_url ? this.state.program.thumbnail_url : 'http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478624954/eqc0owfgyzqlujj6afvs.jpg'}
             />
 
             <Divider

@@ -45,11 +45,9 @@ class Api::ProgramsController < ApplicationController
 
   def destroy
     @program = Program.find(params[:id])
-    if @program && current_user.id == @program.author_id
+    if @program
       @program.destroy
       render json: @program
-    else
-      render json: ["You do not have permission to delete that program"], status: 404
     end
   end
 

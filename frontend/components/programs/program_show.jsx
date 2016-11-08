@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import FlatButton from 'material-ui/FlatButton';
@@ -82,6 +82,8 @@ class ProgramShow extends React.Component {
   handleDelete(e) {
     e.preventDefault();
     this.props.destroyProgram();
+    this.setState({deleteOpen: false });
+    hashHistory.push('/');
   }
 
   render() {
