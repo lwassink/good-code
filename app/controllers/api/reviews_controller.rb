@@ -32,7 +32,7 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     Review.find(params[:id]).destroy
-    render json: {}
+    render json: params[:id]
   end
 
   private

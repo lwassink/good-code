@@ -6,6 +6,7 @@ import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 import { fetchProgram } from '../../util/programs_api_util.js';
 import StatusSelectorContainer from '../statuses/status_selector_container.js';
+import ReviewIndexContainer from '../reviews/review_index_container.js';
 
 class ProgramShow extends React.Component {
   constructor(props) {
@@ -91,7 +92,6 @@ class ProgramShow extends React.Component {
       <FlatButton
         label="Cancel"
         primary={true}
-        keyboardFocused={true}
         onClick={() => this.setState({deleteOpen: false})}
       />,
       <FlatButton
@@ -137,6 +137,8 @@ class ProgramShow extends React.Component {
             </div>
 
           </Paper>
+
+          <ReviewIndexContainer />
         </Paper>
       </div>
     )

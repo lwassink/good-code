@@ -49,12 +49,12 @@ class StatusSelector extends React.Component {
           onChange={this.handleChange}
           color="brown"
           style={{
-            width: 160
+            width: 170
           }}
           labelStyle={{
             color: colors.tan
           }}>
-          <MenuItem value={0} primaryText="No status" />
+          <MenuItem value={0} primaryText="No status set" />
           <MenuItem value={1} primaryText="Currently using" />
           <MenuItem value={2} primaryText="Have used" />
           <MenuItem value={3} primaryText="Want to use" />

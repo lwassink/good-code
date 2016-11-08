@@ -52,3 +52,13 @@ export const receiveReviewErrors = (errors) => ({
   errors
 });
 
+export const OPEN_REVIEW_FORM = 'OPEN_REVIEW_FORM';
+export const openReviewForm = () => ({
+  type: OPEN_REVIEW_FORM
+});
+
+export const CLOSE_REVIEW_FORM = 'CLOSE_REVIEW_FORM';
+export const closeReviewForm = () => ({
+  type: CLOSE_REVIEW_FORM
+});
+

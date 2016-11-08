@@ -21,7 +21,8 @@ export const submitButton = {
 export const textInput = {
   display: 'block',
   margin: '0 auto',
-  width: 'calc(100% - 20px)'
+  width: 'calc(100% - 20px)',
+  textAlign: 'left'
 };
 
 export const textInputNarrow = {

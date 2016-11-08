@@ -54,7 +54,7 @@ class Api::ProgramsController < ApplicationController
   private
 
   def restrict_to_owner
-    unless current_user.id = Program.find(params[:id]).author
+    unless current_user == Program.find(params[:id]).author
       render json: ["You do not have prermission to modify that program"], status: 404
     end
   end
