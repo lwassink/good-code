@@ -129,8 +129,6 @@ class ProgramShow extends React.Component {
                   <label>Created by:</label> {this.state.creator}
                 </li>
                 <li>
-                  <label>Description:</label>
-                  <br />
                   {this.state.description}
                 </li>
               </ul>

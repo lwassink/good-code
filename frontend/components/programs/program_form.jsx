@@ -126,7 +126,8 @@ class ProgramForm extends React.Component {
     const buttonText = this.props.edit ? "Update Program" : "Add Program"
 
     return (
-      <div>
+      <div
+      className="form">
         <Card
           style={cardWide}>
 
@@ -176,6 +177,10 @@ class ProgramForm extends React.Component {
               label={pictureButtonText} />
             <br />
 
+            <img
+              src={this.state.program.thumbnail_url ? this.state.program.thumbnail_url : '#'}
+            />
+
             <Divider
               style={{
                 width: '100%',
@@ -196,7 +201,7 @@ class ProgramForm extends React.Component {
         <Snackbar
           open={this.state.snackOpen}
           message="Image saved"
-          autoHideDuration={3000}
+          autoHideDuration={6000}
           onRequestClose={this.handleRequestSnackClose}
 
         />

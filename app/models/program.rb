@@ -12,4 +12,7 @@ class Program < ApplicationRecord
   has_many :users,
     through: :statuses,
     source: :user
+
+  has_many :reviews,
+    dependent: :destroy
 end

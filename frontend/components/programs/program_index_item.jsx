@@ -39,8 +39,6 @@ export default ({ program, expanded, handleExpand }) => {
             <label>Created by:</label> {program.creator}
           </li>
           <li>
-            <label>Description:</label>
-            &nbsp;
             {description()}
           </li>
         </ul>

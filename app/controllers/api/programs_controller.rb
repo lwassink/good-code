@@ -1,5 +1,5 @@
 class Api::ProgramsController < ApplicationController
-  # before_action :restrict_to_owner, only: [:update, :destroy]
+  before_action :restrict_to_owner, only: [:update, :destroy]
 
   def index
     if params[:status] == '-1'
@@ -9,7 +9,7 @@ class Api::ProgramsController < ApplicationController
     elsif params[:all_statuses] && current_user
       @programs = current_user.programs
     elsif current_user
-      @programs = User.first.programs
+      @programs = current_user.programs
         .joins(:statuses)
         .where(statuses: { content: params[:status] })
     end
@@ -56,7 +56,7 @@ class Api::ProgramsController < ApplicationController
   private
 
   def restrict_to_owner
-    unless current_user.id = params[:program][:author_id]
+    unless current_user.id = Program.find(params[:id]).author
       render json: ["You do not have prermission to modify that program"], status: 404
     end
   end

@@ -7,11 +7,16 @@ class User < ApplicationRecord
     class_name: :Program,
     foreign_key: :author_id
 
-  has_many :statuses
+  has_many :statuses,
+    dependent: :destroy
 
   has_many :programs,
     through: :statuses,
     source: :program
+
+  has_many :reviews,
+    foreign_key: :author_id,
+    dependent: :destroy
 
   attr_reader :password
   before_validation :ensure_session_token

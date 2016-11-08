@@ -6,7 +6,7 @@ export default (props) => {
     <div
       className="main">
       <p>
-        These are the programs you created.
+        These are the programs you added.
         You can edit or delete them.
     </p>
 

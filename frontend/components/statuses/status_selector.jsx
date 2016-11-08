@@ -63,7 +63,7 @@ class StatusSelector extends React.Component {
         <Snackbar
           open={this.state.snackOpen}
           message="Status Set"
-          autoHideDuration={3000}
+          autoHideDuration={6000}
           onRequestClose={this.handleRequestSnackClose}
 
         />

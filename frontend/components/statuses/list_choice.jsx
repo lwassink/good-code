@@ -16,6 +16,7 @@ class ListChoice extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.handleChoiceClick = this.handleChoiceClick.bind(this);
+    this.handleMyProgramsClick = this.handleMyProgramsClick.bind(this);
   }
 
   handleClick(event) {
@@ -36,6 +37,11 @@ class ListChoice extends React.Component {
       hashHistory.push(`lists/${statusCode}`);
       this.setState({open: false});
     }
+  }
+
+  handleMyProgramsClick(event) {
+    hashHistory.push('programs');
+    this.setState({open: false});
   }
 
   render() {
@@ -66,8 +72,8 @@ class ListChoice extends React.Component {
               onClick={this.handleChoiceClick(3)}
               primaryText="Programs I want to use" />
             <MenuItem
-              onClick={this.handleChoiceClick(0)}
-              primaryText="All" />
+              onClick={this.handleMyProgramsClick}
+              primaryText="Programs I added" />
           </Menu>
         </Popover>
       </div>

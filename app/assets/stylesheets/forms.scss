@@ -18,5 +18,10 @@ $dark-brown: #65411f;
   padding-top: 15px;
   font-size: 18px;
   color: $dark-brown;
+  img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
 }
 
