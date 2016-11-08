@@ -2,7 +2,6 @@ import React from 'react';
 import CircularProgress from 'material-ui/CircularProgress';
 
 export default ({ loading }) => {
-  console.log(loading);
   if (loading) {
     return (
       <div
