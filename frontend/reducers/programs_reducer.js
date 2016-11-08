@@ -38,7 +38,7 @@ export default (oldState = _default_state, action) =>{
       newState[action.id].expanded = true;
       return newState;
     case RECEIVE_STATUS:
-      newState[action.status.programId] = action.status.content;
+      newState[action.status.program_id].status = action.status.content;
       return newState;
     case REMOVE_STATUS:
       newState[action.status.programId] = null;
