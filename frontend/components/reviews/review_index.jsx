@@ -30,11 +30,11 @@ class ReviewIndex extends React.Component {
         className="review-index"
         style={{marginTop: '10px'}}>
         <Paper>
-          <ReviewToolbar />
+          <ReviewToolbar loggedIn={this.props.loggedIn}/>
 
           {this.emptyMessage()}
 
-          {Object.values(prunedReviews).map(review => (
+          {Object.values(prunedReviews).reverse().map(review => (
             <ReviewItem
               key={review.id}
               review={review}

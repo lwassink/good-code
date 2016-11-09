@@ -1,7 +1,7 @@
 import React from 'react';
 import Divider from 'material-ui/Divider';
 
-export default ({ owner, editReview, deleteReview }) => {
+export default ({ owner, editReview, deleteReview, openReviewForm }) => {
   if (owner) {
     return (
       <div
@@ -9,7 +9,8 @@ export default ({ owner, editReview, deleteReview }) => {
         <Divider
           style={{marginTop: 10}}/>
 
-        <span className="link">
+        <span className="link"
+        onClick={openReviewForm}>
           Edit
         </span>
         &nbsp;

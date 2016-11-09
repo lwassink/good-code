@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  deleteReview: () => dispatch(destroyReview(ownProps.review.id))
+  deleteReview: () => dispatch(destroyReview(ownProps.review.id)),
+  openReviewForm: () => dispatch(openReviewForm(true)) // true tells the from to open in edit mode
 });
 
 const EditAndDeleteContainer = connect(

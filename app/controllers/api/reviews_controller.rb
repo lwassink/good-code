@@ -1,4 +1,6 @@
 class Api::ReviewsController < ApplicationController
+  before_action :require_login, only: [:create, :update, :destroy]
+
   before_action :restrict_to_owner, only: [:update, :destroy]
 
   def index
@@ -40,7 +42,7 @@ class Api::ReviewsController < ApplicationController
   def restrict_to_owner
     review = Review.find(params[:id])
     unless review && current_user == review.author
-      render json: ["You do not have prermission to modify that review"], status: 404
+      render json: ["You do not have prermission to modify that review"], status: 401
     end
   end
 

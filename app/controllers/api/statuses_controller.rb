@@ -1,4 +1,8 @@
 class Api::StatusesController < ApplicationController
+  before_action :require_login, only: [:create, :update, :destroy]
+
+  before_action :restrict_to_owner, only: [:update, :destroy]
+
   def show
     @status = Status.find(params[:id])
   end
@@ -31,6 +35,13 @@ class Api::StatusesController < ApplicationController
   end
 
   private
+
+  def restrict_to_owner
+    status = current_user.statuses.find_by_program_id(params[:id])
+    unless status && current_user == status.user
+      render json: ["You do not have prermission to modify that status"], status: 401
+    end
+  end
 
   def status_params
     params.require(:status).permit(:program_id, :content)

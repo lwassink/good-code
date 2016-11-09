@@ -6,7 +6,8 @@ import { withRouter } from 'react-router';
 const mapStateToProps = (state, ownProps) => ({
   reviews: state.reviews,
   programId: ownProps.params.id,
-  program: ownProps.program
+  program: ownProps.program,
+  loggedIn: state.currentUser.id ? true : false
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

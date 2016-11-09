@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'material-ui/Card';
 import { preview } from '../styles/formStyles.js';
+import ReactMarkdown from 'react-markdown';
 
 export default ({ text }) => {
   return (
@@ -8,12 +9,9 @@ export default ({ text }) => {
       <h2>
         Preview:
       </h2>
-      <Card
-        style={preview}>
-        <p>
-          {text}
-        </p>
-      </Card>
+      <div className="preview">
+        <ReactMarkdown source={text} />
+      </div>
     </div>
   )
 }

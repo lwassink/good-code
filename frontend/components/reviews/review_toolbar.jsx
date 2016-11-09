@@ -15,7 +15,7 @@ export default (props) => {
       </ToolbarGroup>
 
       <ToolbarGroup>
-        <ReviewModalContainer />
+        {props.loggedIn ? <ReviewModalContainer /> : null}
       </ToolbarGroup>
     </Toolbar>
   )

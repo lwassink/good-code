@@ -14,5 +14,11 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_session_token(session[:session_token])
   end
 
+  def require_login
+    unless current_user.id
+      render json: ["You must be logged in to use this api"], status: 401
+    end
+  end
+
   helper_method :current_user
 end

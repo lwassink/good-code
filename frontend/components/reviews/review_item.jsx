@@ -2,6 +2,7 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import { item } from '../styles/indexStyle.js';
 import EditAndDeleteContainer from './edit_and_delete_container.js';
+import ReactMarkdown from 'react-markdown';
 
 export default ({ review, program }) => {
   let status;
@@ -28,12 +29,9 @@ export default ({ review, program }) => {
           className="group">
           <aside>
             <p>
-              {review.author}
+              <em>{review.author}</em>
               <span className="status">{status}</span>
-              {program} for:
-            </p>
-            <p>
-              {review.project_used_in}
+              {program} for {review.project_used_in}
             </p>
 
             <EditAndDeleteContainer review={review}/>
@@ -42,9 +40,9 @@ export default ({ review, program }) => {
           <ul
             className="program-item-list">
             <li>
-              <p>
-                {review.body}
-              </p>
+              <div className="preview">
+                <ReactMarkdown source={review.body} />
+              </div>
             </li>
           </ul>
         </div>

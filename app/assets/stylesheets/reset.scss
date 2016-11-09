@@ -1,6 +1,7 @@
-html, body, nav, h1, a,
+h1, h2, h3, h4, h5, h6, a,
+html, body, nav, a,
 ul, li, strong, main, button, i,
-section, img, div, h2, p, form,
+section, img, div, p, form,
 fieldset, label, input, textarea,
 span, article, footer, time, small {
   font-size: 14px;
@@ -45,6 +46,11 @@ button {
 button,
 input[type="submit"] {
   cursor: pointer;
+}
+
+em {
+  font-style: normal;
+  font-weight: 700;
 }
 
 /* Clearfix */

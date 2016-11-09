@@ -1,0 +1,55 @@
+.preview {
+  text-align: left;
+  margin-left: 10px;
+
+  ul {
+    list-style: disc;
+    margin-left: 30px;
+  }
+
+  h1{
+    font-weight: 700;
+    font-size: 29px;
+  }
+
+  h2{
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+  h3{
+    font-weight: 700;
+    font-size: 23px;
+  }
+
+  h4{
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  h5{
+    font-weight: 700;
+    font-size: 17px;
+  }
+
+  h6{
+    font-weight: 700;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  a {
+    color: #0B6376;
+    cursor: pointer;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}

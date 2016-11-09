@@ -112,8 +112,9 @@ class ProgramShow extends React.Component {
 
                 {this.props.authorId ?  <StatusSelectorContainer programId={this.state.id} /> : <div></div> }
 
-                <label>Created by</label>: {this.state.creator}
-                <br />
+                <p>
+                  <label>Created by</label>: {this.state.creator}
+                </p>
 
                 {this.sourceCodeUrl()}
 

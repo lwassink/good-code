@@ -43,9 +43,11 @@ class ReviewModal extends React.Component {
         <Dialog
           contentStyle={{ width: 650 }}
           autoScrollBodyContent={true}
+          autoDetectWindowHeight={true}
           title="Review"
           actions={actions}
           modal={true}
+          repositionOnUpdate={true}
           open={this.state.open}
           title="Add review">
 

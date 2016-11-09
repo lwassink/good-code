@@ -1,4 +1,6 @@
 class Api::ProgramsController < ApplicationController
+  before_action :require_login, only: [:create, :update, :destroy]
+
   before_action :restrict_to_owner, only: [:update, :destroy]
 
   def index
@@ -53,7 +55,7 @@ class Api::ProgramsController < ApplicationController
 
   def restrict_to_owner
     unless current_user == Program.find(params[:id]).author
-      render json: ["You do not have prermission to modify that program"], status: 404
+      render json: ["You do not have prermission to modify that program"], status: 401
     end
   end
 
