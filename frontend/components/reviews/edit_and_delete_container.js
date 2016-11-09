@@ -4,12 +4,12 @@ import { withRouter } from 'react-router';
 import EditAndDelete from './edit_and_delete.jsx';
 
 const mapStateToProps = (state, ownProps) => ({
-  owner: state.currentUser.id === ownProps.review.author_id
+  owner: state.currentUser.id === ownProps.review.author_id,
+  review: ownProps.review
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   deleteReview: () => dispatch(destroyReview(ownProps.review.id)),
-  openReviewForm: () => dispatch(openReviewForm(true)) // true tells the from to open in edit mode
 });
 
 const EditAndDeleteContainer = connect(

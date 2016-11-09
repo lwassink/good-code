@@ -53,13 +53,24 @@ export const recieveReviewErrors = (errors) => ({
 });
 
 export const OPEN_REVIEW_FORM = 'OPEN_REVIEW_FORM';
-export const openReviewForm = (edit = false) => ({
-  type: OPEN_REVIEW_FORM,
-  edit
+export const openReviewForm = () => ({
+  type: OPEN_REVIEW_FORM
 });
 
 export const CLOSE_REVIEW_FORM = 'CLOSE_REVIEW_FORM';
 export const closeReviewForm = () => ({
   type: CLOSE_REVIEW_FORM
+});
+
+export const OPEN_REVIEW_EDIT = 'OPEN_REVIEW_EDIT';
+export const openReviewEdit = (id) => ({
+  type: OPEN_REVIEW_EDIT,
+  id
+});
+
+export const CLOSE_REVIEW_EDIT = 'CLOSE_REVIEW_EDIT';
+export const closeReviewEdit = (id) => ({
+  type: CLOSE_REVIEW_EDIT,
+  id
 });
 

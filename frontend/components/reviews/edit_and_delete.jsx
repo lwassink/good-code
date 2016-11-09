@@ -1,7 +1,8 @@
 import React from 'react';
 import Divider from 'material-ui/Divider';
+import EditReviewModalContainer from './edit_review_modal_container.js';
 
-export default ({ owner, editReview, deleteReview, openReviewForm }) => {
+export default ({ owner, deleteReview, openReviewForm, review }) => {
   if (owner) {
     return (
       <div
@@ -9,10 +10,7 @@ export default ({ owner, editReview, deleteReview, openReviewForm }) => {
         <Divider
           style={{marginTop: 10}}/>
 
-        <span className="link"
-        onClick={openReviewForm}>
-          Edit
-        </span>
+          <EditReviewModalContainer review={review} />
         &nbsp;
         &nbsp;
         <span className="link"

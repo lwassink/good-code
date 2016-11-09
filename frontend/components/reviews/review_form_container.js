@@ -1,20 +1,22 @@
 import { connect } from 'react-redux';
 import ReviewForm from './review_form.jsx';
 import { withRouter } from 'react-router';
-import { createReview, closeReviewForm } from '../../actions/review_actions.js';
+import { createReview, updateReview, closeReviewForm } from '../../actions/review_actions.js';
 
 const _default_review = {
   body: '',
   project_used_in: '',
 }
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => {
+  return ({
   program_id: ownProps.router.params.id,
-  review: merge({}, _default_review)
+  review: ownProps.review ? merge({}, _default_review, ownProps.review) : merge({}, _default_review)
 });
+}
 
-const mapDispatchToProps = dispatch => ({
-  submit: review => dispatch(createReview(review))
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  submit: ownProps.review ? review => dispatch(updateReview(review)) : review => dispatch(createReview(review))
 });
 
 const ReviewFormContainer = connect(

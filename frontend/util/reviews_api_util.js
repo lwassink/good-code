@@ -33,7 +33,7 @@ export const updateReview = (review, success, error) => {
     type: 'PATCH',
     success,
     error,
-    review
+    data: { review }
   });
 };
 

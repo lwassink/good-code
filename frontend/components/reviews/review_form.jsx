@@ -87,6 +87,7 @@ class ReviewForm extends React.Component {
             value={this.state.review.body}
             onChange={this.update('body')}
             errorText={this.getErrors('body')}
+            hintText="You can use markdown. You'll see a live preview below."
             style={textInput}
             multiLine={true}/>
 
