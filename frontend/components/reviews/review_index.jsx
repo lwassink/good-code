@@ -1,32 +1,45 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 import ReviewToolbar from './review_toolbar.jsx';
-import ReviewItem from './review_item_container.js';
+import ReviewItem from './review_item.jsx';
 
 class ReviewIndex extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = this.props.reviews;
   }
 
   componentDidMount() {
     this.props.fetchReviews();
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState(newProps.reviews);
+  emptyMessage() {
+    if (Object.values(this.props.reviews).length < 3) {
+      return (<p>No reviews yet...</p>);
+    } else {
+      return "";
+    }
   }
 
   render() {
+    let prunedReviews = merge({}, this.props.reviews);
+    delete prunedReviews.errors;
+    delete prunedReviews.formOpen;
+
     return (
       <div
+        className="review-index"
         style={{marginTop: '10px'}}>
         <Paper>
           <ReviewToolbar />
 
-          {Object.values(this.state).map(review => (
-              <ReviewItem review={review}/>
+          {this.emptyMessage()}
+
+          {Object.values(prunedReviews).map(review => (
+            <ReviewItem
+              key={review.id}
+              review={review}
+              program={this.props.program}
+            />
           ))}
         </Paper>
       </div>

@@ -46,15 +46,16 @@ export const removeReview = (id) => ({
   id
 });
 
-export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
-export const receiveReviewErrors = (errors) => ({
-  type: RECEIVE_REVIEW_ERRORS,
+export const RECIEVE_REVIEW_ERRORS = 'RECIEVE_REVIEW_ERRORS';
+export const recieveReviewErrors = (errors) => ({
+  type: RECIEVE_REVIEW_ERRORS,
   errors
 });
 
 export const OPEN_REVIEW_FORM = 'OPEN_REVIEW_FORM';
-export const openReviewForm = () => ({
-  type: OPEN_REVIEW_FORM
+export const openReviewForm = (edit = false) => ({
+  type: OPEN_REVIEW_FORM,
+  edit
 });
 
 export const CLOSE_REVIEW_FORM = 'CLOSE_REVIEW_FORM';

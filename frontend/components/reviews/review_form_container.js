@@ -10,7 +10,7 @@ const _default_review = {
 
 const mapStateToProps = (state, ownProps) => ({
   program_id: ownProps.router.params.id,
-  review: _default_review
+  review: merge({}, _default_review)
 });
 
 const mapDispatchToProps = dispatch => ({

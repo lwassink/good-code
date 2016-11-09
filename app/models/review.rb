@@ -6,4 +6,8 @@ class Review < ApplicationRecord
     class_name: :User
 
   belongs_to :program
+
+  has_many :statuses,
+    through: :program,
+    source: :statuses
 end

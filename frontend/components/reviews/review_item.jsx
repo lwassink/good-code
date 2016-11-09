@@ -2,32 +2,53 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import { item } from '../styles/indexStyle.js';
 
-export default ({ review }) => {
+export default ({ review, program }) => {
+  let status;
+  switch(review.status) {
+    case "1":
+      status = " is currently using ";
+      break;
+    case "2":
+      status = " has used ";
+      break;
+    case "3":
+      status = " wants to use ";
+      break;
+  }
+
   return (
-    <div>
+    <div className="review-item">
       <Paper
         style={item}>
 
         <div
           className="group">
           <aside>
-            <label>Author</label>: Tommy Tommerson
-            <br />
-
-            <label>Used for</label>: various and sundry projects
+            <p>
+              {review.author}
+              &nbsp;
+              <span>{status}</span>
+              &nbsp;
+              {program}
+              &nbsp;
+              for:
+            </p>
+            <p>
+              {review.project_used_in}
+            </p>
           </aside>
 
           <ul
             className="program-item-list">
             <li>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                {review.body}
               </p>
             </li>
           </ul>
         </div>
-    </Paper>
-  </div>
+      </Paper>
+    </div>
   )
 }
 

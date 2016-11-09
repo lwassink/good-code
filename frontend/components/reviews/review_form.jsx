@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, CardActions } from 'material-ui/Card';
 import {
   cardWide,
-  preview,
   textInput
 } from '../styles/formStyles.js';
 import TextField from 'material-ui/TextField';
@@ -10,6 +9,7 @@ import Divider from 'material-ui/Divider';
 import FlatButton from 'material-ui/FlatButton';
 import { hashHistory } from 'react-router';
 import Errors from '../auth/errors.jsx';
+import Preview from './preview.jsx';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -29,7 +29,6 @@ class ReviewForm extends React.Component {
     this.touch = this.touch.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
 
   validInput(key) {
     return this.state.review[key].length > 0;
@@ -91,15 +90,7 @@ class ReviewForm extends React.Component {
             style={textInput}
             multiLine={true}/>
 
-          <h2>
-            Preview:
-          </h2>
-          <Card
-            style={preview}>
-            <p>
-              {this.state.review.body}
-            </p>
-          </Card>
+          <Preview text={this.state.review.body} />
 
           <CardActions>
             <FlatButton

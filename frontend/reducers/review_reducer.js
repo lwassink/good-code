@@ -2,7 +2,7 @@ import {
   RECIEVE_REVIEW,
   RECIEVE_REVIEWS,
   REMOVE_REVIEW,
-  RECEIVE_REVIEW_ERRORS,
+  RECIEVE_REVIEW_ERRORS,
   OPEN_REVIEW_FORM,
   CLOSE_REVIEW_FORM
 } from '../actions/review_actions.js';
@@ -28,7 +28,7 @@ export default (oldState = _default_state, action) => {
     case REMOVE_REVIEW:
       delete newState[action.id];
       return newState;
-    case RECEIVE_REVIEW_ERRORS:
+    case RECIEVE_REVIEW_ERRORS:
       newState.errors = action.errors;
       return newState;
     case OPEN_REVIEW_FORM:
