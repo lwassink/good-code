@@ -7,28 +7,28 @@ class ReviewModal extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { open: false }
+    this.state = { open: this.props.open }
 
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState( { open: newProps.open } );
+  }
+
   handleOpen() {
-    this.setState({ open: true });
+    this.props.openDialog();
   }
 
   handleClose() {
-    this.setState({ open: false });
+    this.props.closeDialog();
   }
 
   render () {
     const actions = [
       <FlatButton
         label="Cancel"
-        primary={true}
-        onClick={this.handleClose} />,
-      <FlatButton
-        label="Save"
         primary={true}
         onClick={this.handleClose} />
     ];

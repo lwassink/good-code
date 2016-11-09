@@ -36,9 +36,11 @@ export default ({ getState, dispatch }) => next => action => {
     hashHistory.push(`programs/${program.id}`);
   }
 
-  const removeProgramSuccess = program => {
-    dispatch(removeProgram(program));
-    hashHistory.push('/');
+  const removeProgramSuccess = id => {
+    return () => {
+      dispatch(removeProgram(id));
+      hashHistory.push('/');
+    }
   }
 
   switch(action.type) {
@@ -61,7 +63,7 @@ export default ({ getState, dispatch }) => next => action => {
       updateProgram(action.program, makeProgramSuccess, error);
       return next(action);
     case DESTROY_PROGRAM:
-      destroyProgram(action.id, removeProgramSuccess, error);
+      destroyProgram(action.id, removeProgramSuccess(action.idprogram), error);
       return next(action);
     default:
       return next(action);

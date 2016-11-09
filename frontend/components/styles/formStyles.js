@@ -8,6 +8,11 @@ export const cardWide = {
   margin: 'auto',
 };
 
+export const preview = {
+  width: '530px',
+  margin: 'auto',
+};
+
 export const button = {
   width: 'calc(50% - 8px)',
   margin: 'auto'

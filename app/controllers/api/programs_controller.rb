@@ -6,15 +6,13 @@ class Api::ProgramsController < ApplicationController
       @programs = Program.all
     elsif params[:current_user] && current_user
       @programs = current_user.authored_programs
-    elsif params[:all_statuses] && current_user
-      @programs = current_user.programs
     elsif current_user
       @programs = current_user.programs
         .joins(:statuses)
         .where(statuses: { content: params[:status] })
     end
 
-    p @programs
+    render :index
   end
 
   def show

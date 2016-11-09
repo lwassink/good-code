@@ -2,7 +2,7 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import { item } from '../styles/indexStyle.js';
 
-export default (props) => {
+export default ({ review }) => {
   return (
     <div>
       <Paper

@@ -7,7 +7,7 @@ export default (props) => {
   return (
     <Toolbar
       style={{
-        marginTop: '-10px'
+        marginTop: '-8px'
       }}>
       <ToolbarGroup>
         <ToolbarTitle text="Reviews"

@@ -2,10 +2,12 @@ import React from 'react';
 import { Card, CardActions } from 'material-ui/Card';
 import {
   cardWide,
+  preview,
   textInput
 } from '../styles/formStyles.js';
 import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
+import FlatButton from 'material-ui/FlatButton';
 import { hashHistory } from 'react-router';
 import Errors from '../auth/errors.jsx';
 
@@ -14,19 +16,18 @@ class ReviewForm extends React.Component {
     super(props);
 
     this.state = {
-      review: {
-        project_used_in: "",
-        body: ""
-      },
+      review: this.props.review,
       touched: {
         body: false
       }
     }
+    this.state.review.program_id = this.props.program_id;
 
     this.getErrors = this.getErrors.bind(this);
     this.update = this.update.bind(this);
     this.validInput = this.validInput.bind(this);
     this.touch = this.touch.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
@@ -62,6 +63,10 @@ class ReviewForm extends React.Component {
     }
   }
 
+  handleSubmit() {
+    this.props.submit(this.state.review);
+  }
+
   render() {
     return (
       <div
@@ -90,13 +95,21 @@ class ReviewForm extends React.Component {
             Preview:
           </h2>
           <Card
-          style={cardWide}>
+            style={preview}>
             <p>
               {this.state.review.body}
             </p>
           </Card>
 
-          <CardActions />
+          <CardActions>
+            <FlatButton
+              style={{
+                width: '100%'
+              }}
+              label="Save"
+              disabled={!this.submittable()}
+              onClick={this.handleSubmit} />
+          </CardActions>
         </Card>
       </div>
     )

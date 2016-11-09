@@ -29,8 +29,6 @@ class ProgramForm extends React.Component {
       snackOpen: false
     };
 
-    console.log(this.props.program);
-
     window.myState = this.state;
     window.myProps = this.props;
 
