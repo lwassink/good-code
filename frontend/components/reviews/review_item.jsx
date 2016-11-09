@@ -1,6 +1,7 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 import { item } from '../styles/indexStyle.js';
+import EditAndDeleteContainer from './edit_and_delete_container.js';
 
 export default ({ review, program }) => {
   let status;
@@ -14,6 +15,8 @@ export default ({ review, program }) => {
     case "3":
       status = " wants to use ";
       break;
+    case "0":
+      status = " has no status set for "
   }
 
   return (
@@ -26,16 +29,14 @@ export default ({ review, program }) => {
           <aside>
             <p>
               {review.author}
-              &nbsp;
-              <span>{status}</span>
-              &nbsp;
-              {program}
-              &nbsp;
-              for:
+              <span className="status">{status}</span>
+              {program} for:
             </p>
             <p>
               {review.project_used_in}
             </p>
+
+            <EditAndDeleteContainer review={review}/>
           </aside>
 
           <ul

@@ -32,13 +32,14 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     Review.find(params[:id]).destroy
-    render json: params[:id]
+    render json: {}
   end
 
   private
 
   def restrict_to_owner
-    unless current_user == Review.find(params[:id]).user
+    review = Review.find(params[:id])
+    unless review && current_user == review.author
       render json: ["You do not have prermission to modify that review"], status: 404
     end
   end

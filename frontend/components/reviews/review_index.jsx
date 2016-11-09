@@ -16,7 +16,7 @@ class ReviewIndex extends React.Component {
     if (Object.values(this.props.reviews).length < 3) {
       return (<p>No reviews yet...</p>);
     } else {
-      return "";
+      return null;
     }
   }
 

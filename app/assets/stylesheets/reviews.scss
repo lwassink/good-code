@@ -1,20 +1,28 @@
 $dark-brown: #65411f;
 $tan: #cc9966;
 
-.review-item {
-  p {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  span {
-    color: $tan;
-  }
-}
-
 .review-index {
   p {
-    padding: 10px;
+    display: block;
+    margin: 10px 0 0 10px;
+    padding-bottom: 10px;
+  }
+  .review-item {
+    p {
+      margin: 10px 0 0 0;
+    }
+
+    span {
+      margin-top: 10px;
+    }
+
+    .status {
+      color: $tan;
+    }
+
+    aside {
+      margin: 0 0 0 10px;
+    }
   }
 }
 

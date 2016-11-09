@@ -22,7 +22,7 @@ export default ({ getState, dispatch }) => next => action => {
   const error = e => dispatch(recieveReviewErrors(e));
   const fetchReviewSuccess = review => dispatch(recieveReview(review));
   const fetchReviewsSuccess = reviews => dispatch(recieveReviews(reviews));
-  const destroyReviewSuccess = id => dispatch(removeReview(id));
+  const destroyReviewSuccess = () => dispatch(removeReview(action.id));
   const makeReviewSuccess = review => {
     dispatch(recieveReview(review));
     dispatch(closeReviewForm());

@@ -47,11 +47,9 @@ class ProgramShow extends React.Component {
     if (this.props.authorId === this.state.author_id) {
       return (
         <div
-          className="white-space"
-        >
+          className="white-space">
           <Divider
-            style={{marginTop: 10}}
-          />
+            style={{marginTop: 10}}/>
 
           <Link to={`programs/${this.state.id}/edit`}>
             <span className="link">
