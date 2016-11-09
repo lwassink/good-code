@@ -39,11 +39,9 @@ export default ({ review, program }) => {
 
           <ul
             className="program-item-list">
-            <li>
-              <div className="preview">
-                <ReactMarkdown source={review.body} />
-              </div>
-            </li>
+            <div className="preview" id="preview">
+              <ReactMarkdown source={review.body} />
+            </div>
           </ul>
         </div>
       </Paper>

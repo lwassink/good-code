@@ -1,10 +1,12 @@
-.preview {
+#preview {
   text-align: left;
   margin-left: 10px;
 
   ul {
+    float: none;
     list-style: disc;
     margin-left: 30px;
+    display: block;
   }
 
   h1{
@@ -53,3 +55,4 @@
     text-decoration: underline;
   }
 }
+

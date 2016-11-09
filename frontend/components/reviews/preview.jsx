@@ -9,7 +9,7 @@ export default ({ text }) => {
       <h2>
         Preview:
       </h2>
-      <div className="preview">
+      <div id="preview">
         <ReactMarkdown source={text} />
       </div>
     </div>

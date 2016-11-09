@@ -79,7 +79,7 @@ Program.create!(
   creator: "Lawrence Journal-World",
   source_code_url: "https://github.com/django/django",
   image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478475707/exkz9qeidcvmo5tetpc2.png",
-  description: "Django (/ˈdʒæŋɡoʊ/ jang-goh) is a free and open-source web framework, written in Python, which follows the model-view-template (MVT) architectural pattern. It is maintained by the Django Software Foundation (DSF), an independent organization established as a 501(c)(3) non-profit.\n\nDjango's primary goal is to ease the creation of complex, database-driven websites. Django emphasizes reusability and \"pluggability\" of components, rapid development, and the principle of don't repeat yourself. Python is used throughout, even for settings files and data models. Django also provides an optional administrative create, read, update and delete interface that is generated dynamically through introspection and configured via admin models.\n\nSome well-known sites that use Django include the Public Broadcasting Service, Pinterest, Instagram, Mozilla, The Washington Times, Disqus, Bitbucket, and Nextdoor.",
+  description: "Django is a free and open-source web framework, written in Python, which follows the model-view-template (MVT) architectural pattern. It is maintained by the Django Software Foundation (DSF), an independent organization established as a 501(c)(3) non-profit.\n\nDjango's primary goal is to ease the creation of complex, database-driven websites. Django emphasizes reusability and \"pluggability\" of components, rapid development, and the principle of don't repeat yourself. Python is used throughout, even for settings files and data models. Django also provides an optional administrative create, read, update and delete interface that is generated dynamically through introspection and configured via admin models.\n\nSome well-known sites that use Django include the Public Broadcasting Service, Pinterest, Instagram, Mozilla, The Washington Times, Disqus, Bitbucket, and Nextdoor.",
   author_id: 3,
   thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478475707/exkz9qeidcvmo5tetpc2.png"
 )
@@ -169,7 +169,7 @@ Program.create!(
   creator: "Debian Project",
   source_code_url: "http://sources.debian.net/",
   image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478478026/rbcrjhygrm62z90iniye.png",
-  description: "Debian (/ˈdɛbiən/) is a Unix-like computer operating system that is composed entirely of free software, most of which is under the GNU General Public License and packaged by a group of individuals participating in the Debian Project.\n\nThe Debian Project was first announced in 1993 by Ian Murdock, Debian 0.01 was released on September 15, 1993, and the first stable release was made in 1996.\n\nThe projects work is carried out over the Internet by a team of volunteers guided by the Debian Project Leader and three foundational documents: the Debian Social Contract, the Debian Constitution, and the Debian Free Software Guidelines. New distributions are updated continually, and the next candidate is released after a time-based freeze.\n\nAs one of the earliest Linux distributions, it was decided that Debian was to be developed openly and freely distributed in the spirit of the GNU Project. This decision drew the attention and support of the Free Software Foundation, which sponsored the project for one year from November 1994 to November 1995. Upon the ending of the sponsorship, the Debian Project formed the non-profit organisation Software in the Public Interest.",
+  description: "Debian is a Unix-like computer operating system that is composed entirely of free software, most of which is under the GNU General Public License and packaged by a group of individuals participating in the Debian Project.\n\nThe Debian Project was first announced in 1993 by Ian Murdock, Debian 0.01 was released on September 15, 1993, and the first stable release was made in 1996.\n\nThe projects work is carried out over the Internet by a team of volunteers guided by the Debian Project Leader and three foundational documents: the Debian Social Contract, the Debian Constitution, and the Debian Free Software Guidelines. New distributions are updated continually, and the next candidate is released after a time-based freeze.\n\nAs one of the earliest Linux distributions, it was decided that Debian was to be developed openly and freely distributed in the spirit of the GNU Project. This decision drew the attention and support of the Free Software Foundation, which sponsored the project for one year from November 1994 to November 1995. Upon the ending of the sponsorship, the Debian Project formed the non-profit organisation Software in the Public Interest.",
   author_id: 4,
   thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478478026/rbcrjhygrm62z90iniye.png"
 )
@@ -204,56 +204,43 @@ Program.create!(
   thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478478496/hgqnkegvly9hwa8saxbu.png"
 )
 
-Status.create!(
-  user_id: 1,
-  program_id: 1,
-  content: "1"
-)
+(1..20).each do |program_id|
+  (1..4).each do |user_id|
+    status = (program_id + user_id) % 4
+    next if status == 0
+    Status.create!(
+      user_id: user_id,
+      program_id: program_id,
+      content: status.to_s
+    )
+  end
+end
 
-Status.create!(
-  user_id: 1,
-  program_id: 4,
-  content: "1"
-)
+REVIEWS = [
+  "I know some people say it's out of date, but I couldn't imagine work with out XXX. I think it's impressive how well XXX has stood the test of time. It's a real testiment to the community of devlopers that maintain it. 'People ask me, would you recomend XXX?' and the answer is allways YES!",
+  "There are three main problems with XXX. They are\n* it's too slow. \n* It's unreliable.\n* The developer community is very unfriendly.\n\nI wouldn't recomend XXX to my worst enemy.",
+  "## Pros\n XXX is quite easy to use. The learning curve is really quite shallow. I picked it up in a weekend.\n#Cons\n\nXXX doesn't scale well. Once you reach a certain size limit you will likely find it to be prohibitively slow. We had to stop using XXX at about 10,000 users.",
+  "May I suggest this [link](https://www.google.com) where XXX is discussed in great detail. I learned a lot from their tutorial. The docs are a little wanting, but I found the tutorial quite satisfactory.",
+  "# Main Point\nXXX is totes awesome yo!\n## Sub point\nI use it on all my projects. Such as? Oh, I don' know...\n* The internet, ever heard of it\n* My highly lucrative monkey training business\n* Need I go on?"
+]
 
-Status.create!(
-  user_id: 1,
-  program_id: 2,
-  content: "2"
-)
+USES = [
+  "my personal web page",
+  "several work projects",
+  "mobile development",
+  "web development",
+  "computer games"
+]
 
-Status.create!(
-  user_id: 1,
-  program_id: 5,
-  content: "2"
-)
-
-Status.create!(
-  user_id: 1,
-  program_id: 7,
-  content: "2"
-)
-
-Status.create!(
-  user_id: 1,
-  program_id: 3,
-  content: "3"
-)
-
-Status.create!(
-  user_id: 1,
-  program_id: 6,
-  content: "3"
-)
-
-Status.create!(
-  user_id: 1,
-  program_id: 9,
-  content: "3"
-)
-
-Status.create!(
-  user_id: 1,
-  program_id: 13,
-  content: "3"
-)
+(1..20).each do |program_id|
+  reviews = REVIEWS.shuffle
+  uses = USES.shuffle
+  (1..4).each do |user_id|
+    Review.create!(
+      author_id: ((user_id + program_id) % 4) + 1,
+      program_id: program_id,
+      body: reviews[user_id].gsub('XXX', Program.find(program_id).name),
+      project_used_in: uses[user_id]
+    )
+  end
+end
