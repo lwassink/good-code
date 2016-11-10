@@ -6,12 +6,12 @@ import { Link } from 'react-router';
 export default ({ program, expanded, handleExpand }) => {
   const description = () => {
     let words = program.description.split(' ');
-    if (expanded || words.length < 45) {
+    if (expanded || words.length < 65) {
       return program.description;
     } else {
       return (
         <span>
-          {words.slice(0,46).join(' ') + '... ('}
+          {words.slice(0,66).join(' ') + '... ('}
           <span
             onClick={handleExpand}
             className='link'>more</span>)

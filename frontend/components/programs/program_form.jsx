@@ -177,7 +177,16 @@ class ProgramForm extends React.Component {
 
             <img
               src={this.state.program.thumbnail_url ? this.state.program.thumbnail_url : 'http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478624954/eqc0owfgyzqlujj6afvs.jpg'}
+              onClick={this.cloudinate}
+              style={{cursor: "pointer"}}
             />
+
+          <p>
+            {this.state.program.image_url}
+          </p>
+          <p>
+            {this.state.program.thumbnail_url}
+          </p>
 
             <Divider
               style={{

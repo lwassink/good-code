@@ -30,7 +30,7 @@ class Search extends React.Component {
         <TextField
           value={this.state.query}
           onChange={this.search}
-          hintText="Search for the name of a program"
+          hintText="Search for the name or creator of a program"
           floatingLabelText="Search"/>
 
         <SearchIndex programs={this.props.programs} />

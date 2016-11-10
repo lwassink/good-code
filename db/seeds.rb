@@ -204,6 +204,206 @@ Program.create!(
   thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478478496/hgqnkegvly9hwa8saxbu.png"
 )
 
+Program.create!(
+  name: "Red Hat Linux",
+  creator: "Red Hat",
+  source_code_url: "https://www.redhat.com/en",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478807344/utgpklenw6dhzwevpkhw.png",
+  description: "Red Hat Linux, assembled by the company Red Hat, was a widely used Linux distribution until its discontinuation in 2004.\n\nEarly releases of Red Hat Linux were called Red Hat Commercial Linux; Red Hat first published the software on November 3, 1994. It was the first Linux distribution to use the RPM Package Manager as its packaging format, and over time has served as the starting point for several other distributions, such as Mandriva Linux and Yellow Dog Linux.\n\nIn 2003, Red Hat discontinued the Red Hat Linux line in favor of Red Hat Enterprise Linux (RHEL) for enterprise environments. Fedora, developed by the community-supported Fedora Project and sponsored by Red Hat, is a free-of-cost alternative intended for home use. Red Hat Linux 9, the final release, hit its official end-of-life on April 30, 2004, although updates were published for it through 2006 by the Fedora Legacy project until that shut down in early 2007.",
+  author_id: 2,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478807344/utgpklenw6dhzwevpkhw.png"
+)
+
+Program.create!(
+  name: "Mac OS",
+  creator: "Apple",
+  source_code_url: "http://www.apple.com/macos/sierra/",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478807885/uu7gmand4morjwbbrdda.gif",
+  description: 'The family of Macintosh operating systems developed by Apple Inc. includes the graphical user interface-based operating systems it has designed for use with its Macintosh series of personal computers since 1984, as well as the related system software it once created for compatible third-party systems.\n\nIn 1984, Apple debuted the operating system that is now known as the "Classic" Mac OS with its release of the original Macintosh System Software. The system, rebranded "Mac OS" in 1996, was preinstalled on every Macintosh until 2002 and offered on Macintosh clones for a short time in the 1990s. Noted for its ease of use, it was also criticized for its lack of modern technologies compared to its competitors.\n\nThe current Mac operating system is macOS, originally named "Mac OS X" until 2012 and then "OS X" until 2016. Developed between 1997 and 2001 after Apple`s purchase of NeXT, Mac OS X brought an entirely new architecture based on NeXTSTEP, a Unix system, that eliminated many of the technical challenges that faced the classic Mac OS. The current macOS is preinstalled with every Mac and is updated annually. It is the basis of Apple`s current system software for its other devices, iOS, watchOS, and tvOS.',
+  author_id: 3,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478807885/uu7gmand4morjwbbrdda.jpg"
+)
+
+Program.create!(
+  name: "Windows OS",
+  creator: "Microsoft",
+  source_code_url: "https://www.microsoft.com/en-us/windows",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478811459/zzqdnidcawe2pfunomcb.png",
+  description: "Microsoft Windows (or simply Windows) is a metafamily of graphical operating systems developed, marketed, and sold by Microsoft. It consists of several families of operating systems, each of which cater to a certain sector of the computing industry with the OS typically associated with IBM PC compatible architecture. Active Windows families include Windows NT, Windows Embedded and Windows Phone; these may encompass subfamilies, e.g. Windows Embedded Compact (Windows CE) or Windows Server. Defunct Windows families include Windows 9x; Windows 10 Mobile is an active product, unrelated to the defunct family Windows Mobile.\n\nMicrosoft introduced an operating environment named Windows on November 20, 1985, as a graphical operating system shell for MS-DOS in response to the growing interest in graphical user interfaces (GUIs). Microsoft Windows came to dominate the world's personal computer (PC) market with over 90% market share, overtaking Mac OS, which had been introduced in 1984. Apple came to see Windows as an unfair encroachment on their innovation in GUI development as implemented on products such as the Lisa and Macintosh (eventually settled in court in Microsoft's favor in 1993). On PCs, Windows is still the most popular operating system. However, in 2014, Microsoft admitted losing the majority of the overall operating system market to Android, because of the massive growth in sales of Android smartphones. In 2014, the number of Windows devices sold were less than 25% of Android devices sold. This comparisons, however, may not be fully relevant as the two operating systems traditionally targeted different platforms.",
+  author_id: 4,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478811459/zzqdnidcawe2pfunomcb.png"
+)
+
+Program.create!(
+  name: "React Router",
+  creator: "Alexander Gudermann",
+  source_code_url: "https://github.com/ReactTraining/react-router",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478809494/vl3b1rky51pvr4m6pxlw.png",
+  description: "React Router is a complete routing library for React.\n\nReact Router keeps your UI in sync with the URL. It has a simple API with powerful features like lazy code loading, dynamic route matching, and location transition handling built right in. Make the URL your first thought, not an after-thought.",
+  author_id: 1,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478809494/vl3b1rky51pvr4m6pxlw.png"
+)
+
+Program.create!(
+  name: "Bundler",
+  creator: "Andre Arko, Samuel Giddins, James Wen, Chris Morris",
+  source_code_url: "https://github.com/bundler/bundler",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478809764/tuaxacotgrln2ov9re5w.png",
+  description: "Bundler provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed.\n\nBundler is an exit from dependency hell, and ensures that the gems you need are present in development, staging, and production. Starting work on a project is as simple as bundle install.",
+  author_id: 2,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478809764/tuaxacotgrln2ov9re5w.png"
+)
+
+Program.create!(
+  name: "XCode",
+  creator: "Apple Inc.",
+  source_code_url: "https://developer.apple.com/xcode/",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478809949/aychltnghru2n6q36uff.jpg",
+  description: "Xcode is an integrated development environment (IDE) containing a suite of software development tools developed by Apple for developing software for macOS, iOS, WatchOS and tvOS. First released in 2003, the latest stable release is version 8 and is available via the Mac App Store free of charge for OS X El Capitan and macOS Sierra users. Registered developers can download preview releases and prior versions of the suite through the Apple Developer website. However, Apple recently made a beta version of version 8.0 of the software available to those of the public with Apple Developer accounts.",
+  author_id: 3,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478809949/aychltnghru2n6q36uff.jpg"
+)
+
+Program.create!(
+  name: "Rubymine",
+  creator: "JetBrains",
+  source_code_url: "http://www.jetbrains.com/",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478810182/hbrivj6ock7iau1uiqag.png",
+  description: "JetBrains (formerly IntelliJ) is a software development company whose tools are targeted towards software developers and project managers.\n\nAs of 2015, the company has over 500 employees in its five offices: in Prague, Saint Petersburg, Moscow, Munich, and Boston.\n\nThe company offers an extended family of integrated development environments (IDEs) for the programming languages Java, Ruby, Python, PHP, SQL, Objective-C, C++, and JavaScript.\n\nIn 2011 the company entered a new area by introducing Kotlin, a programming language that runs in a Java virtual machine (JVM).\n\nInfoWorld magazine awarded the firm \"Technology of the Year Award\" in 2015 and 2011.",
+  author_id: 4,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478810182/hbrivj6ock7iau1uiqag.png"
+)
+
+Program.create!(
+  name: "Devise",
+  creator: "Lucas Mazza",
+  source_code_url: "https://github.com/plataformatec/devise",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478810344/rizhjkiz0dkomijgcons.png",
+  description: "Just about every public-facing Rails app needs some type of authentication scheme. Authentication is often confused and interchanged with authorization, although the 2 terms have very distinct meanings.\n\nIn a nut shell, authentication determines if users are who they say they are, commonly through a username and password combination. Authorization determines which actions an authenticated user can perform. Devise is a solution to the former problem. I recently switched from AuthLogic in favor of Devise’s advanced engine for providing models, controllers and views. AuthLogic leaves it up to the developer to create the views and controllers. However, views are generally the first thing you should override, but thankfully Devise makes that easy as well.\n\nDevise is a very active gem, and in conjunction with omniauth, has made it incredibly simple to setup Facebook and Twitter login buttons in less than a dozen lines of code. At first, the engine seemed too overbearing for me, but once I understood how easy it is to override and extend Devise, I made the switch.",
+  author_id: 1,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478810344/rizhjkiz0dkomijgcons.png"
+)
+
+Program.create!(
+  name: "CanCan",
+  creator: "Vasiliy Ermolovich",
+  source_code_url: "https://github.com/ryanb/cancan",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478810471/r5dubx4bveg3zuuvcpl7.jpg",
+  description: "CanCan is an incredibly easy way to define and access user permissions. All apps tend to have some sort of authorization scheme, but it’s generally setup adhoc, and leads to very messy view code. If you have dozens of if object.user == current_user statements littered among your views and controllers, it’s time to take a look at CanCan.\n\nIf you aren’t authorizing the current user to modify a provided object in update actions, a user could send a post request to update another user’s project, for example. With CanCan, your app’s authorization scheme is defined centrally in an Ability model. By using the can? method, you can check to see if the current user is authorized to perform an action to handle conditional view rendering.\n\nCanCan also makes it dead simple to authorize controller actions and handle authorization exceptions.",
+  author_id: 2,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478810471/r5dubx4bveg3zuuvcpl7.jpg"
+)
+
+Program.create!(
+  name: "Paperclip",
+  creator: "Tute Costa",
+  source_code_url: "https://github.com/thoughtbot/paperclip",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478810708/kdq1j0fykrm7e5gitre9.jpg",
+  description: "If you’ve ever written code to handle file uploads and image processing, you surely cringe every time a client says “I’d like the user to have his or her own photo”–that is until you’ve worked with a gem as easy to use as this one.\n\nPaperclip makes it trivial to restrict content types, define storage locations and access a model’s associated attachment. If you’re working with images, you can define styles with corresponding resolutions for use-cases such as thumbnails and profile sizes.\n\nEven if you are using Heroku with its read-only file system, paperclip works beautifully with outside storage mechanism such as Amazon S3.",
+  author_id: 3,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478810708/kdq1j0fykrm7e5gitre9.jpg"
+)
+
+Program.create!(
+  name: "Rack SSL Enforcer",
+  creator: "Tobias Matthies",
+  source_code_url: "https://github.com/tobmatth/rack-ssl-enforcer",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478810868/pcrbhrxwmpjj1ejtmvyb.png",
+  description: "With all the hype a few months ago over Firesheep, even basic, non credit-card accepting, apps that use passwords need for SSL. Sure, there’s no requirement that you secure your app, and even if a user’s account was compromised it may cause little harm.\n\nHowever, most people reuse the same password for everything, and I wouldn’t like to have on my conscience that a user’s online banking password was stolen because they accessed my app without SSL at Starbucks.\n\nRack SSL Enforcer is a dead simple gem that uses Rack to redirect non https requests to the https equivalent. The default configuration forces HTTPS on every request, but can easily be overridden to only required it on some URL and URL patterns.\n\nYou may be familiar with the ssl_requirement gem originally released by DHH. This isn’t compatible with Rails 3, although there is a fork bartt-ssl_requirement that is which I’ve used in previous projects. I never really liked the idea of HTTPS redirection happening after the request gets to the controller. The rack solution is much simpler, especially for securing an entire app.",
+  author_id: 4,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478810868/pcrbhrxwmpjj1ejtmvyb.png"
+)
+
+Program.create!(
+  name: "Async.js",
+  creator: "Graeme Yeates",
+  source_code_url: "https://github.com/caolan/async",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478811014/dvsu8tmdamdf8yamfzhb.svg",
+  description: "Asynchronous JavaScript has rebuilt the way JavaScript content interacts with your web pages, allowing you to increase performance by getting rid of render-blocking JavaScript. Render-blocking basically means that any JavaScript content that resides in the “above the fold” parts of a page will not be loaded, until JavaScript itself has been finished loading in the page. This can have certain effects on the performance of your website, but with the helps of libraries such as Async.js — you can open the door to load JavaScript content alongside everything else, sometimes even faster. The library is meant to be used with Node.js, originally, but these days it will work with browsers too, so you can inject it in any project, whether it uses Node.js or not. There are more than twenty functions that this library gives you control over.",
+  author_id: 1,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478811014/dvsu8tmdamdf8yamfzhb.jpg"
+)
+
+Program.create!(
+  name: "lodash",
+  creator: "Benjamin Tan, John-David Dalton, Jeroen Engels, Justin Ridgewell, Mathias Bynens, Jean-Philippe Sirois, Zack Hall",
+  source_code_url: "https://github.com/lodash/lodash",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478811074/x7kvakstyrapdfxjiczc.png",
+  description: "Lodash is a JavaScript library which provides utility functions for common programming tasks using the functional programming paradigm",
+  author_id: 2,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478811074/x7kvakstyrapdfxjiczc.png"
+)
+
+Program.create!(
+  name: "React",
+  creator: "Facebook",
+  source_code_url: "https://github.com/facebook/react",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478813592/hpxky5y7ibchthbepxn5.png",
+  description: "React (sometimes styled React.js or ReactJS) is an open-source JavaScript library providing a view for data rendered as HTML.\n\nIt is maintained by Facebook, Instagram and a community of individual developers and corporations. According to JavaScript analytics service Libscore, React is currently being used on the websites of Netflix, Imgur, Bleacher Report, Feedly, Airbnb, SeatGeek, HelloSign, and others.\n\nAs of March 2016, React and React Native are Facebook's top two open-source projects by number of stars on GitHub, and React is the 6th most starred project of all time on GitHub.",
+  author_id: 3,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478813592/hpxky5y7ibchthbepxn5.png"
+)
+
+Program.create!(
+  name: "Git",
+  creator: "Linus Torvalds",
+  source_code_url: "https://git-scm.com/",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478811788/ntehqflawqfgs3bumsru.png",
+  description: "Git is a version control system that is used for software development and other version control tasks. As a distributed revision control system it is aimed at speed, data integrity, and support for distributed, non-linear workflows.\n\nGit was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development. Its current maintainer is Junio Hamano.\n\nAs with most other distributed version control systems, and unlike most client–server systems, every Git directory on every computer is a full-fledged repository with complete history and full version-tracking capabilities, independent of network access or a central server.\n\nLike the Linux kernel, Git is free software distributed under the terms of the GNU General Public License version 2.",
+  author_id: 4,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478811788/ntehqflawqfgs3bumsru.png"
+)
+
+Program.create!(
+  name: "Redux",
+  creator: "Dan Abramov",
+  source_code_url: "https://github.com/reactjs/redux",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478811859/uzbqjpg82dv6l92emfat.png",
+  description: "Redux is a predictable state container for JavaScript apps.\n\n(If you're looking for a WordPress framework, check out Redux Framework.)\n\nIt helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.\n\nYou can use Redux together with React, or with any other view library.\n\nIt is tiny (2kB, including dependencies).",
+  author_id: 1,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478811859/uzbqjpg82dv6l92emfat.png"
+)
+
+Program.create!(
+  name: "Mercurial",
+  creator: "Matt Mackall",
+  source_code_url: "https://www.mercurial-scm.org/",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478812040/gcjbix51z5syd5xthqvl.png",
+  description: "Mercurial, a cross-platform, distributed revision-control tool for software developers, is mainly implemented using the Python programming language, but includes a binary diff implementation written in C. It is supported on MS Windows and Unix-like systems, such as FreeBSD, Mac OS X and Linux. Mercurial is primarily a command-line driven program, but graphical user interface extensions are available. All of Mercurial's operations are invoked as arguments to its driver program hg (a reference to Hg - the chemical symbol of the element mercury).\n\nMercurial's major design goals include high performance and scalability, decentralized, fully distributed collaborative development, robust handling of both plain text and binary files, and advanced branching and merging capabilities, while remaining conceptually simple. It includes an integrated web-interface. Mercurial has also taken steps to ease the transition for users of other version control systems, particularly Subversion.\n\nMatt Mackall originated Mercurial and serves as its lead developer. Mercurial is released as free software under the terms of the GNU GPL v2 (or any later version).",
+  author_id: 2,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478812040/gcjbix51z5syd5xthqvl.png"
+)
+
+Program.create!(
+  name: "Sublime Text",
+  creator: "Jon Skinner",
+  source_code_url: "https://www.sublimetext.com/",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478812244/oklgfgdi9uchlwubljwy.png",
+  description: "Sublime Text is a proprietary cross-platform source code editor with a Python application programming interface (API). It natively supports many programming languages and markup languages, and its functionality can be extended by users with plugins, typically community-built and maintained under free-software licenses.",
+  author_id: 3,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478812244/oklgfgdi9uchlwubljwy.png"
+)
+
+Program.create!(
+  name: "Rake",
+  creator: "Jim Weirich",
+  source_code_url: "https://github.com/ruby/rake",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478812362/y074tmhkvnrdpswxr315.jpg",
+  description: "Rake is a Make-like program implemented in Ruby. Tasks and dependencies are specified in standard Ruby syntax.\n\nRake has the following features:\n\nRakefiles (rake's version of Makefiles) are completely defined in standard Ruby syntax. No XML files to edit. No quirky Makefile syntax to worry about (is that a tab or a space?)\n\nUsers can specify tasks with prerequisites.\n\nRake supports rule patterns to synthesize implicit tasks.\n\nFlexible FileLists that act like arrays but know about manipulating file names and paths.\n\nA library of prepackaged tasks to make building rakefiles easier. For example, tasks for building tarballs. (Formerly tasks for building RDoc, Gems and publishing to FTP were included in rake but they're now available in RDoc, RubyGems and respectively.)\n\nSupports parallel execution of tasks.",
+  author_id: 4,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478812362/y074tmhkvnrdpswxr315.jpg"
+)
+
+Program.create!(
+  name: "The Silver Searcher",
+  creator: "Geoff Greer",
+  source_code_url: "https://github.com/ggreer",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478812553/yioj7vcxbpovtckd1xaa.jpg",
+  description: "Do you know C? I invite you to pair with me to help me get to Ag 1.0.\n\nWhat's so great about Ag?\n\nIt is an order of magnitude faster than ack.It ignores file patterns from your .gitignore and .hgignore.If there are files in your source repo you don't want to search, just add their patterns to a .ignore file. The command name is 33% shorter than ack, and all keys are on the home row!",
+  author_id: 1,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478812553/yioj7vcxbpovtckd1xaa.jpg"
+)
+
 (1..20).each do |program_id|
   (1..4).each do |user_id|
     status = (program_id + user_id) % 4
@@ -218,10 +418,13 @@ end
 
 REVIEWS = [
   "I know some people say it's **out of date**, but I couldn't _imagine_ work with out XXX. I think it's impressive how well XXX has stood the test of time. It's a real _testiment_ to the community of devlopers that maintain it. 'People ask me, would you recomend XXX?' and the answer is allways **_YES!_**",
-  "There are three main problems with XXX. They are\n* it's **too slow**. \n* It's unreliable.\n* The developer community is _very_ unfriendly.\n\nI wouldn't recomend XXX to my worst enemy.",
+  "There are three main problems with XXX. They are\n* it's **too slow**. \n* It's unreliable.\n* The developer community is _very_ unfriendly.\n\nI wouldn't recomend XXX unless you have no other choice.",
   "## Pros\n XXX is quite easy to use. The learning curve is really quite shallow. I picked it up in a weekend.\n# Cons\n\nXXX doesn't scale well. Once you reach a certain size limit you will likely find it to be prohibitively slow. We had to stop using XXX at about 10,000 users.",
   "May I suggest this [link](https://www.google.com) where XXX is discussed in great detail. I learned a lot from their tutorial. The docs are a little wanting, but I found the tutorial quite satisfactory.",
-  "# Main Point\nXXX is totes awesome yo!\n## Sub point\nI use it on all my projects. Such as? Oh, I don' know...\n* The internet, ever heard of it\n* My highly lucrative monkey training business\n* Need I go on?"
+  "# First\nXXX is very useful in my day to day work!\n## Second\nI use it on all my projects. Such as? Oh, I don' know...\n* The internet\n* My highly lucrative monkey training business\n* Need I go on?",
+  "People allways recomended XXX to me. For a long time I was resistant to using XXX because the interface is pretty scary. However, now that I have tried it I find XXX usefull for a couple reasons\n* It is much more eficient than windows me.\n * While it takes some getting used to, the interface is actually very intuitive\nOverall, I would recomend XXX to most people.",
+  "I really am surprised more people haven't addopted XXX yet. I know its new and the bugs haven't all be ironed out, but I already find it **indispensible** in my day to day life!",
+  "Isn't it cool how these _comments_ can be written in **markdown**. I find it so much easier to **_express_** myself. (Pst. I hear you can also use links, insert images, etc.)"
 ]
 
 USES = [
@@ -232,10 +435,10 @@ USES = [
   "computer games"
 ]
 
-(1..20).each do |program_id|
+(1..40).each do |program_id|
   reviews = REVIEWS.shuffle
   uses = USES.shuffle
-  (1..4).each do |user_id|
+  (1..5).each do |user_id|
     Review.create!(
       author_id: ((user_id + program_id) % 4) + 1,
       program_id: program_id,
