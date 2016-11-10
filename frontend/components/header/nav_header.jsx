@@ -10,6 +10,7 @@ import { LogoSmall } from '../misc.jsx';
 import { modelAnchor, button } from '../styles/headerStyles.js';
 import { hashHistory } from 'react-router';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import ActionSearch from 'material-ui/svg-icons/action/search';
 import ListChoice from '../statuses/list_choice.jsx';
 
 class NavHeader extends React.Component {
@@ -54,6 +55,14 @@ class NavHeader extends React.Component {
             <FlatButton
               style={button}
               label="Add Program"/>
+          </Link>
+
+          <Link to="search">
+            <FlatButton
+              style={button}
+              icon={<ActionSearch />}
+              labelPosition="before"
+              label="Search"/>
           </Link>
 
           <ListChoice />

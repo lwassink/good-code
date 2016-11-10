@@ -11,6 +11,7 @@ import ProgramShowContainer from './programs/program_show_container.js';
 import HomeContainer from './home/home_container.js';
 import ProgramFormContainer from './programs/program_form_container.js';
 import ProgramListContainer from './programs/program_list_container.js';
+import SearchContainer from './search/search_containter.js';
 
 export default ({ store }) => {
   const _requireLogin = () =>{
@@ -30,6 +31,7 @@ export default ({ store }) => {
             <Route path="programs/:id" component={ProgramShowContainer} />
             <Route path="programs" component={MyProgramsContainer} />
             <Route path="lists/:statusCode" onEnter={_requireLogin} component={ProgramListContainer} />
+            <Route path="search" component={SearchContainer} />
           </Route>
         </Router>
       </MuiThemeProvider>

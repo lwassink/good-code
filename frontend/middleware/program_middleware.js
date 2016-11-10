@@ -7,14 +7,16 @@ import { receivePrograms,
   FETCH_PROGRAM,
   CREATE_PROGRAM,
   UPDATE_PROGRAM,
-  DESTROY_PROGRAM
+  DESTROY_PROGRAM,
+  SEARCH
 } from '../actions/program_actions.js';
 import {fetchPrograms,
   fetchProgram,
   fetchUserPrograms,
   createProgram,
   updateProgram,
-  destroyProgram
+  destroyProgram,
+  search
 } from '../util/programs_api_util.js';
 import { startLoading, stopLoading } from '../actions/util_actions.js';
 import { hashHistory } from 'react-router';
@@ -64,6 +66,9 @@ export default ({ getState, dispatch }) => next => action => {
       return next(action);
     case DESTROY_PROGRAM:
       destroyProgram(action.id, removeProgramSuccess(action.idprogram), error);
+      return next(action);
+    case SEARCH:
+      search(action.query, fetchProgramsSuccess, error);
       return next(action);
     default:
       return next(action);

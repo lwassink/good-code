@@ -57,3 +57,13 @@ export const destroyProgram = (id, success, error) => {
   });
 };
 
+export const search = (query, success, error) => {
+  $.ajax({
+    url: `api/search`,
+    type: 'GET',
+    success,
+    error,
+    data: { query }
+  });
+};
+

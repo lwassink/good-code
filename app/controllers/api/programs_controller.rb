@@ -51,6 +51,16 @@ class Api::ProgramsController < ApplicationController
     end
   end
 
+  def search
+    if params[:query].present?
+      @programs = Program.where("name ~ ?", params[:query])
+    else
+      @programs = Program.none
+    end
+
+    render :index
+  end
+
   private
 
   def restrict_to_owner

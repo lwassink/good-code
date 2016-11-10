@@ -63,3 +63,10 @@ export const expand = (id) => ({
   id
 });
 
+export const SEARCH = 'SEARCH';
+export const search = (query) => ({
+  type: SEARCH,
+  query
+});
+
+

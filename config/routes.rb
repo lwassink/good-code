@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :programs, only: [:index, :show, :create, :update, :destroy]
     resources :statuses, only: [:show, :create, :update, :destroy]
     resources :reviews, only: [:index, :show, :create, :update, :destroy]
+
+    get "search", to: 'programs#search'
   end
 end

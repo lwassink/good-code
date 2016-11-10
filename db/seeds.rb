@@ -217,9 +217,9 @@ Program.create!(
 end
 
 REVIEWS = [
-  "I know some people say it's out of date, but I couldn't imagine work with out XXX. I think it's impressive how well XXX has stood the test of time. It's a real testiment to the community of devlopers that maintain it. 'People ask me, would you recomend XXX?' and the answer is allways YES!",
-  "There are three main problems with XXX. They are\n* it's too slow. \n* It's unreliable.\n* The developer community is very unfriendly.\n\nI wouldn't recomend XXX to my worst enemy.",
-  "## Pros\n XXX is quite easy to use. The learning curve is really quite shallow. I picked it up in a weekend.\n#Cons\n\nXXX doesn't scale well. Once you reach a certain size limit you will likely find it to be prohibitively slow. We had to stop using XXX at about 10,000 users.",
+  "I know some people say it's **out of date**, but I couldn't _imagine_ work with out XXX. I think it's impressive how well XXX has stood the test of time. It's a real _testiment_ to the community of devlopers that maintain it. 'People ask me, would you recomend XXX?' and the answer is allways **_YES!_**",
+  "There are three main problems with XXX. They are\n* it's **too slow**. \n* It's unreliable.\n* The developer community is _very_ unfriendly.\n\nI wouldn't recomend XXX to my worst enemy.",
+  "## Pros\n XXX is quite easy to use. The learning curve is really quite shallow. I picked it up in a weekend.\n# Cons\n\nXXX doesn't scale well. Once you reach a certain size limit you will likely find it to be prohibitively slow. We had to stop using XXX at about 10,000 users.",
   "May I suggest this [link](https://www.google.com) where XXX is discussed in great detail. I learned a lot from their tutorial. The docs are a little wanting, but I found the tutorial quite satisfactory.",
   "# Main Point\nXXX is totes awesome yo!\n## Sub point\nI use it on all my projects. Such as? Oh, I don' know...\n* The internet, ever heard of it\n* My highly lucrative monkey training business\n* Need I go on?"
 ]
