@@ -52,8 +52,15 @@ class Api::ProgramsController < ApplicationController
   end
 
   def search
+    query = params[:query].downcase
+    query = query.split.join('%')
+    query = "%#{query}%"
+
     if params[:query].present?
-      @programs = Program.where("name ~ ?", params[:query])
+      @programs = Program.where(<<-SQL, query: query)
+        LOWER(name) LIKE :query OR
+        LOWER(creator) LIKE :query
+      SQL
     else
       @programs = Program.none
     end

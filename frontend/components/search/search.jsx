@@ -10,7 +10,7 @@ class Search extends React.Component {
     super(props);
     this.state = { query: "" }
 
-    this.dbSearch = debounce(this.props.search, 250);
+    this.dbSearch = debounce(this.props.search, 200);
     this.search = this.search.bind(this);
   }
 
@@ -30,6 +30,7 @@ class Search extends React.Component {
         <TextField
           value={this.state.query}
           onChange={this.search}
+          hintText="Search for the name of a program"
           floatingLabelText="Search"/>
 
         <SearchIndex programs={this.props.programs} />

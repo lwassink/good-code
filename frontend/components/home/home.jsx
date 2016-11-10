@@ -30,7 +30,7 @@ export default (props) => {
         className="main">
         <p>
           Click a program to read reviews.
-          Log in or continue as as a <span className="link" onClick={handleGuestLogin}>guest</span> to write your own reviews.
+      Click <span className="link"><Link to="search">here</Link></span> to search for a program.
         </p>
 
       <ProgramIndex expand={props.expand} programs={props.programs} path={props.path} fetchPrograms={props.fetchPrograms} />
