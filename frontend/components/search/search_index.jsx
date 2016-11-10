@@ -26,7 +26,7 @@ class ProgramIndex extends React.Component {
           <LoadingContainer />
 
           <ul>
-            {Object.values(programs).map(program => 
+            {_.values(programs).map(program => 
                 (<SearchIndexItem
                   key={program.id}
                   program={program} />)

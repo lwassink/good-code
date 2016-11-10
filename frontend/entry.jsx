@@ -4,6 +4,7 @@ import Root from './components/root.jsx';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import configureStore from './store/store.js';
 import { merge, union } from 'lodash';
+import _ from 'lodash';
 
 injectTapEventPlugin();
 

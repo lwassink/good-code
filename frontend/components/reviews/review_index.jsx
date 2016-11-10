@@ -13,7 +13,7 @@ class ReviewIndex extends React.Component {
   }
 
   emptyMessage() {
-    if (Object.values(this.props.reviews).length < 3) {
+    if (_.values(this.props.reviews).length < 3) {
       return (<p>No reviews yet...</p>);
     } else {
       return null;
@@ -34,7 +34,7 @@ class ReviewIndex extends React.Component {
 
           {this.emptyMessage()}
 
-          {Object.values(prunedReviews).reverse().map(review => (
+          {_.values(prunedReviews).reverse().map(review => (
             <ReviewItem
               key={review.id}
               review={review}

@@ -36,7 +36,7 @@ class ProgramIndex extends React.Component {
           <LoadingContainer />
 
           <ul>
-            {Object.values(programs).reverse().map(program => 
+            {_.values(programs).reverse().map(program => 
                 (<ProgramIndexItem
                   key={program.id}
                   handleExpand={this.props.expand(program.id)}
