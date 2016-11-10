@@ -69,4 +69,8 @@ export const search = (query) => ({
   query
 });
 
+export const CLEAR_PROGRAMS = 'CLEAR_PROGRAMS';
+export const clearPrograms = () => ({
+  type: CLEAR_PROGRAMS
+});
 

@@ -2,7 +2,8 @@ import { RECEIVE_PROGRAM_ERRORS,
   RECEIVE_PROGRAM,
   REMOVE_PROGRAM,
   RECEIVE_PROGRAMS,
-  EXPAND
+  EXPAND,
+  CLEAR_PROGRAMS
 } from '../actions/program_actions.js';
 import {
   RECEIVE_STATUS,
@@ -43,6 +44,8 @@ export default (oldState = _default_state, action) =>{
     case REMOVE_STATUS:
       newState[action.status.programId] = null;
       return newState;
+    case CLEAR_PROGRAMS:
+      return {};
     default:
       return oldState;
   }

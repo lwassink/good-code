@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Search from './search.jsx';
-import { search, expand } from '../../actions/program_actions.js';
+import { search, clearPrograms } from '../../actions/program_actions.js';
 
 const mapStateToProps = (state, ownProps) => ({
   programs: state.programs,
@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   expand: id => { return () => dispatch(expand(id)); },
-  search: query => dispatch(search(query))
+  search: query => dispatch(search(query)),
+  clearPrograms: () => dispatch(clearPrograms())
 });
 
 export default connect(
