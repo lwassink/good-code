@@ -28,6 +28,7 @@ class Search extends React.Component {
       <div
         className="main">
         <TextField
+          style={{width: 350}}
           value={this.state.query}
           onChange={this.search}
           hintText="Search for the name or creator of a program"

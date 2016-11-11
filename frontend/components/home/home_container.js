@@ -12,9 +12,11 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     expand: id => { return () => dispatch(expand(id)); },
-    fetchPrograms: (ownProps.location.pathname === '/programs'
-      ? () => dispatch(fetchUserPrograms())
-      : () => dispatch(fetchPrograms())),
+    fetchPrograms: (
+      ownProps.location.pathname === '/programs'
+      ? page => dispatch(fetchUserPrograms(page))
+      : page => dispatch(fetchPrograms(page))
+    ),
     loginGuest: () => dispatch(login({username: 'Guest', password: 'password'}))
   });
 };

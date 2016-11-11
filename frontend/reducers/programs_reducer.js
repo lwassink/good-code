@@ -20,8 +20,8 @@ export default (oldState = _default_state, action) =>{
 
   switch(action.type) {
     case RECEIVE_PROGRAMS:
-      merge(clearErrors, action.programs)
-      return clearErrors;
+      merge(newState, clearErrors, action.programs);
+      return newState;
     case RECEIVE_PROGRAM:
       let programState = {[action.program.id]: action.program};
       merge(newState, programState, clearErrors);

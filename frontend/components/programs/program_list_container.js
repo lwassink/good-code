@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     expand: id => { return () => dispatch(expand(id)); },
-    fetchPrograms: () => dispatch(fetchPrograms(ownProps.params.statusCode))
+    fetchPrograms: page => dispatch(fetchPrograms(page, ownProps.params.statusCode))
   });
 };
 

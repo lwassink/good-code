@@ -3,3 +3,4 @@
     json.partial! 'api/programs/program', program: program
   end
 end
+json.programCount @count

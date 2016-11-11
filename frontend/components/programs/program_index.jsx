@@ -3,27 +3,25 @@ import Paper from 'material-ui/Paper';
 import { index } from '../styles/indexStyle.js';
 import ProgramIndexItem from './program_index_item.jsx';
 import LoadingContainer from '../util/loading_container.js';
+import InfiniteScroll from 'react-infinite-scroller';
 
 class ProgramIndex extends React.Component {
   constructor(props) {
     super(props)
+    this.fetchPrograms = this.props.fetchPrograms.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchPrograms();
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (this.props.path != newProps.path) {
-      newProps.fetchPrograms();
-    }
+    this.props.fetchPrograms(0);
   }
 
   render() {
     let programs = merge({}, this.props.programs);
+    delete programs.programCount;
     if (programs.errors) {
       delete programs.errors;
     }
+    programs = _.values(programs);
 
     return(
       <div>
@@ -33,17 +31,24 @@ class ProgramIndex extends React.Component {
 
         <Paper
           style={index}>
-          <LoadingContainer />
+          <InfiniteScroll
+            initialLoad={false}
+            pageStart={0}
+            loadMore={this.fetchPrograms}
+            hasMore={programs.length < this.props.programs.programCount}
+            loader={<LoadingContainer />}>
 
-          <ul>
-            {_.values(programs).reverse().map(program => 
-                (<ProgramIndexItem
-                  key={program.id}
-                  handleExpand={this.props.expand(program.id)}
-                  expanded={program.expanded}
-                  program={program} />)
-            )}
-          </ul>
+            <ul>
+              {programs.reverse().map(program => 
+                  (<ProgramIndexItem
+                    key={program.id}
+                    handleExpand={this.props.expand(program.id)}
+                    expanded={program.expanded}
+                    program={program} />)
+              )}
+            </ul>
+
+          </InfiniteScroll>
         </Paper>
       </div>
     );

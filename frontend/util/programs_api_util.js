@@ -1,20 +1,26 @@
-export const fetchUserPrograms = (success, error) => {
+export const fetchUserPrograms = (page, success, error) => {
   $.ajax({
     url: `api/programs`,
     type: 'GET',
     success,
     error,
-    data: { current_user: true }
+    data: {
+      page,
+      current_user: true
+    }
   });
 };
 
-export const fetchPrograms = (success, error, status = -1) => {
+export const fetchPrograms = (page, success, error, status = -1) => {
   $.ajax({
     url: `api/programs`,
     type: 'GET',
     success,
     error,
-    data: { status }
+    data: {
+      page,
+      status
+    }
   });
 };
 

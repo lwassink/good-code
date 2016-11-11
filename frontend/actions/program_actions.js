@@ -1,11 +1,13 @@
 export const FETCH_USER_PROGRAMS = 'FETCH_USER_PROGRAMS';
-export const fetchUserPrograms = () => ({
-  type: FETCH_USER_PROGRAMS
+export const fetchUserPrograms = (page) => ({
+  type: FETCH_USER_PROGRAMS,
+  page
 });
 
 export const FETCH_PROGRAMS = 'FETCH_PROGRAMS';
-export const fetchPrograms = (statusCode) => ({
+export const fetchPrograms = (page, statusCode) => ({
   type: FETCH_PROGRAMS,
+  page,
   statusCode
 });
 
