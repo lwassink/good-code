@@ -6,16 +6,26 @@ Users can add entries for new tools, then review them, mark them with various st
 
 Goodcode is a personal project of Luke Wassink.
 
+![Goodcode home page](./docs/images/home_with_browser.png)
 
 ## Features
 
 * Secure user authentication and protection from CSRF attacks.
 * Creation, deletion and editing of coding tools and reviews.
 * Optional image upload to show the logo for coding tools.
+
+![Image upload](./docs/images/add_image.gif)
+
 * Reviews can be written in markdown with a live preview.
+
+![Review in markdown](./docs/images/markdown_review.gif)
+
 * Responsive, controlled forms that show frontend errors in real time and backend errors on submission.
 * Setting a status ("Have used", "Want to use", etc) for coding tools and the ability to view tools by status.
 * Search tools by name and creator.
+
+![Search](./docs/images/search.gif)
+
 * Infinite scroll for the programs index.
 
 
