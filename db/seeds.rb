@@ -405,7 +405,7 @@ Program.create!(
   thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478812362/y074tmhkvnrdpswxr315.jpg"
 )
 
-(1..20).each do |program_id|
+(1..40).each do |program_id|
   (1..3).each do |user_id|
     status = ((program_id + user_id) % 3) + 1
     Status.create!(

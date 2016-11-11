@@ -2,7 +2,7 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import { index } from '../styles/indexStyle.js';
 import ProgramIndexItem from './program_index_item.jsx';
-import LoadingContainer from '../util/loading_container.js';
+import Loader from '../util/loading.jsx';
 import InfiniteScroll from 'react-infinite-scroller';
 
 class ProgramIndex extends React.Component {
@@ -42,7 +42,7 @@ class ProgramIndex extends React.Component {
             pageStart={0}
             loadMore={this.fetchPrograms}
             hasMore={programs.length < this.props.programs.programCount}
-            loader={<LoadingContainer />}>
+            loader={<Loader loading={true} />}>
 
             <ul>
               {programs.reverse().map(program => 

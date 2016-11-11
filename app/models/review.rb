@@ -12,7 +12,7 @@ class Review < ApplicationRecord
     source: :statuses
 
   def author_status
-    author_statuses = statuses.where(user_id: self.author_id)
+    author_statuses = self.statuses.where(user_id: self.author_id)
     return "0" if author_statuses.empty?
     author_statuses.first.content
   end

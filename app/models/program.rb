@@ -7,6 +7,7 @@ class Program < ApplicationRecord
     foreign_key: :author_id
 
   has_many :statuses,
+    class_name: :Status,
     dependent: :destroy
 
   has_many :users,
