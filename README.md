@@ -14,15 +14,9 @@ Goodcode is a personal project of Luke Wassink.
 * Creation, deletion and editing of coding tools and reviews.
 * Optional image upload to show the logo for coding tools.
 * Reviews can be written in markdown with a live preview.
-
-![Review in markdown](./docs/images/markdown_review.gif)
-
 * Responsive, controlled forms that show frontend errors in real time and backend errors on submission.
 * Setting a status ("Have used", "Want to use", etc) for coding tools and the ability to view tools by status.
 * Search tools by name and creator.
-
-![Search](./docs/images/search.gif)
-
 * Infinite scroll for the programs index.
 
 
