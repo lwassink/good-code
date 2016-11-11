@@ -13,9 +13,6 @@ Goodcode is a personal project of Luke Wassink.
 * Secure user authentication and protection from CSRF attacks.
 * Creation, deletion and editing of coding tools and reviews.
 * Optional image upload to show the logo for coding tools.
-
-![Image upload](./docs/images/add_image.gif)
-
 * Reviews can be written in markdown with a live preview.
 
 ![Review in markdown](./docs/images/markdown_review.gif)
