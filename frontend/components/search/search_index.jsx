@@ -11,6 +11,7 @@ class ProgramIndex extends React.Component {
 
   render() {
     let programs = merge({}, this.props.programs);
+    delete programs.programCount;
     if (programs.errors) {
       delete programs.errors;
     }

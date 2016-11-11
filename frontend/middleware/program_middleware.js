@@ -75,7 +75,7 @@ export default ({ getState, dispatch }) => next => action => {
       destroyProgram(action.id, removeProgramSuccess(action.idprogram), error);
       return next(action);
     case SEARCH:
-      search(action.query, fetchProgramsSuccess, error);
+      search(action.query, fetchProgramsSuccess(0), error);
       return next(action);
     default:
       return next(action);

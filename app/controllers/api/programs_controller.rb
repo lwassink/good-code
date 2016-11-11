@@ -59,8 +59,10 @@ class Api::ProgramsController < ApplicationController
   end
 
   def search
-    query = params[:query].downcase
-    query = query.split.join('%')
+    query = params[:query]
+      .downcase
+      .split
+      .join('%')
     query = "%#{query}%"
 
     if params[:query].present?
