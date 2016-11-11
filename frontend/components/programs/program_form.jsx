@@ -181,13 +181,6 @@ class ProgramForm extends React.Component {
               style={{cursor: "pointer"}}
             />
 
-          <p>
-            {this.state.program.image_url}
-          </p>
-          <p>
-            {this.state.program.thumbnail_url}
-          </p>
-
             <Divider
               style={{
                 width: '100%',
