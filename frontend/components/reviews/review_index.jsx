@@ -12,6 +12,12 @@ class ReviewIndex extends React.Component {
     this.props.fetchReviews();
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.programId != this.props.programId) {
+      newProps.fetchReviews();
+    }
+  }
+
   emptyMessage() {
     if (_.values(this.props.reviews).length < 3) {
       return (<p>No reviews yet...</p>);

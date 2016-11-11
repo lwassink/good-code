@@ -214,25 +214,6 @@ Program.create!(
   thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478807344/utgpklenw6dhzwevpkhw.png"
 )
 
-Program.create!(
-  name: "Mac OS",
-  creator: "Apple",
-  source_code_url: "http://www.apple.com/macos/sierra/",
-  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478807885/uu7gmand4morjwbbrdda.gif",
-  description: 'The family of Macintosh operating systems developed by Apple Inc. includes the graphical user interface-based operating systems it has designed for use with its Macintosh series of personal computers since 1984, as well as the related system software it once created for compatible third-party systems.\n\nIn 1984, Apple debuted the operating system that is now known as the "Classic" Mac OS with its release of the original Macintosh System Software. The system, rebranded "Mac OS" in 1996, was preinstalled on every Macintosh until 2002 and offered on Macintosh clones for a short time in the 1990s. Noted for its ease of use, it was also criticized for its lack of modern technologies compared to its competitors.\n\nThe current Mac operating system is macOS, originally named "Mac OS X" until 2012 and then "OS X" until 2016. Developed between 1997 and 2001 after Apple`s purchase of NeXT, Mac OS X brought an entirely new architecture based on NeXTSTEP, a Unix system, that eliminated many of the technical challenges that faced the classic Mac OS. The current macOS is preinstalled with every Mac and is updated annually. It is the basis of Apple`s current system software for its other devices, iOS, watchOS, and tvOS.',
-  author_id: 3,
-  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478807885/uu7gmand4morjwbbrdda.jpg"
-)
-
-Program.create!(
-  name: "Windows OS",
-  creator: "Microsoft",
-  source_code_url: "https://www.microsoft.com/en-us/windows",
-  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478811459/zzqdnidcawe2pfunomcb.png",
-  description: "Microsoft Windows (or simply Windows) is a metafamily of graphical operating systems developed, marketed, and sold by Microsoft. It consists of several families of operating systems, each of which cater to a certain sector of the computing industry with the OS typically associated with IBM PC compatible architecture. Active Windows families include Windows NT, Windows Embedded and Windows Phone; these may encompass subfamilies, e.g. Windows Embedded Compact (Windows CE) or Windows Server. Defunct Windows families include Windows 9x; Windows 10 Mobile is an active product, unrelated to the defunct family Windows Mobile.\n\nMicrosoft introduced an operating environment named Windows on November 20, 1985, as a graphical operating system shell for MS-DOS in response to the growing interest in graphical user interfaces (GUIs). Microsoft Windows came to dominate the world's personal computer (PC) market with over 90% market share, overtaking Mac OS, which had been introduced in 1984. Apple came to see Windows as an unfair encroachment on their innovation in GUI development as implemented on products such as the Lisa and Macintosh (eventually settled in court in Microsoft's favor in 1993). On PCs, Windows is still the most popular operating system. However, in 2014, Microsoft admitted losing the majority of the overall operating system market to Android, because of the massive growth in sales of Android smartphones. In 2014, the number of Windows devices sold were less than 25% of Android devices sold. This comparisons, however, may not be fully relevant as the two operating systems traditionally targeted different platforms.",
-  author_id: 4,
-  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478811459/zzqdnidcawe2pfunomcb.png"
-)
 
 Program.create!(
   name: "React Router",
@@ -262,6 +243,16 @@ Program.create!(
   description: "Xcode is an integrated development environment (IDE) containing a suite of software development tools developed by Apple for developing software for macOS, iOS, WatchOS and tvOS. First released in 2003, the latest stable release is version 8 and is available via the Mac App Store free of charge for OS X El Capitan and macOS Sierra users. Registered developers can download preview releases and prior versions of the suite through the Apple Developer website. However, Apple recently made a beta version of version 8.0 of the software available to those of the public with Apple Developer accounts.",
   author_id: 3,
   thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478809949/aychltnghru2n6q36uff.jpg"
+)
+
+Program.create!(
+  name: "The Silver Searcher",
+  creator: "Geoff Greer",
+  source_code_url: "https://github.com/ggreer",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478812553/yioj7vcxbpovtckd1xaa.jpg",
+  description: "Do you know C? I invite you to pair with me to help me get to Ag 1.0.\n\nWhat's so great about Ag?\n\nIt is an order of magnitude faster than ack. It ignores file patterns from your .gitignore and .hgignore. If there are files in your source repo you don't want to search, just add their patterns to a .ignore file. The command name is 33% shorter than ack, and all keys are on the home row!",
+  author_id: 1,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478812553/yioj7vcxbpovtckd1xaa.jpg"
 )
 
 Program.create!(
@@ -355,6 +346,26 @@ Program.create!(
 )
 
 Program.create!(
+  name: "Mac OS",
+  creator: "Apple",
+  source_code_url: "http://www.apple.com/macos/sierra/",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478807885/uu7gmand4morjwbbrdda.gif",
+  description: 'The family of Macintosh operating systems developed by Apple Inc. includes the graphical user interface-based operating systems it has designed for use with its Macintosh series of personal computers since 1984, as well as the related system software it once created for compatible third-party systems.\n\nIn 1984, Apple debuted the operating system that is now known as the "Classic" Mac OS with its release of the original Macintosh System Software. The system, rebranded "Mac OS" in 1996, was preinstalled on every Macintosh until 2002 and offered on Macintosh clones for a short time in the 1990s. Noted for its ease of use, it was also criticized for its lack of modern technologies compared to its competitors.\n\nThe current Mac operating system is macOS, originally named "Mac OS X" until 2012 and then "OS X" until 2016. Developed between 1997 and 2001 after Apple`s purchase of NeXT, Mac OS X brought an entirely new architecture based on NeXTSTEP, a Unix system, that eliminated many of the technical challenges that faced the classic Mac OS. The current macOS is preinstalled with every Mac and is updated annually. It is the basis of Apple`s current system software for its other devices, iOS, watchOS, and tvOS.',
+  author_id: 3,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478807885/uu7gmand4morjwbbrdda.jpg"
+)
+
+Program.create!(
+  name: "Windows OS",
+  creator: "Microsoft",
+  source_code_url: "https://www.microsoft.com/en-us/windows",
+  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478811459/zzqdnidcawe2pfunomcb.png",
+  description: "Microsoft Windows (or simply Windows) is a metafamily of graphical operating systems developed, marketed, and sold by Microsoft. It consists of several families of operating systems, each of which cater to a certain sector of the computing industry with the OS typically associated with IBM PC compatible architecture. Active Windows families include Windows NT, Windows Embedded and Windows Phone; these may encompass subfamilies, e.g. Windows Embedded Compact (Windows CE) or Windows Server. Defunct Windows families include Windows 9x; Windows 10 Mobile is an active product, unrelated to the defunct family Windows Mobile.\n\nMicrosoft introduced an operating environment named Windows on November 20, 1985, as a graphical operating system shell for MS-DOS in response to the growing interest in graphical user interfaces (GUIs). Microsoft Windows came to dominate the world's personal computer (PC) market with over 90% market share, overtaking Mac OS, which had been introduced in 1984. Apple came to see Windows as an unfair encroachment on their innovation in GUI development as implemented on products such as the Lisa and Macintosh (eventually settled in court in Microsoft's favor in 1993). On PCs, Windows is still the most popular operating system. However, in 2014, Microsoft admitted losing the majority of the overall operating system market to Android, because of the massive growth in sales of Android smartphones. In 2014, the number of Windows devices sold were less than 25% of Android devices sold. This comparisons, however, may not be fully relevant as the two operating systems traditionally targeted different platforms.",
+  author_id: 4,
+  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478811459/zzqdnidcawe2pfunomcb.png"
+)
+
+Program.create!(
   name: "Redux",
   creator: "Dan Abramov",
   source_code_url: "https://github.com/reactjs/redux",
@@ -394,20 +405,9 @@ Program.create!(
   thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478812362/y074tmhkvnrdpswxr315.jpg"
 )
 
-Program.create!(
-  name: "The Silver Searcher",
-  creator: "Geoff Greer",
-  source_code_url: "https://github.com/ggreer",
-  image_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/v1478812553/yioj7vcxbpovtckd1xaa.jpg",
-  description: "Do you know C? I invite you to pair with me to help me get to Ag 1.0.\n\nWhat's so great about Ag?\n\nIt is an order of magnitude faster than ack.It ignores file patterns from your .gitignore and .hgignore.If there are files in your source repo you don't want to search, just add their patterns to a .ignore file. The command name is 33% shorter than ack, and all keys are on the home row!",
-  author_id: 1,
-  thumbnail_url: "http://res.cloudinary.com/dfmknrbfz/image/upload/c_limit,h_60,w_90/v1478812553/yioj7vcxbpovtckd1xaa.jpg"
-)
-
 (1..20).each do |program_id|
-  (1..4).each do |user_id|
-    status = (program_id + user_id) % 4
-    next if status == 0
+  (1..3).each do |user_id|
+    status = ((program_id + user_id) % 3) + 1
     Status.create!(
       user_id: user_id,
       program_id: program_id,
@@ -417,14 +417,14 @@ Program.create!(
 end
 
 REVIEWS = [
-  "I know some people say it's **out of date**, but I couldn't _imagine_ work with out XXX. I think it's impressive how well XXX has stood the test of time. It's a real _testiment_ to the community of devlopers that maintain it. 'People ask me, would you recomend XXX?' and the answer is allways **_YES!_**",
-  "There are three main problems with XXX. They are\n* it's **too slow**. \n* It's unreliable.\n* The developer community is _very_ unfriendly.\n\nI wouldn't recomend XXX unless you have no other choice.",
+  "I know some people say it's **out of date**, but I couldn't _imagine_ work with out XXX. I think it's impressive how well XXX has stood the test of time. It's a real _testament_ to the community of devlopers that maintain it. 'People ask me, would you recomend XXX?' and the answer is allways **_YES!_**",
+  "There are three main problems with XXX. They are\n* It's **too slow**. \n* It's unreliable.\n* The developer community is _very_ unfriendly.\n\nI wouldn't recomend XXX unless you have no other choice.",
   "## Pros\n XXX is quite easy to use. The learning curve is really quite shallow. I picked it up in a weekend.\n# Cons\n\nXXX doesn't scale well. Once you reach a certain size limit you will likely find it to be prohibitively slow. We had to stop using XXX at about 10,000 users.",
   "May I suggest this [link](https://www.google.com) where XXX is discussed in great detail. I learned a lot from their tutorial. The docs are a little wanting, but I found the tutorial quite satisfactory.",
   "# First\nXXX is very useful in my day to day work!\n## Second\nI use it on all my projects. Such as? Oh, I don' know...\n* The internet\n* My highly lucrative monkey training business\n* Need I go on?",
   "People allways recomended XXX to me. For a long time I was resistant to using XXX because the interface is pretty scary. However, now that I have tried it I find XXX usefull for a couple reasons\n* It is much more eficient than windows me.\n * While it takes some getting used to, the interface is actually very intuitive\nOverall, I would recomend XXX to most people.",
-  "I really am surprised more people haven't addopted XXX yet. I know its new and the bugs haven't all be ironed out, but I already find it **indispensible** in my day to day life!",
-  "Isn't it cool how these _comments_ can be written in **markdown**. I find it so much easier to **_express_** myself. (Pst. I hear you can also use links, insert images, etc.)"
+  "I really am surprised more people haven't adopted XXX yet. I know it's new and the bugs haven't all be ironed out, but I already find it **indispensable** in my day to day life!",
+  "Isn't it cool how these _comments_ can be written in **markdown**? I find it so much easier to **_express_** myself. (Also, I hear you can use links, insert images, etc.)"
 ]
 
 USES = [

@@ -15,6 +15,12 @@ class ProgramIndex extends React.Component {
     this.props.fetchPrograms(0);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.path != this.props.path) {
+      newProps.fetchPrograms(0);
+    }
+  }
+
   render() {
     let programs = merge({}, this.props.programs);
     delete programs.programCount;

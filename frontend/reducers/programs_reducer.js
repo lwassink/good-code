@@ -10,6 +10,7 @@ import {
   REMOVE_STATUS
 } from '../actions/statuses_actions.js';
 import merge from 'lodash/merge';
+import keys from 'lodash/keys';
 
 const _default_state = {}
 
@@ -33,8 +34,7 @@ export default (oldState = _default_state, action) =>{
       merge(newState, {errors: action.errors})
       return newState;
     case EXPAND:
-      let ids = Object.keys(newState);
-      delete ids.errors;
+      let ids = keys(newState).slice(0,-2);
       ids.forEach(id => {newState[id].expanded = false});
       newState[action.id].expanded = true;
       return newState;
