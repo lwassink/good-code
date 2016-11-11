@@ -1,62 +1,48 @@
-# GoodCode
+# Goodcode
 
-[Heroku link][heroku],
-[Trello link][trello]
+[goodcode][heroku-link] is a web application that allows users to review coding tools.
+It is inspired by goodreads.
+Users can add entries for new tools, then review them, mark them with various statuses, and search for them.
 
-[trello]: https://trello.com/b/mAPXiEe1/goodcode
-[heroku]: https://goodcode.herokuapp.com/
+Goodcode is a personal project of Luke Wassink.
 
-## Minimum Viable Product
 
-Goodcode is a web application based on Goodreads but designed to support reviews of coding frameworks and libraries rather than books.
-It is built using Ruby on Rails and React/Redux.
-By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug free navigation, adequate seed data and sufficient CSS styling:
+## Features
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest login
-- [ ] Programs
-- [ ] Giving programs a status (have used/want to use/etc.)
-- [ ] Review programs
-- [ ] Markdown and code snippets
-- [ ] Production README
+* Secure user authentication and protection from CSRF attacks.
+* Creation, deletion and editing of coding tools and reviews.
+* Optional image upload to show the logo for code tools.
+* Write reviews in markdown with a live preview.
+* Responsive, controlled forms that show frontend errors in real time and backend errors on submission.
+* Setting a status ("Have used", "Want to use", etc) for tools and the ability to view tools by status.
+* Search tools by name and creator.
+* Infinite scroll for the programs index.
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API Endpoints][api-endpoints]
-* [DB Schema][schema]
-* [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+## Product Design
 
-## Implementation Timeline
+Goodcode was built in two weeks.
+This included creating a [development plan][development-readme] which has a timeline and links to a database schema, wireframe drawings of the components and other design documents.
 
-### Phase 1: Backend setup and Frontend End User Authentication (2 days)
 
-**Objective:** Functioning project with fronend auth
+## Technology
 
-### Phase 2: Programs Model, API, and components (2 days)
+Goodcode is a full stack application built using Ruby on Rails and React.js.
 
-**Objective:** Programs can be created, edited, and destroyed, and can be viewed through index and show components
+* [Frontend][frontend]
+* [Backend][backend]
+* [Cloudinary for images][cloudinary]
 
-### Phase 3: Statuses (2 day)
 
-**Objective:** Users can mark programs with statuses and marked programs are listed on the user home pages
+## Future Implementations
 
-### Phase 4: Reviews (2 days)
+While goodcode does have some additional features beyond the initial MVP plan, there are still many possible features that could be added.
+See the [future implementation outline][future-implementation-outline] for details.
 
-**Objective:** Users can create, edit, and destroy reviews.
-Reviews are shown on the user show page
 
-### Phase 5: Reviews in Markdown with live preview (1 day)
-
-**Objective:** Reviews can be styled in markdown with code snippets and a live preview of the review is shown like on Stack Overflow
-
-### Bonus Features (TBD)
-- [ ] Search programs and reviews
-- [ ] Friend other users
-- [ ] View timeline of your friends' statuses and reviews
+[heroku-link]: https://goodcode.herokuapp.com
+[development-readme]: ./docs/README.md
+[frontend]: ./docs/frontend.md
+[backend]: ./docs/backend.md
+[cloudinary]: ./docs/cloudinary.md
+[future-implementation-outline]: ./docs/future_implementations.md
