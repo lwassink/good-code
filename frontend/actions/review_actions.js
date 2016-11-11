@@ -74,3 +74,8 @@ export const closeReviewEdit = (id) => ({
   id
 });
 
+export const CLEAR_REVIEWS = 'CLEAR_REVIEWS';
+export const clearReviews = () => ({
+  type: CLEAR_REVIEWS
+});
+

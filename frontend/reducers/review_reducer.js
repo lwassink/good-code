@@ -6,7 +6,8 @@ import {
   OPEN_REVIEW_FORM,
   CLOSE_REVIEW_FORM,
   OPEN_REVIEW_EDIT,
-  CLOSE_REVIEW_EDIT
+  CLOSE_REVIEW_EDIT,
+  CLEAR_REVIEWS
 } from '../actions/review_actions.js';
 import { merge } from 'lodash';
 
@@ -33,6 +34,8 @@ export default (oldState = _default_state, action) => {
     case RECIEVE_REVIEW_ERRORS:
       newState.errors = action.errors;
       return newState;
+    case CLEAR_REVIEWS:
+      return _default_state;
     case OPEN_REVIEW_FORM:
       newState.formOpen = true;
       return newState;

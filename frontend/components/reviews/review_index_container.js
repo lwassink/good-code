@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
 import ReviewIndex from './review_index.jsx';
-import { requestReviews } from '../../actions/review_actions.js';
+import { requestReviews, clearReviews } from '../../actions/review_actions.js';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => ({
   reviews: state.reviews,
-  programId: ownProps.params.id,
   program: ownProps.program,
-  loggedIn: state.currentUser.id ? true : false
+  loggedIn: state.currentUser.id ? true : false,
+  path: ownProps.location.pathname
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchReviews: () => dispatch(requestReviews(ownProps.params.id))
+  fetchReviews: () => dispatch(requestReviews(ownProps.params.id)),
+  clearReviews: () => dispatch(clearReviews())
 });
 
 const ReviewIndexContainer = connect(

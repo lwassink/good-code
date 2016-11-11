@@ -12,8 +12,12 @@ class ReviewIndex extends React.Component {
     this.props.fetchReviews();
   }
 
+  componentWillUnmount() {
+    this.props.clearReviews(); // this forces it to reloade reviews each time you look at a new program
+  }
+
   componentWillReceiveProps(newProps) {
-    if (newProps.programId != this.props.programId) {
+    if (this.props.path != newProps.path) {
       newProps.fetchReviews();
     }
   }
