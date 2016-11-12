@@ -14,12 +14,12 @@ class Api::ProgramsController < ApplicationController
         .where(statuses: { content: params[:status] })
     end
 
+    @count = programs.count
+
     @programs = programs
       .reverse_order
       .offset(params[:page].to_i * 10)
       .limit(10)
-
-    @count = Program.all.count
 
     render :index
   end

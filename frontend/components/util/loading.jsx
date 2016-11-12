@@ -5,7 +5,7 @@ export default ({ loading }) => {
   if (loading) {
     return (
       <div
-        className="main">
+        className="loader">
         <CircularProgress
           size={80}
           thickness={8}/>

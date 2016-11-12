@@ -8,6 +8,9 @@ import InfiniteScroll from 'react-infinite-scroller';
 class ProgramIndex extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {hasMore: true};
+
     this.fetchPrograms = this.props.fetchPrograms.bind(this);
   }
 
