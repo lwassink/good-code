@@ -21,7 +21,12 @@ export default (props) => {
       </p>
 
 
-      <ProgramIndex expand={props.expand} programs={props.programs} path={props.path} fetchPrograms={props.fetchPrograms} />
+      <ProgramIndex
+        key='all-logged-in'
+        expand={props.expand}
+        programs={props.programs}
+        path={props.path}
+        fetchPrograms={props.fetchPrograms} />
     </div>
     );
   } else {
@@ -33,7 +38,12 @@ export default (props) => {
       Click <span className="link"><Link to="search">here</Link></span> to search for a program.
         </p>
 
-      <ProgramIndex expand={props.expand} programs={props.programs} path={props.path} fetchPrograms={props.fetchPrograms} />
+        <ProgramIndex
+          key='all-logged-out'
+          expand={props.expand}
+          programs={props.programs}
+          path={props.path}
+          fetchPrograms={props.fetchPrograms} />
     </div>
     );
   }

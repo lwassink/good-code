@@ -137,7 +137,9 @@ class ProgramShow extends React.Component {
 
           </Paper>
 
-          <ReviewIndexContainer program={this.state.name}/>
+          <ReviewIndexContainer
+            key={this.state.id}
+            program={this.state.name}/>
         </Paper>
       </div>
     )

@@ -17,7 +17,12 @@ export default (props) => {
         { introMessages[props.statusCode] + " Add programs to this list by setting their status." }
       </p>
 
-      <ProgramIndex expand={props.expand} programs={props.programs} path={props.path} fetchPrograms={props.fetchPrograms} />
+      <ProgramIndex
+        key={props.statusCode}
+        expand={props.expand}
+        programs={props.programs}
+        path={props.path}
+        fetchPrograms={props.fetchPrograms} />
     </div>
   );
 };

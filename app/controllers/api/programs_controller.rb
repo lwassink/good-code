@@ -14,7 +14,7 @@ class Api::ProgramsController < ApplicationController
         .where(statuses: { content: params[:status] })
     end
 
-    @count = programs.count
+    @count = programs.group(:id).length
 
     @programs = programs
       .reverse_order
