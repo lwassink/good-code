@@ -28,6 +28,7 @@ class Search extends React.Component {
       <div
         className="main">
         <TextField
+          autoFocus
           style={{width: 350}}
           value={this.state.query}
           onChange={this.search}
@@ -41,4 +42,3 @@ class Search extends React.Component {
 };
 
 export default Search;
-

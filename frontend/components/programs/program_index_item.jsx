@@ -21,7 +21,7 @@ export default ({ program, expanded, handleExpand }) => {
   };
 
   return (
-    <li>
+    <li className='program-index-item'>
       <Paper
         style={item}>
 
@@ -46,4 +46,3 @@ export default ({ program, expanded, handleExpand }) => {
     </li>
   );
 }
-

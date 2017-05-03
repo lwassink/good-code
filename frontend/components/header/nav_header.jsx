@@ -97,4 +97,3 @@ class NavHeader extends React.Component {
 }
 
 export default NavHeader;
-
