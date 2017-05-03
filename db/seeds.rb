@@ -446,15 +446,15 @@ USES = [
   "computer games"
 ]
 
-program_ids.each do |program_id|
+programs.each do |program|
   reviews = REVIEWS.shuffle
   uses = USES.shuffle
-  user_ids.each do |user_id|
+  user_ids.shuffle.each do |user_id|
     Review.create!(
-      author_id: ((user_id + program_id) % 4) + 1,
-      program_id: program_id,
-      body: reviews[user_id].gsub('XXX', Program.find(program_id).name),
-      project_used_in: uses[user_id]
+      author_id: user_id,
+      program_id: program.id,
+      body: reviews[user_id % 4].gsub('XXX', program.name),
+      project_used_in: uses[user_id % 4]
     )
   end
 end
