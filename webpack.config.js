@@ -1,3 +1,11 @@
+var path = require('path');
+var reactDomLibPath = path.join(__dirname, "./node_modules/react-dom/lib");
+var alias = {};
+["EventPluginHub", "EventConstants", "EventPluginUtils", "EventPropagators",
+ "SyntheticUIEvent", "CSSPropertyOperations", "ViewportMetrics"].forEach(function(filename){
+    alias["react/lib/"+filename] = path.join(__dirname, "./node_modules/react-dom/lib", filename);
+});
+
 module.exports = {
   entry: './frontend/entry.jsx',
   output: {
@@ -22,6 +30,7 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
+    alias: alias,
     extensions: ['', '.js', '.jsx' ]
   }
 };
