@@ -428,12 +428,12 @@ program_ids.each do |program_id|
 end
 
 REVIEWS = [
-  "I know some people say it's **out of date**, but I couldn't _imagine_ work with out XXX. I think it's impressive how well XXX has stood the test of time. It's a real _testament_ to the community of devlopers that maintain it. 'People ask me, would you recomend XXX?' and the answer is allways **_YES!_**",
-  "There are three main problems with XXX. They are\n* It's **too slow**. \n* It's unreliable.\n* The developer community is _very_ unfriendly.\n\nI wouldn't recomend XXX unless you have no other choice.",
+  "I know some people say it's **out of date**, but I couldn't _imagine_ work with out XXX. I think it's impressive how well XXX has stood the test of time. It's a real _testament_ to the community of developers that maintain it. 'People ask me, would you recommend XXX?' and the answer is always **_YES!_**",
+  "There are three main problems with XXX. They are\n* It's **too slow**. \n* It's unreliable.\n* The developer community is _very_ unfriendly.\n\nI wouldn't recommend XXX unless you have no other choice.",
   "## Pros\n XXX is quite easy to use. The learning curve is really quite shallow. I picked it up in a weekend.\n# Cons\n\nXXX doesn't scale well. Once you reach a certain size limit you will likely find it to be prohibitively slow. We had to stop using XXX at about 10,000 users.",
   "May I suggest this [link](https://www.google.com) where XXX is discussed in great detail. I learned a lot from their tutorial. The docs are a little wanting, but I found the tutorial quite satisfactory.",
   "# First\nXXX is very useful in my day to day work!\n## Second\nI use it on all my projects. Such as? Oh, I don' know...\n* The internet\n* My highly lucrative monkey training business\n* Need I go on?",
-  "People allways recomended XXX to me. For a long time I was resistant to using XXX because the interface is pretty scary. However, now that I have tried it I find XXX usefull for a couple reasons\n* It is much more eficient than windows me.\n * While it takes some getting used to, the interface is actually very intuitive\nOverall, I would recomend XXX to most people.",
+  "People always recommended XXX to me. For a long time I was resistant to using XXX because the interface is pretty scary. However, now that I have tried it I find XXX useful for a couple reasons\n* It is much more efficient than windows me.\n * While it takes some getting used to, the interface is actually very intuitive\nOverall, I would recommend XXX to most people.",
   "I really am surprised more people haven't adopted XXX yet. I know it's new and the bugs haven't all be ironed out, but I already find it **indispensable** in my day to day life!",
   "Isn't it cool how these _comments_ can be written in **markdown**? I find it so much easier to **_express_** myself. (Also, I hear you can use links, insert images, etc.)"
 ]
