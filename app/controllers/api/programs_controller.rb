@@ -5,21 +5,27 @@ class Api::ProgramsController < ApplicationController
 
   def index
     if params[:status] == '-1'
-      programs = Program.all
+      @programs = Program.all
+        .reverse_order
+        .offset(params[:page].to_i * 10)
+        .limit(10)
+      @count = Program.all.count
     elsif params[:current_user] && current_user
-      programs = current_user.authored_programs
+      @programs = current_user.authored_programs
+      @count = @programs.group(:id).length
     elsif current_user
-      programs = current_user.programs
+      @programs = current_user.programs
         .joins(:statuses)
         .where(statuses: { content: params[:status] })
+      @count = @programs.group(:id).length
     end
 
-    @count = programs.group(:id).length
 
-    @programs = programs
-      .reverse_order
-      .offset(params[:page].to_i * 10)
-      .limit(10)
+    # @programs = programs
+    #   .reverse_order
+    #   .offset(params[:page].to_i * 10)
+    #   .limit(10)
+    #   .load
 
     render :index
   end
@@ -94,4 +100,3 @@ class Api::ProgramsController < ApplicationController
                                    :description,)
   end
 end
-
