@@ -2974,3 +2974,1591 @@ Completed 422 Unprocessable Entity in 89ms (Views: 0.3ms | ActiveRecord: 0.3ms)
   [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 127]]
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (25.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (27.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (26.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$GCTxNJNdAeKVkWUIBEZbXuNUnwQjAVsCdQVzOaoBN0ztgBWtKH3k2"], ["session_token", "4sOjSgLCxcnjI36nhlrAqA"], ["created_at", 2017-05-05 17:04:25 UTC], ["updated_at", 2017-05-05 17:04:25 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 128], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 128], ["created_at", 2017-05-05 17:04:25 UTC], ["updated_at", 2017-05-05 17:04:25 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 128], ["program_id", 74], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 128], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 74], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 128], ["program_id", 74], ["created_at", 2017-05-05 17:04:25 UTC], ["updated_at", 2017-05-05 17:04:25 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"13"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.5ms)
+  Rendered api/statuses/show.json.jbuilder (10.6ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$1bcEB0wo7BTcp9xXKjsEOu0pWIrttWP9KS8f3CVEsdejBYkVzB3oS"], ["session_token", "-xSWP2sv58ws7sOmRhsaDw"], ["created_at", 2017-05-05 17:04:25 UTC], ["updated_at", 2017-05-05 17:04:25 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 129], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 129], ["created_at", 2017-05-05 17:04:25 UTC], ["updated_at", 2017-05-05 17:04:25 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 129], ["program_id", 75], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 129], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 129], ["program_id", 75], ["created_at", 2017-05-05 17:04:25 UTC], ["updated_at", 2017-05-05 17:04:25 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.4ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$ZdpfjBfKW7F5f5A8u7GrNOOFxfYpzzkNLxn2298FeaipapOxr/EDe"], ["session_token", "AaE2YxKwwJMn1vad0Xif1g"], ["created_at", 2017-05-05 17:04:26 UTC], ["updated_at", 2017-05-05 17:04:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 130], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 130], ["created_at", 2017-05-05 17:04:26 UTC], ["updated_at", 2017-05-05 17:04:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"content"=>"2", "program_id"=>"76", "user_id"=>"130"}}
+Unpermitted parameter: user_id
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 130], ["program_id", 76], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 130], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 130], ["program_id", 76], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "2"], ["user_id", 130], ["program_id", 76], ["created_at", 2017-05-05 17:04:26 UTC], ["updated_at", 2017-05-05 17:04:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.5ms)
+Completed 200 OK in 23ms (Views: 1.1ms | ActiveRecord: 2.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$.3OVYhv9oBSjDxx.F5.Gb.q0/cCXD3HjKtt/BGEFCZ0NcIPz7G3he"], ["session_token", "vNBM2XZfP6E4gu9kZtrNdw"], ["created_at", 2017-05-05 17:04:26 UTC], ["updated_at", 2017-05-05 17:04:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 131], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 131], ["created_at", 2017-05-05 17:04:26 UTC], ["updated_at", 2017-05-05 17:04:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"program_id"=>"77"}}
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 131], ["program_id", 77], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 131], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 595ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$fiKXIA9kcccfbfsRMrwgwO/6CtLEd9spE9EMKxHg5jH7yCZpuxWrK"], ["session_token", "hKGARF2TkhIiUZebdFrILw"], ["created_at", 2017-05-05 17:04:26 UTC], ["updated_at", 2017-05-05 17:04:26 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 132], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 132], ["created_at", 2017-05-05 17:04:26 UTC], ["updated_at", 2017-05-05 17:04:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 132], ["program_id", 78], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 132], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 132], ["program_id", 78], ["created_at", 2017-05-05 17:04:26 UTC], ["updated_at", 2017-05-05 17:04:26 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#destroy as JSON
+  Parameters: {"id"=>"16"}
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 132], ["program_id", 16], ["LIMIT", 1]]
+Filter chain halted as :restrict_to_owner rendered or redirected
+Completed 401 Unauthorized in 24ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$Qmm7JJvJlYm14jzQggRxEu6/CmWllgae48UqxFXAnmWYK96V1fGzu"], ["session_token", "TSdRBhw8BsO8oyfJAyNlzg"], ["created_at", 2017-05-05 17:07:04 UTC], ["updated_at", 2017-05-05 17:07:04 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 133], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 133], ["created_at", 2017-05-05 17:07:04 UTC], ["updated_at", 2017-05-05 17:07:04 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 133], ["program_id", 79], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 133], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 79], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 133], ["program_id", 79], ["created_at", 2017-05-05 17:07:04 UTC], ["updated_at", 2017-05-05 17:07:04 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"17"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.4ms)
+  Rendered api/statuses/show.json.jbuilder (8.7ms)
+Completed 200 OK in 27ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$28tJqLHhd1KObye58uvfvuzRtc3OGrKfC5MpRAPUEBuk4p2JgYs5q"], ["session_token", "WKPfzv23hKRANDpLRRnxEg"], ["created_at", 2017-05-05 17:07:04 UTC], ["updated_at", 2017-05-05 17:07:04 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (6.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 134], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 134], ["created_at", 2017-05-05 17:07:04 UTC], ["updated_at", 2017-05-05 17:07:04 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 134], ["program_id", 80], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 134], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 134], ["program_id", 80], ["created_at", 2017-05-05 17:07:04 UTC], ["updated_at", 2017-05-05 17:07:04 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"18"}
+  [1m[36mStatus Load (2.9ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.6ms)
+Completed 200 OK in 14ms (Views: 1.5ms | ActiveRecord: 2.9ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$KJ5frb/L1oT136zpOvyMLOeC4tADp7xUIBNzQdwDzLPqHpfu/NGt6"], ["session_token", "-IgqjTdk3HQFAfNEIi4Y4g"], ["created_at", 2017-05-05 17:07:05 UTC], ["updated_at", 2017-05-05 17:07:05 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 135], ["created_at", 2017-05-05 17:07:05 UTC], ["updated_at", 2017-05-05 17:07:05 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"content"=>"2", "program_id"=>"81", "user_id"=>"135"}}
+Unpermitted parameter: user_id
+  [1m[36mStatus Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 135], ["program_id", 81], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 81], ["LIMIT", 1]]
+  [1m[35m (11.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 135], ["program_id", 81], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "2"], ["user_id", 135], ["program_id", 81], ["created_at", 2017-05-05 17:07:05 UTC], ["updated_at", 2017-05-05 17:07:05 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.8ms)
+Completed 200 OK in 57ms (Views: 2.2ms | ActiveRecord: 15.6ms)
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (9.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$MjalcafAovJLSXZDjctbKe2ae/uOHmBzdz2QWSHqA65AnvkJq2NYC"], ["session_token", "FpNMyl1v-mdcS6xL9M9vzA"], ["created_at", 2017-05-05 17:07:05 UTC], ["updated_at", 2017-05-05 17:07:05 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 136], ["created_at", 2017-05-05 17:07:05 UTC], ["updated_at", 2017-05-05 17:07:05 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"program_id"=>"82"}}
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 136], ["program_id", 82], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 82], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 1207ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$cMj520Vse9n2ZImOFUSaAOb0BOLHFEGEkXv69oACwd7mLfNzJmlza"], ["session_token", "c43NkDIAOjUsHgrpdvfa4Q"], ["created_at", 2017-05-05 17:07:06 UTC], ["updated_at", 2017-05-05 17:07:06 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 137], ["created_at", 2017-05-05 17:07:06 UTC], ["updated_at", 2017-05-05 17:07:06 UTC]]
+  [1m[35m (3.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 137], ["program_id", 83], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 137], ["program_id", 83], ["created_at", 2017-05-05 17:07:06 UTC], ["updated_at", 2017-05-05 17:07:06 UTC]]
+  [1m[35m (8.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#destroy as JSON
+  Parameters: {"id"=>"20"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$Yh3MeX5RKayyy.ANy3B6L.ra3RZeJ5/nKp/q83dQsc3k3/KO/2WJm"], ["session_token", "wQBxGJe5S9wY_ABCc_FJww"], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 138], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 138], ["program_id", 84], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 138], ["program_id", 84], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"21"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.7ms)
+  Rendered api/statuses/show.json.jbuilder (10.6ms)
+Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$zWzz5lxFPBX/B0TjjpznZeGfGmGrojyA2HS3VuffBBf0Ny3Jg77kq"], ["session_token", "N8g6YxmJy2HQemf_QQOehA"], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 139], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 139], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 139], ["program_id", 85], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 139], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+  [1m[35mSQL (6.4ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 139], ["program_id", 85], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"22"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.4ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$h47I.xQqOdnxPRYzs9PB1OTZs6P7YdjiA7RzB/9sKLPu1XULsB.8S"], ["session_token", "JIWCKmu1rvT85OpkfAOhbQ"], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 140], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"content"=>"2", "program_id"=>"86", "user_id"=>"140"}}
+Unpermitted parameter: user_id
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 140], ["program_id", 86], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 140], ["program_id", 86], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "2"], ["user_id", 140], ["program_id", 86], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.3ms)
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$ld/u98Ct5KOSZ0pi3X1z1eVLOGwFt9eav1LlHTwVyzedSgyG.XnMK"], ["session_token", "kzr1jiTp4Ht29Zi-uzN9Vw"], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 141], ["created_at", 2017-05-05 17:08:19 UTC], ["updated_at", 2017-05-05 17:08:19 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"program_id"=>"87"}}
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 141], ["program_id", 87], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 517ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$lWdnjpLxgp.ib.G3Sk1Iauio7AuLOURoBsoTMYD171r/988G1xgme"], ["session_token", "tvqvluJB_P91U1H4VSj0UQ"], ["created_at", 2017-05-05 17:08:20 UTC], ["updated_at", 2017-05-05 17:08:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 142], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 142], ["created_at", 2017-05-05 17:08:20 UTC], ["updated_at", 2017-05-05 17:08:20 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 142], ["program_id", 88], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 142], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 142], ["program_id", 88], ["created_at", 2017-05-05 17:08:20 UTC], ["updated_at", 2017-05-05 17:08:20 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#destroy as JSON
+  Parameters: {"id"=>"24"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$knjlGWUT0g7cgKepOwKkvOdbYRjVtiVRJbA3rm1jZo378mfbCEIUi"], ["session_token", "4udo-2cMvHWIbpIuNwjdeg"], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 143], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 143], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 143], ["program_id", 89], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 143], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 143], ["program_id", 89], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"25"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.6ms)
+  Rendered api/statuses/show.json.jbuilder (10.8ms)
+Completed 200 OK in 33ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$KlnZUAPl7xYIWKnswspRBuorEhVEdr3CnvkydzixLBlKe0cI.PaqK"], ["session_token", "WlFpU3Xo6tcej_X18cI8gQ"], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 144], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 144], ["program_id", 90], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 90], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 144], ["program_id", 90], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"26"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.4ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$l/5GWFanHl.mGd3/LK9Dg.uo0aJ7u6xhG/0NbvAl64jnpWILs4R0m"], ["session_token", "xaaKbhxx59OzqAyijtOE2A"], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 145], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"content"=>"2", "program_id"=>"91", "user_id"=>"145"}}
+Unpermitted parameter: user_id
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 145], ["program_id", 91], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 145], ["program_id", 91], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "2"], ["user_id", 145], ["program_id", 91], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.3ms)
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$m33B3azS.5PJ4emDZRO/d.toONPaowBqJ8FltPnJIQmPfP8Aj3wnS"], ["session_token", "CNqc13NdHpalmUhs_pAAhg"], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 146], ["created_at", 2017-05-05 17:10:37 UTC], ["updated_at", 2017-05-05 17:10:37 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"program_id"=>"92"}}
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 146], ["program_id", 92], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 92], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 533ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$75QNtKBTh4mds9wI90040e4EPccGVw2CEmtPE0SJHgHtGmphZeDpC"], ["session_token", "EbrqFrgveUbLECjsRp5z_A"], ["created_at", 2017-05-05 17:10:38 UTC], ["updated_at", 2017-05-05 17:10:38 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 147], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 147], ["created_at", 2017-05-05 17:10:38 UTC], ["updated_at", 2017-05-05 17:10:38 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 147], ["program_id", 93], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 147], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 93], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 147], ["program_id", 93], ["created_at", 2017-05-05 17:10:38 UTC], ["updated_at", 2017-05-05 17:10:38 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#destroy as JSON
+  Parameters: {"id"=>"28"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$e8XfT7.CCQ/mQG1O6nwlxuCJtky6YC94BpDq6c.aydQoqE4fXNlqi"], ["session_token", "QFMO1RTxw3swDds2Hi_Z-g"], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 148], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 148], ["program_id", 94], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 94], ["LIMIT", 1]]
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 148], ["program_id", 94], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"29"}
+  [1m[36mStatus Load (0.4ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.5ms)
+  Rendered api/statuses/show.json.jbuilder (19.5ms)
+Completed 200 OK in 39ms (Views: 31.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$/Emu5BcdHhl71oyyp2kR.esn2GAi0dSJHuXAcbNvgF83pbtiEIP4G"], ["session_token", "cvlDakCkzuOugOcZf8INTw"], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 149], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 149], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 149], ["program_id", 95], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 149], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 95], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 149], ["program_id", 95], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"30"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.3ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$qkrQITzYH9VSN0c/B0A3I..30giu5sfwUSInp1aUT1P2ay0b8Gh9m"], ["session_token", "XEamdCspyvEzuvBDtsVspQ"], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 150], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 150], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"content"=>"2", "program_id"=>"96", "user_id"=>"150"}}
+Unpermitted parameter: user_id
+  [1m[36mStatus Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 150], ["program_id", 96], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 150], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.7ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 96], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 150], ["program_id", 96], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "2"], ["user_id", 150], ["program_id", 96], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.4ms)
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$onaQOeVE0NNBBsvya9OQZunF1fR7UYyf9GFsIlYuB1rQXNLE3HoTO"], ["session_token", "E0A_ZHywZ_3dyoOPonZoVw"], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 151], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 151], ["created_at", 2017-05-05 17:11:22 UTC], ["updated_at", 2017-05-05 17:11:22 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"program_id"=>"97"}}
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 151], ["program_id", 97], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 151], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 97], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 564ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$x0ki40GA1c0B6XFmyIhRP.FnFNPxGvb5OO/M3xlN6U7JTU.KsqWA6"], ["session_token", "v6ENE8wBqYMA2CRexYgFBQ"], ["created_at", 2017-05-05 17:11:23 UTC], ["updated_at", 2017-05-05 17:11:23 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 152], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 152], ["created_at", 2017-05-05 17:11:23 UTC], ["updated_at", 2017-05-05 17:11:23 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 152], ["program_id", 98], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 152], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.6ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 152], ["program_id", 98], ["created_at", 2017-05-05 17:11:23 UTC], ["updated_at", 2017-05-05 17:11:23 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#destroy as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["id", 32], ["program_id", 32], ["LIMIT", 1]]
+Filter chain halted as :restrict_to_owner rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$c1V/pkw53zB61z3Psl.EsOFYTGzyYo/0rFCHTVQ3H09DalmfDG63K"], ["session_token", "M_6CXCAr2NEPWqAWHpJx6A"], ["created_at", 2017-05-05 17:12:08 UTC], ["updated_at", 2017-05-05 17:12:08 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 153], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 153], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 153], ["program_id", 99], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 153], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 99], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 153], ["program_id", 99], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"33"}
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.4ms)
+  Rendered api/statuses/show.json.jbuilder (8.4ms)
+Completed 200 OK in 29ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$tb0Gmk/lG.rYYLneWElebO4wsvczbGOQh34iY5TLkIr4Li6t6NSA."], ["session_token", "yOZAVF1fYAYV4NZuwqDShQ"], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 154], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 154], ["program_id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 154], ["program_id", 100], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.4ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$l1DmhhE7j1OjUQOaxEqI/e/hPZ3SZF4oYn32DXx5BEudHDuko9yGG"], ["session_token", "9CPsYjMGPLWG_E1AmCeq1g"], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 155], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 155], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"content"=>"2", "program_id"=>"101", "user_id"=>"155"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 155], ["program_id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 155], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[35mSQL (5.7ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 155], ["program_id", 101], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Unpermitted parameter: user_id
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 155], ["program_id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 155], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 551ms (Views: 0.3ms | ActiveRecord: 8.7ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$9lrBRu9jaOScQfeKODnSJ.aNmChrn8sFqllSv52RHMkxQi.AcDeRK"], ["session_token", "EQ2Dg2OEqNnjv7vNkRz67A"], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 156], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"program_id"=>"102"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 156], ["program_id", 102], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 156], ["program_id", 102], ["created_at", 2017-05-05 17:12:09 UTC], ["updated_at", 2017-05-05 17:12:09 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 156], ["program_id", 102], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.7ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 14ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$HBux9iyMk5acSly/ToAMjegf1EPD0WasJeBlgUrTOrqlBwe2xA4l2"], ["session_token", "Sr-ovgs2XxiUoZ6mhOwImw"], ["created_at", 2017-05-05 17:12:10 UTC], ["updated_at", 2017-05-05 17:12:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 157], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 157], ["created_at", 2017-05-05 17:12:10 UTC], ["updated_at", 2017-05-05 17:12:10 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 157], ["program_id", 103], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 157], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 157], ["program_id", 103], ["created_at", 2017-05-05 17:12:10 UTC], ["updated_at", 2017-05-05 17:12:10 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#destroy as JSON
+  Parameters: {"id"=>"37"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 157], ["program_id", 37], ["LIMIT", 1]]
+Filter chain halted as :restrict_to_owner rendered or redirected
+Completed 401 Unauthorized in 16ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$CJ2C/06XH8J9ItTeVdeIGOn/uW.EggpUrYVs6KAcDA6/butgB6mKC"], ["session_token", "jnQMqg2Llxx9Kd-sa2cu_Q"], ["created_at", 2017-05-05 17:13:13 UTC], ["updated_at", 2017-05-05 17:13:13 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 158], ["created_at", 2017-05-05 17:13:13 UTC], ["updated_at", 2017-05-05 17:13:13 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"104"}
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 104], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."program_id" = $1 AND "statuses"."user_id" = $2 LIMIT $3[0m  [["program_id", 104], ["user_id", 158], ["LIMIT", 1]]
+  Rendered api/programs/_program.json.jbuilder (29.1ms)
+  Rendered api/programs/show.json.jbuilder (37.9ms)
+Completed 200 OK in 55ms (Views: 49.4ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::ProgramsController#create as JSON
+  Parameters: {"program"=>{"creator"=>"Tim", "description"=>"It's cool!", "name"=>"test"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$2QHQHfxtVoPhUQJJIe5F..yrfhDV.b1SogTDVRGbTVqPfycu2.qeq"], ["session_token", "ZccVyPx-5Crq6i3KiIyw7g"], ["created_at", 2017-05-05 17:13:14 UTC], ["updated_at", 2017-05-05 17:13:14 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 159], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "test"], ["creator", "Tim"], ["description", "It's cool!"], ["author_id", 159], ["created_at", 2017-05-05 17:13:14 UTC], ["updated_at", 2017-05-05 17:13:14 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/programs/show.json.jbuilder
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."program_id" = $1 AND "statuses"."user_id" = $2 LIMIT $3[0m  [["program_id", 105], ["user_id", 159], ["LIMIT", 1]]
+  Rendered api/programs/_program.json.jbuilder (1.7ms)
+  Rendered api/programs/show.json.jbuilder (2.0ms)
+Completed 200 OK in 96ms (Views: 2.3ms | ActiveRecord: 2.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::ProgramsController#create as JSON
+  Parameters: {"program"=>{"name"=>"test"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$syWOMyG0RoKiiLMT8KZyMu3/dxP//byjqXwPQPIEsw/xJF3e09TeS"], ["session_token", "FzEGtAuPGOEFM1DO5Lylug"], ["created_at", 2017-05-05 17:13:14 UTC], ["updated_at", 2017-05-05 17:13:14 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 160], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 637ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::ProgramsController#search as JSON
+  Parameters: {"query"=>""}
+  Rendering api/programs/index.json.jbuilder
+  Rendered api/programs/index.json.jbuilder (0.8ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::ProgramsController#search as JSON
+  Parameters: {"query"=>"testow"}
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "programs" WHERE (        LOWER(name) LIKE '%testow%' OR
+        LOWER(creator) LIKE '%testow%'
+)[0m
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.5ms)[0m  [1m[34mSELECT "programs".* FROM "programs" WHERE (        LOWER(name) LIKE '%testow%' OR
+        LOWER(creator) LIKE '%testow%'
+)[0m
+  Rendered api/programs/index.json.jbuilder (1.6ms)
+Completed 200 OK in 10ms (Views: 2.1ms | ActiveRecord: 6.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$xnixOXFDLQlaHXDRvL.daeWA.ciK.SelF5eOiyt5jV3IEn/wrpvRS"], ["session_token", "Ru3JHzsenlq-WxTn1jeLMA"], ["created_at", 2017-05-05 17:13:14 UTC], ["updated_at", 2017-05-05 17:13:14 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 161], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 161], ["created_at", 2017-05-05 17:13:14 UTC], ["updated_at", 2017-05-05 17:13:14 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"program_id"=>"106"}
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 106], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (6.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."program_id" = $1[0m  [["program_id", 106]]
+  Rendered api/reviews/index.json.jbuilder (7.9ms)
+Completed 200 OK in 18ms (Views: 4.2ms | ActiveRecord: 7.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$ZYssfOkjO5gNmenCrhwHXOoJMaBPdvaPjaoecPiuiTK5B7CYrEVeu"], ["session_token", "gusvTPpTl8lR2JN5qI8iww"], ["created_at", 2017-05-05 17:13:14 UTC], ["updated_at", 2017-05-05 17:13:14 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 162], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 162], ["created_at", 2017-05-05 17:13:14 UTC], ["updated_at", 2017-05-05 17:13:14 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"program_id"=>"107"}
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 107], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."program_id" = $1[0m  [["program_id", 107]]
+  Rendered api/reviews/index.json.jbuilder (1.1ms)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$RY/eYS.nbjZTXYRf7z2uIuPHaN8qVEYSzfbXGBt7TEuIe.KsrobvW"], ["session_token", "wP6_61QfPMZXqpLPhZoCWw"], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 163], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 163], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 163], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 108], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "reviews" ("body", "project_used_in", "author_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "It's cool"], ["project_used_in", "a project"], ["author_id", 163], ["program_id", 108], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#show as JSON
+  Parameters: {"id"=>"13"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering api/reviews/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 163], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" INNER JOIN "programs" ON "statuses"."program_id" = "programs"."id" WHERE "programs"."id" = $1 AND "statuses"."user_id" = $2[0m  [["id", 108], ["user_id", 163]]
+  Rendered api/reviews/_review.json.jbuilder (13.7ms)
+  Rendered api/reviews/show.json.jbuilder (16.0ms)
+Completed 200 OK in 22ms (Views: 16.4ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$VJAumXBNW5PTXcD5E5du8.4ZmiVtAaG9kSt6rTGcUljjpkNr8Z55q"], ["session_token", "0tzmEDFPbjB3Cwck2bx8rw"], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 164], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 164], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 164], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("body", "project_used_in", "author_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "It's cool"], ["project_used_in", "a project"], ["author_id", 164], ["program_id", 109], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering api/reviews/show.json.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 164], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" INNER JOIN "programs" ON "statuses"."program_id" = "programs"."id" WHERE "programs"."id" = $1 AND "statuses"."user_id" = $2[0m  [["id", 109], ["user_id", 164]]
+  Rendered api/reviews/_review.json.jbuilder (4.0ms)
+  Rendered api/reviews/show.json.jbuilder (4.7ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$n/EcatP4RKYcsZA5sM7XDOOaazo8fxJ86WaghKS1CLFlnAPYONLLC"], ["session_token", "BRK7OPAXnBEuAnEQOwQWYg"], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 165], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 165], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#create as JSON
+  Parameters: {"review"=>{"body"=>"hi there", "program_id"=>"110", "project_used_in"=>"Stuff"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 165], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 110], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("body", "project_used_in", "author_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "hi there"], ["project_used_in", "Stuff"], ["author_id", 165], ["program_id", 110], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/reviews/show.json.jbuilder
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" INNER JOIN "programs" ON "statuses"."program_id" = "programs"."id" WHERE "programs"."id" = $1 AND "statuses"."user_id" = $2[0m  [["id", 110], ["user_id", 165]]
+  Rendered api/reviews/_review.json.jbuilder (3.7ms)
+  Rendered api/reviews/show.json.jbuilder (4.2ms)
+Completed 200 OK in 13ms (Views: 4.5ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$X90.i16qrulNnHQ/qW5U2ex/Ks3bWyZuYAkxvFocKNyJcExwg.WXO"], ["session_token", "Jz4byMR9f-22cRB1cYmW1g"], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 166], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 166], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#create as JSON
+  Parameters: {"review"=>{"program_id"=>"111", "project_used_in"=>"Stuff"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 166], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 111], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 7ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$5Le9V/0PtNTqeC1UVYxhWuZmAIF0u3bTpJM0q4f4iwJQ5dHSM5ymG"], ["session_token", "B7WMBUaSbrbPTJUyyqmQcw"], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 167], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 167], ["program_id", 112], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 112], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 167], ["program_id", 112], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"38"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.5ms)
+  Rendered api/statuses/show.json.jbuilder (2.7ms)
+Completed 200 OK in 11ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$CZxBeeZ.MsY97ZzCrVyRueryzRj7ydpUjcnG9cZbbTwuPjhED6FOO"], ["session_token", "JjTqK4brmvszh0C24mAWFQ"], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 168], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 168], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 168], ["program_id", 113], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 168], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 113], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 168], ["program_id", 113], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"39"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.2ms)
+  Rendered api/statuses/show.json.jbuilder (0.6ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$tKk2LIg3x9v/STEkap9rf.y6pJkbvx94rCoqaiR3m354cb9309RnW"], ["session_token", "vCpiucdDpbly8ue9QH0JOw"], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 169], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 169], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"content"=>"2", "program_id"=>"114", "user_id"=>"169"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 169], ["program_id", 114], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 169], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 114], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 169], ["program_id", 114], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Unpermitted parameter: user_id
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 169], ["program_id", 114], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 169], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 114], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 14ms (Views: 0.5ms | ActiveRecord: 3.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$sVi6ZjeSbZpwemj7nFmCU./mfJv5BN2jEtWwOq1kgoRaDv1s8/r2."], ["session_token", "2pxj0mtw6NLwsvoftWmIzA"], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 170], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 170], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"program_id"=>"115"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 170], ["program_id", 115], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 170], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 115], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 170], ["program_id", 115], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 170], ["program_id", 115], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 170], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 115], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 12ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "username"=>"test"}}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$c533ib9m.sdwcl/GyE79FuNn5Z489nVcJiL4ramyFKO2LIshJH/re"], ["session_token", "ZiwRz48WniAeMH_OySTHwQ"], ["created_at", 2017-05-05 17:13:15 UTC], ["updated_at", 2017-05-05 17:13:15 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test"], ["id", 171], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "gHz_o81b8v27Ydsaha95bw"], ["updated_at", 2017-05-05 17:13:15 UTC], ["id", 171]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.5ms)
+Completed 200 OK in 111ms (Views: 14.5ms | ActiveRecord: 6.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]"}}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 87ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$dMcIcoMwNdBLSPYbFHYLeO/NMq6s3C/FrV8aS9q2Rt/BAJCItO/Zq"], ["session_token", "z1qJLWIk2QSRgbeoFmuzxA"], ["created_at", 2017-05-05 17:13:16 UTC], ["updated_at", 2017-05-05 17:13:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 172], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "test"], ["creator", "Timmy"], ["description", "test"], ["author_id", 172], ["created_at", 2017-05-05 17:13:16 UTC], ["updated_at", 2017-05-05 17:13:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" ORDER BY "programs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProgram Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 172], ["LIMIT", 1]]
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "TEST"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Load (0.5ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."program_id" = $1[0m  [["program_id", 116]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."program_id" = $1[0m  [["program_id", 116]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "programs" WHERE "programs"."id" = $1[0m  [["id", 116]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = $1[0m  [["user_id", 172]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."author_id" = $1[0m  [["author_id", 172]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 172]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$ntOL2cOv.4O7NU78EZbnRukF/IL6fP5ytQb.fKdYBEqBgnsdiCvry"], ["session_token", "zGAG-ptlijvFY5c-WvTPmg"], ["created_at", 2017-05-05 17:13:16 UTC], ["updated_at", 2017-05-05 17:13:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "test"], ["creator", "Timmy"], ["description", "test"], ["author_id", 173], ["created_at", 2017-05-05 17:13:16 UTC], ["updated_at", 2017-05-05 17:13:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 173], ["program_id", 117], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 117], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 173], ["program_id", 117], ["created_at", 2017-05-05 17:13:16 UTC], ["updated_at", 2017-05-05 17:13:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" ORDER BY "statuses"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 173], ["program_id", 117], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 117], ["LIMIT", 1]]
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses"[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 173], ["program_id", 118], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$fW2odEhqWqhE6k4/.EKZKeQTIZcZlkm6ACFx8ODZmd9W3zHBD3T26"], ["session_token", "session_token"], ["created_at", 2017-05-05 17:13:16 UTC], ["updated_at", 2017-05-05 17:13:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test2"], ["password_digest", "$2a$10$eDJwFrz1VL67ZhGMkrWwOuydNQQ6TClN6O70uLZippQIV2McG3s/C"], ["session_token", "session_token"], ["created_at", 2017-05-05 17:13:16 UTC], ["updated_at", 2017-05-05 17:13:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "TEST"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$F7ZtW6rTJo7KLK1t7LCXHOGviPVP4waQPlIoVFRkTupjKjYdT4ClO"], ["session_token", "F0pzvdMOiExL-A9H1WXehg"], ["created_at", 2017-05-05 17:13:16 UTC], ["updated_at", 2017-05-05 17:13:16 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test"], ["id", 176], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$gGI8IcMQLodFeRfX7CXC1OxZHOvpXEgS695LQfQNB5Y4KlpBiHESm"], ["session_token", "9MJslIgl4c7cinoWMmBdxA"], ["created_at", 2017-05-05 17:13:16 UTC], ["updated_at", 2017-05-05 17:13:16 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 177], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = $1[0m  [["user_id", 177]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."author_id" = $1[0m  [["author_id", 177]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 177]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$Y6GFnnVm4U3tyyPzzEmwqukEtAZpBs1QhXcdW07U0.1xC3xvZMqvi"], ["session_token", "vc1MQldoC9ID69u3Q-GrBQ"], ["created_at", 2017-05-05 17:14:02 UTC], ["updated_at", 2017-05-05 17:14:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 178], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 178], ["created_at", 2017-05-05 17:14:02 UTC], ["updated_at", 2017-05-05 17:14:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ProgramsController#show as JSON
+  Parameters: {"id"=>"118"}
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  Rendering api/programs/show.json.jbuilder
+  [1m[36mStatus Load (0.4ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."program_id" = $1 AND "statuses"."user_id" = $2 LIMIT $3[0m  [["program_id", 118], ["user_id", 178], ["LIMIT", 1]]
+  Rendered api/programs/_program.json.jbuilder (40.1ms)
+  Rendered api/programs/show.json.jbuilder (48.8ms)
+Completed 200 OK in 66ms (Views: 59.3ms | ActiveRecord: 2.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::ProgramsController#create as JSON
+  Parameters: {"program"=>{"creator"=>"Tim", "description"=>"It's cool!", "name"=>"test"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$2yRH/e7SIcjIr3KnFz10PO3GsLwFI0UHOe9Hy6LDe9PoiYSG0XAMa"], ["session_token", "4cycuAL7nn8u-2Xw9eRWpg"], ["created_at", 2017-05-05 17:14:02 UTC], ["updated_at", 2017-05-05 17:14:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 179], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "test"], ["creator", "Tim"], ["description", "It's cool!"], ["author_id", 179], ["created_at", 2017-05-05 17:14:02 UTC], ["updated_at", 2017-05-05 17:14:02 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/programs/show.json.jbuilder
+  [1m[36mStatus Load (0.4ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."program_id" = $1 AND "statuses"."user_id" = $2 LIMIT $3[0m  [["program_id", 119], ["user_id", 179], ["LIMIT", 1]]
+  Rendered api/programs/_program.json.jbuilder (2.5ms)
+  Rendered api/programs/show.json.jbuilder (3.0ms)
+Completed 200 OK in 94ms (Views: 3.4ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::ProgramsController#create as JSON
+  Parameters: {"program"=>{"name"=>"test"}}
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$NVbT2P0hdm24EpaUAytXJeVBnSISYLl92LCDjqeeaBybnnMyE.fIq"], ["session_token", "Qc7JrW8k9onjiCSAAf6_8Q"], ["created_at", 2017-05-05 17:14:02 UTC], ["updated_at", 2017-05-05 17:14:02 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 180], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 610ms (Views: 0.3ms | ActiveRecord: 2.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::ProgramsController#search as JSON
+  Parameters: {"query"=>""}
+  Rendering api/programs/index.json.jbuilder
+  Rendered api/programs/index.json.jbuilder (0.6ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::ProgramsController#search as JSON
+  Parameters: {"query"=>"testow"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "programs" WHERE (        LOWER(name) LIKE '%testow%' OR
+        LOWER(creator) LIKE '%testow%'
+)[0m
+  Rendering api/programs/index.json.jbuilder
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT "programs".* FROM "programs" WHERE (        LOWER(name) LIKE '%testow%' OR
+        LOWER(creator) LIKE '%testow%'
+)[0m
+  Rendered api/programs/index.json.jbuilder (0.7ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$NtX2dnjnv2abP2wX/f4UROxxI0H1pSeGJtDvbAEQEz2xExVZOQZ9m"], ["session_token", "b1V6bzMnySIjQz6CW9ZVGQ"], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 181], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 181], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"program_id"=>"120"}
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."program_id" = $1[0m  [["program_id", 120]]
+  Rendered api/reviews/index.json.jbuilder (2.1ms)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$AYf./2EB0Bnja75pZ1cnMOO8IUh4KvuN/XBChj00yOPeeUSyeg7fK"], ["session_token", "9WGaL2uT5_wOD7bP9AYOcA"], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 182], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 182], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"program_id"=>"121"}
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 121], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."program_id" = $1[0m  [["program_id", 121]]
+  Rendered api/reviews/index.json.jbuilder (0.8ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$2gJ9SSZZ19pnjeFgNK05n.E52ikN4nWf70KLVlyXFrlIqExyQCICm"], ["session_token", "o2ywW56_QkL6IR1QhgNNKw"], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 183], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 183], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 183], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 122], ["LIMIT", 1]]
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "reviews" ("body", "project_used_in", "author_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "It's cool"], ["project_used_in", "a project"], ["author_id", 183], ["program_id", 122], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#show as JSON
+  Parameters: {"id"=>"16"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering api/reviews/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 183], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" INNER JOIN "programs" ON "statuses"."program_id" = "programs"."id" WHERE "programs"."id" = $1 AND "statuses"."user_id" = $2[0m  [["id", 122], ["user_id", 183]]
+  Rendered api/reviews/_review.json.jbuilder (12.2ms)
+  Rendered api/reviews/show.json.jbuilder (15.0ms)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$icFCUJsZ5.DzrUF02UYu2.viuVJT58Oy4NJfO5zZXx/4dIelhWj9y"], ["session_token", "wXqzsYMc_WfsI2HOa9MmyA"], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 184], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 184], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 184], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 123], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("body", "project_used_in", "author_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "It's cool"], ["project_used_in", "a project"], ["author_id", 184], ["program_id", 123], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#show as JSON
+  Parameters: {"id"=>"17"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering api/reviews/show.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 184], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" INNER JOIN "programs" ON "statuses"."program_id" = "programs"."id" WHERE "programs"."id" = $1 AND "statuses"."user_id" = $2[0m  [["id", 123], ["user_id", 184]]
+  Rendered api/reviews/_review.json.jbuilder (4.4ms)
+  Rendered api/reviews/show.json.jbuilder (4.9ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$JIBnOahaqmu9xqFrOeiPBewMRKajfK.bakGyF/3Q1gmIKt0hLn9ry"], ["session_token", "iU5wOHrXdojbtwdBurS0zQ"], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 185], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 185], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#create as JSON
+  Parameters: {"review"=>{"body"=>"hi there", "program_id"=>"124", "project_used_in"=>"Stuff"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 185], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 124], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("body", "project_used_in", "author_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "hi there"], ["project_used_in", "Stuff"], ["author_id", 185], ["program_id", 124], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/reviews/show.json.jbuilder
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" INNER JOIN "programs" ON "statuses"."program_id" = "programs"."id" WHERE "programs"."id" = $1 AND "statuses"."user_id" = $2[0m  [["id", 124], ["user_id", 185]]
+  Rendered api/reviews/_review.json.jbuilder (2.3ms)
+  Rendered api/reviews/show.json.jbuilder (2.7ms)
+Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$YpwWHcUix.3lexpnNT30HuicjLlyMRYGEHFx0FTErFl2oUKopT.LK"], ["session_token", "ebmGzYugzltUXolCprWTUQ"], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 186], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 186], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::ReviewsController#create as JSON
+  Parameters: {"review"=>{"program_id"=>"125", "project_used_in"=>"Stuff"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 186], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 125], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$t.jAZVZj7T.aU.8F2pNDSefyUbZp65A/6/LCIVoCyxT5RM2q5ZWze"], ["session_token", "o5ALkaIo11hr8dJYaXUQFA"], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 187], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 187], ["program_id", 126], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 126], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 187], ["program_id", 126], ["created_at", 2017-05-05 17:14:03 UTC], ["updated_at", 2017-05-05 17:14:03 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"43"}
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.7ms)
+  Rendered api/statuses/show.json.jbuilder (3.2ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$jrWJ6S3xmqvP29I2Zo.N..KI/DCkP71Y9MQ1DpsPhYKmY9VW8XOoy"], ["session_token", "R1IIzchCbN3mLrExFRixDw"], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 188], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 188], ["program_id", 127], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 127], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 188], ["program_id", 127], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#show as JSON
+  Parameters: {"id"=>"44"}
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" WHERE "statuses"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.3ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$mmBy53WyXq4BPFmYCSzJl.W/XXGzA9p.B.GD4RF0.OmJDIW6phm2O"], ["session_token", "fD0cw90nbM79J-owTLxorw"], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 189], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"content"=>"2", "program_id"=>"128", "user_id"=>"189"}}
+Unpermitted parameter: user_id
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 189], ["program_id", 128], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 128], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 189], ["program_id", 128], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "2"], ["user_id", 189], ["program_id", 128], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/statuses/show.json.jbuilder
+  Rendered api/statuses/_status.json.jbuilder (0.1ms)
+  Rendered api/statuses/show.json.jbuilder (0.5ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tim"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tim"], ["password_digest", "$2a$10$q/ABx2UcMTjLtch5HaCrXuvc6dg.8SEedi1vFKl1ES/BAeexfWEGG"], ["session_token", "8CnrKjyeJeW1lDb1dN5gRw"], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "testow"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 190], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "testow"], ["creator", "Tim"], ["description", "It's cool"], ["author_id", 190], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::StatusesController#create as JSON
+  Parameters: {"status"=>{"program_id"=>"129"}}
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 190], ["program_id", 129], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 190], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 129], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 11ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "username"=>"test"}}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$CNBeRFEzCAzk.BX6Ep9SmOAwwzEArH4IsJ1PLIuL95bQLqBeaO.we"], ["session_token", "LsLUn0NsVMtdqWCltEsTjw"], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test"], ["id", 191], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "nzCmok9dtzBdYaA8owf-fw"], ["updated_at", 2017-05-05 17:14:04 UTC], ["id", 191]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.2ms)
+Completed 200 OK in 110ms (Views: 13.3ms | ActiveRecord: 2.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]"}}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 90ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$HlntgTJysucUCLPqS182p.CA3saNr.dWp5XvN81AN5jcY0voJ8ify"], ["session_token", "7DLjdX5ltVlhdrZfd68byw"], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "test"], ["creator", "Timmy"], ["description", "test"], ["author_id", 192], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mProgram Load (0.2ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" ORDER BY "programs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  [1m[36mProgram Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "TEST"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."program_id" = $1[0m  [["program_id", 130]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."program_id" = $1[0m  [["program_id", 130]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "programs" WHERE "programs"."id" = $1[0m  [["id", 130]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = $1[0m  [["user_id", 192]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."author_id" = $1[0m  [["author_id", 192]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 192]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$uQIuipMBSG.lrVBCEMQGBOfhxK3bJJfE9hq4L9GOnTGA766mgcyGa"], ["session_token", "NWOHT3pfsyknuErEe4uIwg"], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProgram Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "programs" WHERE "programs"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "programs" ("name", "creator", "description", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "test"], ["creator", "Timmy"], ["description", "test"], ["author_id", 193], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 193], ["program_id", 131], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.4ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 131], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "statuses" ("content", "user_id", "program_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "1"], ["user_id", 193], ["program_id", 131], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT  "statuses".* FROM "statuses" ORDER BY "statuses"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 193], ["program_id", 131], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 131], ["LIMIT", 1]]
+  [1m[36mStatus Load (0.3ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses"[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" = $1 AND "statuses"."program_id" = $2 LIMIT $3[0m  [["user_id", 193], ["program_id", 132], ["LIMIT", 1]]
+  [1m[36mProgram Load (0.3ms)[0m  [1m[34mSELECT  "programs".* FROM "programs" WHERE "programs"."id" = $1 LIMIT $2[0m  [["id", 132], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStatus Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStatus Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mStatus Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "statuses" WHERE "statuses"."user_id" IS NULL AND "statuses"."program_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$wM/2lpVL6X9hvrnGOzqv..UTKmF41dXY4/T73Ac3ou0exttjUBZe2"], ["session_token", "session_token"], ["created_at", 2017-05-05 17:14:04 UTC], ["updated_at", 2017-05-05 17:14:04 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test2"], ["password_digest", "$2a$10$w3WrNn50NpbXjtGeVYSWteSHZYRdxYaX71T5anS1E0RbAEqmGa17K"], ["session_token", "session_token"], ["created_at", 2017-05-05 17:14:05 UTC], ["updated_at", 2017-05-05 17:14:05 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "TEST"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$AyHqHUfB8J2C/S6UGP8HIOqksv.UGGH8Qq0V9zwbSyxOTmXOlDCiW"], ["session_token", "SLVl7K2YlKJTrHQtaC-Bkg"], ["created_at", 2017-05-05 17:14:05 UTC], ["updated_at", 2017-05-05 17:14:05 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test"], ["id", 196], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "test"], ["password_digest", "$2a$10$Uo6/mrTIwLHpeX5oJ89MJ.k1MGG1pX/R/lUhJDCq6ITu.h/Jcsv9."], ["session_token", "l3YRDtBjzHMO4voGve1NIg"], ["created_at", 2017-05-05 17:14:05 UTC], ["updated_at", 2017-05-05 17:14:05 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 197], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."user_id" = $1[0m  [["user_id", 197]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."author_id" = $1[0m  [["author_id", 197]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 197]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

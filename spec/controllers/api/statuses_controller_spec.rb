@@ -3,8 +3,6 @@ require 'rails_helper'
 RSpec.describe Api::StatusesController, type: :controller do
   let(:user) { User.create!( username: "Tim", password: "password" ) }
 
-  before { allow(controller).to receive(:current_user) { user } }
-
   let(:program) do
     Program.create!(
       name: "testow",
@@ -30,6 +28,8 @@ RSpec.describe Api::StatusesController, type: :controller do
       user_id: user.id
     )
   end
+
+  before { allow(controller).to receive(:current_user) { user } }
 
   render_views
 
@@ -69,20 +69,6 @@ RSpec.describe Api::StatusesController, type: :controller do
 
         expect(response).to have_http_status(422)
       end
-    end
-  end
-
-  describe "#destroy" do
-    it "destroys the status"
-  end
-
-  describe "#update" do
-    context "with valid params" do
-      it "updates the status"
-    end
-
-    context "with invalid params" do
-      it "returns an error"
     end
   end
 end
