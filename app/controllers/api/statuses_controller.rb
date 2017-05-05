@@ -14,7 +14,7 @@ class Api::StatusesController < ApplicationController
       @status.save
       render :show
     else
-      render json: @status.errors.full_messages
+      render json: @status.errors.full_messages, status: 422
     end
   end
 

@@ -19,7 +19,7 @@ class Api::ReviewsController < ApplicationController
       @review.save
       render :show
     else
-      render json: @review.errors.full_messages
+      render json: @review.errors.full_messages, status: 422
     end
   end
 
@@ -50,4 +50,3 @@ class Api::ReviewsController < ApplicationController
     params.require(:review).permit(:program_id, :body, :project_used_in)
   end
 end
-

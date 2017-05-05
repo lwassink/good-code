@@ -20,13 +20,6 @@ class Api::ProgramsController < ApplicationController
       @count = @programs.group(:id).length
     end
 
-
-    # @programs = programs
-    #   .reverse_order
-    #   .offset(params[:page].to_i * 10)
-    #   .limit(10)
-    #   .load
-
     render :index
   end
 
@@ -80,6 +73,8 @@ class Api::ProgramsController < ApplicationController
       @programs = Program.none
     end
 
+    @count = @programs.count
+
     render :index
   end
 
@@ -92,11 +87,13 @@ class Api::ProgramsController < ApplicationController
   end
 
   def program_params
-    params.require(:program).permit(:name,
-                                   :creator,
-                                   :source_code_url,
-                                   :image_url,
-                                   :thumbnail_url,
-                                   :description,)
+    params.require(:program).permit(
+     :name,
+     :creator,
+     :source_code_url,
+     :image_url,
+     :thumbnail_url,
+     :description,
+    )
   end
 end
